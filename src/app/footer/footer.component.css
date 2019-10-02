@@ -1,0 +1,36 @@
+footer {
+    font-family: sans-serif;
+    width:100%;
+    background-color: black;
+    color:white;
+    padding:15px 0;
+}
+.footer-box-title {
+    text-transform: uppercase;
+    font-size:16px;
+    letter-spacing: 1px;
+}
+hr{
+    border:0.5px solid lightgreen!important;
+}
+.footer-text {
+    color:silver;
+    text-transform: capitalize;
+}
+.footer-text i {
+    width: 30px;
+}
+.footer-link {
+    color: dimgray;
+}
+.copy-text {
+    color: slategrey;
+    margin :0;
+}
+.copy-text span {
+    color: skyblue;
+}
+.footer-logo {
+    width:100%;
+    margin-top:10px;
+}
