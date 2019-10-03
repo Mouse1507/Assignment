@@ -6,9 +6,11 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  lostPass(){
 
+  }
   constructor(private route: RouterModule) { }
-
+  
   ngOnInit() {
   }
 

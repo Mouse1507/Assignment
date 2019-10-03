@@ -1,5 +1,6 @@
 .quest {
     width:100%;
+    position: relative;
 }
 .quest-choose {
     margin-right : 15px;
@@ -37,6 +38,18 @@
     font-weight: 400;
     margin:0 3px;
 }
-.test-title {
-
+.card-bg {
+    background-color: lightgoldenrodyellow;
+}
+.count-down {
+    position: absolute;
+    top :10px;
+    right :20px;
+    padding:5px;
+    border-radius: 20px;
+    background-color: lightblue;
+    color :white;
+    width:30px;
+    height:30px;
+    line-height: 15px;
 }
