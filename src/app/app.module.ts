@@ -13,6 +13,8 @@ import { IntroduceComponent } from './introduce/introduce.component';
 import { ContactComponent } from './contact/contact.component';
 import { NgxPaginationModule} from 'ngx-pagination';
 import { TestComponent } from './test/test.component';
+import { UserComponent } from './user/user.component';
+import { MainServiceService } from './main-service.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,8 @@ import { TestComponent } from './test/test.component';
     SignupComponent,
     IntroduceComponent,
     ContactComponent,
-    TestComponent
+    TestComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -38,10 +41,11 @@ import { TestComponent } from './test/test.component';
       {path : 'introduce', component : IntroduceComponent},
       {path : 'contact', component: ContactComponent},
       {path : 'test', component: TestComponent},
+      {path : 'user', component: UserComponent},
 
     ])
   ],
-  providers: [],
+  providers: [MainServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -5,19 +5,17 @@
       <div class="card">
         <div class="card-header card-bg"><i class="fas fa-file-code"></i> Cơ sở lập trình</div>
         <div class="card-body">
-          <div class="quest">
-            <p class="quest-title">1. Định nghĩa abcd ???</p>
-            <div class="answer-box">
-              <input type="radio" name="cau-1" class="quest-choose"> <span class="quest-ans">la mot gi do </span><br>
-              <input type="radio" name="cau-1" class="quest-choose"> <span class="quest-ans">la mot gi do </span><br>
-              <input type="radio" name="cau-1" class="quest-choose"> <span class="quest-ans">la mot gi do </span><br>
-              <input type="radio" name="cau-1" class="quest-choose"> <span class="quest-ans">la mot gi do </span><br>
+          <div class="quest" *ngFor='let quiz of androidQuiz | paginate : {itemsPerPage : 1, currentPage: curPage}'>
+            <p class="quest-title">{{curPage}} . {{quiz.Text}}</p>
+            <div class="answer-box" *ngFor="let ind of quiz.Answers">
+              <input type="radio" name="cau-1" class="quest-choose"> <span class="quest-ans" >{{ind.Text}}</span><br>
             </div>
           </div>
           <div class="count-down">15</div>
         </div>
-        <div class="card-footer card-bg">Số câu : 1 / 40</div>
+        <div class="card-footer card-bg">Số câu : {{curPage}} / {{this.androidQuiz.length}}</div>
       </div>
+      <pagination-controls (pageChange)="curPage = $event"></pagination-controls>
     </div>
     <div class="col-md-4" style="background-color:lightgoldenrodyellow; border-radius: 10px;">
       <div class="user-info">
@@ -26,17 +24,18 @@
             <img src="assets/images/user.png" alt="user-info" class="user-img-test rounded-circle img-thumbnail">
           </div>
           <div class="col-md-8">
-            <p>Name</p>
-            <p>Id</p>
+            <p>Hoang Van Luong</p>
+            <p>206737</p>
           </div>
         </div>
         <hr>
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-12 text-center">
             <p class="test-title">cac cau hoi kiem tra</p>
             <div class="quest-num-box">
-              <i class="quest-num"> 1 </i>
+              <div class="quest-num text-center" *ngFor="let quiz of androidQuiz; let i = index" (click) = "toQuiz(i+1)  "> {{i+1}} </div>
             </div>
+            <div class="clear"></div>
           </div>
         </div>
         <div class="row">

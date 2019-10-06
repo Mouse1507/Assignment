@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-12\">\n      <div id=\"demo\" class=\"carousel slide\" data-ride=\"carousel\">\n\n        <!-- Indicators -->\n        <ul class=\"carousel-indicators\">\n          <li data-target=\"#demo\" data-slide-to=\"0\" class=\"active\"></li>\n          <li data-target=\"#demo\" data-slide-to=\"1\"></li>\n          <li data-target=\"#demo\" data-slide-to=\"2\"></li>\n        </ul>\n\n        <!-- The slideshow -->\n        <div class=\"carousel-inner\">\n          <div class=\"carousel-item active\">\n            <img src=\"assets/images/banner-1.jpg\" alt=\"Los Angeles\" width=\"100%\" height=\"400\">\n          </div>\n          <div class=\"carousel-item\">\n            <img src=\"assets/images/banner-2.jpg\" alt=\"Chicago\" width=\"100%\" height=\"400\">\n          </div>\n          <div class=\"carousel-item\">\n            <img src=\"assets/images/banner-3.png\" alt=\"New York\" width=\"100%\" height=\"400\">\n          </div>\n        </div>\n\n        <!-- Left and right controls -->\n        <a class=\"carousel-control-prev\" href=\"#demo\" data-slide=\"prev\">\n          <span class=\"carousel-control-prev-icon\"></span>\n        </a>\n        <a class=\"carousel-control-next\" href=\"#demo\" data-slide=\"next\">\n          <span class=\"carousel-control-next-icon\"></span>\n        </a>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-md-12 text-center\" >\n      <p class=\"title-gt\">Danh mục môn học</p>\n      <hr>\n    </div>\n  </div>\n  <div class=\"row flex-row\">\n    <div class=\"col-md-8 flex-box no-pad-right\">\n      <div class=\"gt-left\">\n        <div class=\"container-fluid\">\n          <div class=\"row flex-row\">\n            <div class=\"col-md-6 flex-layout\" *ngFor= \"let mon of listMon | paginate : {itemsPerPage : 2, currentPage : curPage}\">\n              <div class=\"card\" >\n                <img class=\"card-img-top\" src=\"assets/logo-mon/{{mon.Logo}}\" alt=\"Card image\">\n                <div class=\"card-body\">\n                  <h4 class=\"card-title\">{{mon.Name}}</h4>\n                  <p class=\"card-text\">Some example text.</p>\n                  <a href=\"#\" class=\"btn btn-primary\">Bat dau thi</a>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"row \">\n            <pagination-controls (pageChange)=\"curPage = $event\" class=\"text-center\" ></pagination-controls>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-4 flex-box no-pad-left\">\n      <div class=\"gt-right text-center\">\n        <ul class=\"list-group\">\n          <li class=\"list-group-item\" *ngFor=\"let mon of listMon\"><a href=\"\">{{mon.Name}}</a></li>\n        </ul>\n      </div>\n    </div>\n  </div>\n\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-12\">\n      <div id=\"demo\" class=\"carousel slide\" data-ride=\"carousel\">\n\n        <!-- Indicators -->\n        <ul class=\"carousel-indicators\">\n          <li data-target=\"#demo\" data-slide-to=\"0\" class=\"active\"></li>\n          <li data-target=\"#demo\" data-slide-to=\"1\"></li>\n          <li data-target=\"#demo\" data-slide-to=\"2\"></li>\n        </ul>\n\n        <!-- The slideshow -->\n        <div class=\"carousel-inner\">\n          <div class=\"carousel-item active\">\n            <img src=\"assets/images/banner-1.jpg\" alt=\"Los Angeles\" width=\"100%\" height=\"400\">\n          </div>\n          <div class=\"carousel-item\">\n            <img src=\"assets/images/banner-2.jpg\" alt=\"Chicago\" width=\"100%\" height=\"400\">\n          </div>\n          <div class=\"carousel-item\">\n            <img src=\"assets/images/banner-3.png\" alt=\"New York\" width=\"100%\" height=\"400\">\n          </div>\n        </div>\n\n        <!-- Left and right controls -->\n        <a class=\"carousel-control-prev\" href=\"#demo\" data-slide=\"prev\">\n          <span class=\"carousel-control-prev-icon\"></span>\n        </a>\n        <a class=\"carousel-control-next\" href=\"#demo\" data-slide=\"next\">\n          <span class=\"carousel-control-next-icon\"></span>\n        </a>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-md-12 text-center\" >\n      <p class=\"title-gt\">Danh mục môn học</p>\n      <hr>\n    </div>\n  </div>\n  <div class=\"row flex-row\">\n    <div class=\"col-md-8 flex-box no-pad-right\">\n      <div class=\"gt-left\">\n        <div class=\"container-fluid\">\n          <div class=\"row flex-row\">\n            <div class=\"col-md-6 flex-layout\" *ngFor= \"let mon of listMon | paginate : {itemsPerPage : 2, currentPage : curPage}\">\n              <div class=\"card\" >\n                <img class=\"card-img-top\" src=\"assets/logo-mon/{{mon.Logo}}\" alt=\"Card image\">\n                <div class=\"card-body\">\n                  <h4 class=\"card-title\">{{mon.Name}}</h4>\n                  <p class=\"card-text\">Some example text.</p>\n                  <a routerLink=\"/test\" class=\"btn btn-primary\">Bat dau thi</a>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"row \">\n            <pagination-controls (pageChange)=\"curPage = $event\" class=\"text-center\" ></pagination-controls>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-4 flex-box no-pad-left\">\n      <div class=\"gt-right text-center\">\n        <ul class=\"list-group\">\n          <li class=\"list-group-item\" *ngFor=\"let mon of listMon\"><a routerLink = '/test'>{{mon.Name}}</a></li>\n        </ul>\n      </div>\n    </div>\n  </div>\n\n</div>\n");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<footer>\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4\">\r\n        <p class=\"footer-box-title\">Liên hệ</p>\r\n        <hr>\r\n        <p class=\"footer-text\"><i class=\"fas fa-map-marker-alt\"></i> : <span>12 Trịnh đình thảo, Tân phú, TP.HCM</span>\r\n        </p>\r\n        <p class=\"footer-text\"><i class=\"fas fa-envelope\"></i> : <span>luonghv1997@gmail.com</span></p>\r\n        <p class=\"footer-text\"><i class=\"fas fa-phone\"></i> : <span>0123456789</span></p>\r\n        <p class=\"footer-box-title\">Chi nhánh</p>\r\n        <hr>\r\n        <p class=\"footer-text\"><i class=\"fas fa-map-pin\"></i> : <span>123 Lê Đại hành, TP.HCM </span></p>\r\n        <p class=\"footer-text\"><i class=\"fas fa-map-pin\"></i> : <span>30 Cao thắng, Q3, TP.HCM</span></p>\r\n\r\n      </div>\r\n      <div class=\"col-md-4\">\r\n        <p class=\"footer-box-title\">Về chúng tôi</p>\r\n        <hr>\r\n        <p><a href=\"\" class=\"footer-link\">Điều khoản sử dụng</a></p>\r\n        <p><a href=\"\" class=\"footer-link\">Chính sách</a></p>\r\n        <img src=\"assets/images/logo.png\" alt=\"logo\" class=\"footer-logo\">\r\n\r\n      </div>\r\n      <div class=\"col-md-4\">\r\n        <p class=\"footer-box-title\">Fanpage</p>\r\n        <hr>\r\n        <div class=\"fb-page\" data-href=\"https://www.facebook.com/laptrinhvienconfessions/\"\r\n          data-tabs=\"L&#x1ead;p tr&#xec;nh\" data-width=\"380\" data-height=\"300\" data-small-header=\"false\"\r\n          data-adapt-container-width=\"true\" data-hide-cover=\"false\" data-show-facepile=\"true\">\r\n          <blockquote cite=\"https://www.facebook.com/laptrinhvienconfessions/\" class=\"fb-xfbml-parse-ignore\"><a\r\n              href=\"https://www.facebook.com/laptrinhvienconfessions/\">Lập Trình Viên Confessions</a></blockquote>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12 text-center\">\r\n        <p class=\"copy-text\">Được tạo ra bởi <span>Mouse Time</span></p>\r\n        <p class=\"copy-text\">© 2019 TestOnline.Com  All Rights Reserved </p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</footer>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<footer>\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4\">\r\n        <p class=\"footer-box-title\">Liên hệ</p>\r\n        <hr>\r\n        <p class=\"footer-text\"><i class=\"fas fa-map-marker-alt\"></i> : <span>12 Trịnh đình thảo, Tân phú, TP.HCM</span>\r\n        </p>\r\n        <p class=\"footer-text\"><i class=\"fas fa-envelope\"></i> : <span>luonghv1997@gmail.com</span></p>\r\n        <p class=\"footer-text\"><i class=\"fas fa-phone\"></i> : <span>0123456789</span></p>\r\n        <p class=\"footer-box-title\">Chi nhánh</p>\r\n        <hr>\r\n        <p class=\"footer-text\"><i class=\"fas fa-map-pin\"></i> : <span>123 Lê Đại hành, TP.HCM </span></p>\r\n        <p class=\"footer-text\"><i class=\"fas fa-map-pin\"></i> : <span>30 Cao thắng, Q3, TP.HCM</span></p>\r\n\r\n      </div>\r\n      <div class=\"col-md-4\">\r\n        <p class=\"footer-box-title\">Về chúng tôi</p>\r\n        <hr>\r\n        <p><a href=\"\" class=\"footer-link\">Điều khoản sử dụng</a></p>\r\n        <p><a href=\"\" class=\"footer-link\">Chính sách</a></p>\r\n        <img src=\"assets/images/footer-logo.png\" alt=\"logo\" class=\"footer-logo\">\r\n\r\n      </div>\r\n      <div class=\"col-md-4\">\r\n        <p class=\"footer-box-title\">Fanpage</p>\r\n        <hr>\r\n        <div class=\"fb-page\" data-href=\"https://www.facebook.com/laptrinhvienconfessions/\"\r\n          data-tabs=\"L&#x1ead;p tr&#xec;nh\" data-width=\"380\" data-height=\"300\" data-small-header=\"false\"\r\n          data-adapt-container-width=\"true\" data-hide-cover=\"false\" data-show-facepile=\"true\">\r\n          <blockquote cite=\"https://www.facebook.com/laptrinhvienconfessions/\" class=\"fb-xfbml-parse-ignore\"><a\r\n              href=\"https://www.facebook.com/laptrinhvienconfessions/\">Lập Trình Viên Confessions</a></blockquote>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-12 text-center\">\r\n        <p class=\"copy-text\">Được tạo ra bởi <span>Mouse Time</span></p>\r\n        <p class=\"copy-text\">© 2019 TestOnline.Com  All Rights Reserved </p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</footer>\r\n");
 
 /***/ }),
 
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<header>\n  <nav class=\"navbar navbar-expand-md fixed-top\">\n    <div class=\"container\">\n      <!-- Brand -->\n      <a class=\"navbar-brand\" href=\"#\"><img src=\"assets/images/logo.png\" alt=\"\" class=\"menu-logo\"></a>\n\n      <!-- Toggler/collapsibe Button -->\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsibleNavbar\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n\n      <!-- Navbar links -->\n      <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">\n        <ul class=\"navbar-nav\" style=\"margin-right:auto!important\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"/home\">Trang chủ</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"/introduce\">Giới thiệu</a>\n          </li>\n          <li class=\"nav-item dropdown\">\n            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">\n              Bài thi\n            </a>\n            <div class=\"dropdown-menu\">\n              <a class=\"dropdown-item\" href=\"/test\">Trắc nghiệm </a>\n              <a class=\"dropdown-item\" href=\"#\"></a>\n              <a class=\"dropdown-item\" href=\"#\"></a>\n            </div>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"/contact\">Liên hệ</a>\n          </li>\n        </ul>\n        <ul class=\"navbar-nav\">\n          <li class=\"nav-log\">\n            <a href=\"/login\" class=\"log-link\">Đăng nhập</a>\n          </li>\n          <!-- <li class=\"nav-sup\">\n            <a href=\"/login\">Đăng ký</a>\n          </li> -->\n        </ul>\n      </div>\n    </div>\n  </nav>\n</header>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<header>\n  <nav class=\"navbar navbar-expand-md fixed-top\">\n    <div class=\"container\">\n      <!-- Brand -->\n      <a class=\"navbar-brand\" href=\"#\"><img src=\"assets/images/logo.png\" alt=\"\" class=\"menu-logo\"></a>\n\n      <!-- Toggler/collapsibe Button -->\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsibleNavbar\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n\n      <!-- Navbar links -->\n      <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">\n        <ul class=\"navbar-nav\" style=\"margin-right:auto!important\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/home\">Trang chủ</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/introduce\">Giới thiệu</a>\n          </li>\n          <li class=\"nav-item dropdown\">\n            <a class=\"nav-link dropdown-toggle\" routerLink=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">\n              Môn học\n            </a>\n            <div class=\"dropdown-menu\">\n              <a class=\"dropdown-item\" routerLink=\"/test\" *ngFor=\"let mon of listMon\"> {{mon.Name}}</a>\n            </div>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/contact\">Liên hệ</a>\n          </li>\n        </ul>\n        <ul class=\"navbar-nav\">\n          <li class=\"nav-log\">\n            <a routerLink=\"/login\" class=\"log-link\">Đăng nhập</a>\n          </li>\n          <!-- <li class=\"nav-sup\">\n            <a routerLink=\"/login\">Đăng ký</a>\n          </li> -->\n        </ul>\n      </div>\n    </div>\n  </nav>\n</header>\n");
 
 /***/ }),
 
@@ -149,7 +149,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<div class=\"container\">\n  <div class=\"row pad-t-b-20\">\n    <div class=\"col-md-8\">\n      <div class=\"card\">\n        <div class=\"card-header card-bg\"><i class=\"fas fa-file-code\"></i> Cơ sở lập trình</div>\n        <div class=\"card-body\">\n          <div class=\"quest\">\n            <p class=\"quest-title\">1. Định nghĩa abcd ???</p>\n            <div class=\"answer-box\">\n              <input type=\"radio\" name=\"cau-1\" class=\"quest-choose\"> <span class=\"quest-ans\">la mot gi do </span><br>\n              <input type=\"radio\" name=\"cau-1\" class=\"quest-choose\"> <span class=\"quest-ans\">la mot gi do </span><br>\n              <input type=\"radio\" name=\"cau-1\" class=\"quest-choose\"> <span class=\"quest-ans\">la mot gi do </span><br>\n              <input type=\"radio\" name=\"cau-1\" class=\"quest-choose\"> <span class=\"quest-ans\">la mot gi do </span><br>\n            </div>\n          </div>\n          <div class=\"count-down\">15</div>\n        </div>\n        <div class=\"card-footer card-bg\">Số câu : 1 / 40</div>\n      </div>\n    </div>\n    <div class=\"col-md-4\" style=\"background-color:lightgoldenrodyellow; border-radius: 10px;\">\n      <div class=\"user-info\">\n        <div class=\"row\">\n          <div class=\"col-md-4\">\n            <img src=\"assets/images/user.png\" alt=\"user-info\" class=\"user-img-test rounded-circle img-thumbnail\">\n          </div>\n          <div class=\"col-md-8\">\n            <p>Name</p>\n            <p>Id</p>\n          </div>\n        </div>\n        <hr>\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <p class=\"test-title\">cac cau hoi kiem tra</p>\n            <div class=\"quest-num-box\">\n              <i class=\"quest-num\"> 1 </i>\n            </div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <br>\n            <button type=\"submit\" class=\"btn btn-danger\">ket thuc bai thi</button>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n<app-footer></app-footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<div class=\"container\">\n  <div class=\"row pad-t-b-20\">\n    <div class=\"col-md-8\">\n      <div class=\"card\">\n        <div class=\"card-header card-bg\"><i class=\"fas fa-file-code\"></i> Cơ sở lập trình</div>\n        <div class=\"card-body\">\n          <div class=\"quest\" *ngFor='let quiz of androidQuiz | paginate : {itemsPerPage : 1, currentPage: curPage}'>\n            <p class=\"quest-title\">{{curPage}} . {{quiz.Text}}</p>\n            <div class=\"answer-box\" *ngFor=\"let ind of quiz.Answers\">\n              <input type=\"radio\" name=\"cau-1\" class=\"quest-choose\"> <span class=\"quest-ans\" >{{ind.Text}}</span><br>\n            </div>\n          </div>\n          <div class=\"count-down\">15</div>\n        </div>\n        <div class=\"card-footer card-bg\">Số câu : {{curPage}} / {{this.androidQuiz.length}}</div>\n      </div>\n      <pagination-controls (pageChange)=\"curPage = $event\"></pagination-controls>\n    </div>\n    <div class=\"col-md-4\" style=\"background-color:lightgoldenrodyellow; border-radius: 10px;\">\n      <div class=\"user-info\">\n        <div class=\"row\">\n          <div class=\"col-md-4\">\n            <img src=\"assets/images/user.png\" alt=\"user-info\" class=\"user-img-test rounded-circle img-thumbnail\">\n          </div>\n          <div class=\"col-md-8\">\n            <p>Hoang Van Luong</p>\n            <p>206737</p>\n          </div>\n        </div>\n        <hr>\n        <div class=\"row\">\n          <div class=\"col-md-12 text-center\">\n            <p class=\"test-title\">cac cau hoi kiem tra</p>\n            <div class=\"quest-num-box\">\n              <div class=\"quest-num text-center\" *ngFor=\"let quiz of androidQuiz; let i = index\" (click) = \"toQuiz(i+1)  \"> {{i+1}} </div>\n            </div>\n            <div class=\"clear\"></div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <br>\n            <button type=\"submit\" class=\"btn btn-danger\">ket thuc bai thi</button>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n<app-footer></app-footer>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/user/user.component.html":
+/*!********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/user/user.component.html ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<div class=\"user\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <div class=\"front\">\n          <div class=\"row\">\n            <div class=col-md-4>\n              <img src=\"assets/images/user.png\" alt=\"\" class=\"user-image img-thumbnail\">\n            </div>\n            <div class=\"col-md-8\">\n              <p class=\"info-title\"><i class=\"fas fa-user\"></i> Name</p>\n              <p>Nguyen Van A</p>\n              <p class=\"info-title\"><i class=\"fas fa-dumbbell\"></i> Age</p>\n              <p>20</p>\n              <p class=\"info-title\"><i class=\"fas fa-venus-mars\"></i> Gender</p>\n              <p>Male</p>\n              <p class=\"info-title\"><i class=\"fas fa-at\"></i> Email</p>\n              <p>luonghv1997@gmail.com</p>\n            </div>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-md-12\">\n              <hr>\n            </div>\n          </div>\n        </div>\n        <div class=\"back\">\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<app-footer></app-footer>\n");
 
 /***/ }),
 
@@ -482,6 +495,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _contact_contact_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./contact/contact.component */ "./src/app/contact/contact.component.ts");
 /* harmony import */ var ngx_pagination__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ngx-pagination */ "./node_modules/ngx-pagination/dist/ngx-pagination.js");
 /* harmony import */ var _test_test_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./test/test.component */ "./src/app/test/test.component.ts");
+/* harmony import */ var _user_user_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./user/user.component */ "./src/app/user/user.component.ts");
+/* harmony import */ var _main_service_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./main-service.service */ "./src/app/main-service.service.ts");
+
+
 
 
 
@@ -512,7 +529,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _signup_signup_component__WEBPACK_IMPORTED_MODULE_11__["SignupComponent"],
             _introduce_introduce_component__WEBPACK_IMPORTED_MODULE_12__["IntroduceComponent"],
             _contact_contact_component__WEBPACK_IMPORTED_MODULE_13__["ContactComponent"],
-            _test_test_component__WEBPACK_IMPORTED_MODULE_15__["TestComponent"]
+            _test_test_component__WEBPACK_IMPORTED_MODULE_15__["TestComponent"],
+            _user_user_component__WEBPACK_IMPORTED_MODULE_16__["UserComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -526,9 +544,10 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 { path: 'introduce', component: _introduce_introduce_component__WEBPACK_IMPORTED_MODULE_12__["IntroduceComponent"] },
                 { path: 'contact', component: _contact_contact_component__WEBPACK_IMPORTED_MODULE_13__["ContactComponent"] },
                 { path: 'test', component: _test_test_component__WEBPACK_IMPORTED_MODULE_15__["TestComponent"] },
+                { path: 'user', component: _user_user_component__WEBPACK_IMPORTED_MODULE_16__["UserComponent"] },
             ])
         ],
-        providers: [],
+        providers: [_main_service_service__WEBPACK_IMPORTED_MODULE_17__["MainServiceService"]],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
     })
 ], AppModule);
@@ -606,56 +625,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentComponent", function() { return ContentComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _main_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../main-service.service */ "./src/app/main-service.service.ts");
+
 
 
 let ContentComponent = class ContentComponent {
-    constructor() {
-        this.listMon = [{
-                "Id": "ADAV",
-                "Name": "Lập trình Android nâng cao",
-                "Logo": "ADAV.jpg"
-            },
-            {
-                "Id": "ADBS",
-                "Name": "Lập trình Android cơ bản",
-                "Logo": "ADBS.jpg"
-            },
-            {
-                "Id": "ADTE",
-                "Name": "Kiểm thử và triển khai ứng dụng Android",
-                "Logo": "ADTE.jpg"
-            },
-            {
-                "Id": "ADUI",
-                "Name": "Thiết kế giao diện trên Android",
-                "Logo": "ADUI.jpg"
-            },
-            {
-                "Id": "ASNE",
-                "Name": "Lập trình ASP.NET",
-                "Logo": "ASNE.png"
-            },
-            {
-                "Id": "CLCO",
-                "Name": "Điện toán đám mây",
-                "Logo": "CLCO.jpg"
-            },
-            {
-                "Id": "DBAV",
-                "Name": "SQL Server",
-                "Logo": "DBAV.png"
-            },
-            {
-                "Id": "DBBS",
-                "Name": "Cơ sở dữ liệu",
-                "Logo": "DBBS.png"
-            },
-            {
-                "Id": "GAME",
-                "Name": "Lập trình game 2D",
-                "Logo": "GAME.png"
-            }
-        ];
+    constructor(mainSer) {
+        this.mainSer = mainSer;
         this.carousel = [{
                 name: "",
                 image: "banner-1.jpg",
@@ -671,8 +647,13 @@ let ContentComponent = class ContentComponent {
         ];
         this.curPage = 1;
     }
-    ngOnInit() { }
+    ngOnInit() {
+        this.listMon = this.mainSer.listMon;
+    }
 };
+ContentComponent.ctorParameters = () => [
+    { type: _main_service_service__WEBPACK_IMPORTED_MODULE_2__["MainServiceService"] }
+];
 ContentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-content',
@@ -870,6 +851,1417 @@ LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/main-service.service.ts":
+/*!*****************************************!*\
+  !*** ./src/app/main-service.service.ts ***!
+  \*****************************************/
+/*! exports provided: MainServiceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainServiceService", function() { return MainServiceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let MainServiceService = class MainServiceService {
+    constructor() {
+        this.listMon = [{
+                "Id": "ADAV",
+                "Name": "Lập trình Android nâng cao",
+                "Logo": "ADAV.jpg"
+            },
+            {
+                "Id": "ADBS",
+                "Name": "Lập trình Android cơ bản",
+                "Logo": "ADBS.jpg"
+            },
+            {
+                "Id": "ADTE",
+                "Name": "Kiểm thử và triển khai ứng dụng Android",
+                "Logo": "ADTE.jpg"
+            },
+            {
+                "Id": "ADUI",
+                "Name": "Thiết kế giao diện trên Android",
+                "Logo": "ADUI.jpg"
+            },
+            {
+                "Id": "ASNE",
+                "Name": "Lập trình ASP.NET",
+                "Logo": "ASNE.png"
+            },
+            {
+                "Id": "CLCO",
+                "Name": "Điện toán đám mây",
+                "Logo": "CLCO.jpg"
+            },
+            {
+                "Id": "DBAV",
+                "Name": "SQL Server",
+                "Logo": "DBAV.png"
+            },
+            {
+                "Id": "DBBS",
+                "Name": "Cơ sở dữ liệu",
+                "Logo": "DBBS.png"
+            },
+            {
+                "Id": "GAME",
+                "Name": "Lập trình game 2D",
+                "Logo": "GAME.png"
+            }
+        ];
+        this.androidQuiz = [{
+                "Id": 25106,
+                "Text": "Có mấy loại Service?",
+                "Marks": 1,
+                "AnswerId": 104121,
+                "Answers": [{
+                        "Id": 104118,
+                        "Text": "3"
+                    },
+                    {
+                        "Id": 104119,
+                        "Text": "4"
+                    },
+                    {
+                        "Id": 104120,
+                        "Text": "1"
+                    },
+                    {
+                        "Id": 104121,
+                        "Text": "2"
+                    }
+                ]
+            }, {
+                "Id": 25107,
+                "Text": "Trong IntentService, phương thức onHandlerIntent sẽ được tự động gọi trong phương thức nào?",
+                "Marks": 1,
+                "AnswerId": 104124,
+                "Answers": [{
+                        "Id": 104122,
+                        "Text": "onServiceConnected()"
+                    }, {
+                        "Id": 104123,
+                        "Text": "onServiceDisConnected()"
+                    }, {
+                        "Id": 104124,
+                        "Text": "onStartCommand()"
+                    }, {
+                        "Id": 104125,
+                        "Text": "onBind()"
+                    }]
+            }, {
+                "Id": 25108,
+                "Text": "Khi nào phương thức ServiceConnection.onServiceConnected được gọi?",
+                "Marks": 1,
+                "AnswerId": 104126,
+                "Answers": [{
+                        "Id": 104126,
+                        "Text": "Sau khi một thành phần gọi Context.startService()"
+                    }, {
+                        "Id": 104127,
+                        "Text": "Sau khi một thành phần gọi Context.bindService()"
+                    }, {
+                        "Id": 104128,
+                        "Text": "Sau khi BroadcastReceiver nhận một Intent được gửi bởi Service"
+                    }, {
+                        "Id": 104129,
+                        "Text": "Khi một Service gọi Context.startActivity()"
+                    }]
+            }, {
+                "Id": 25109,
+                "Text": "Phương thức Service.stopSelf(int startId) có tham số kiểu int. Tham số này dùng để làm gì?",
+                "Marks": 1,
+                "AnswerId": 104132,
+                "Answers": [{
+                        "Id": 104130,
+                        "Text": "Nếu startId khác 0, Service sẽ bị hủy một cách vô điều kiện"
+                    }, {
+                        "Id": 104131,
+                        "Text": "Tham số miêu tả số miliseconds bị trì hoãn trước khi Service bị hủy"
+                    }, {
+                        "Id": 104132,
+                        "Text": "Là start identifier gần nhất nhận được bởi lời gọi onStart(Intent, int)"
+                    }, {
+                        "Id": 104133,
+                        "Text": "Được sử dụng để dừng Service nếu Service đang chạy trong process id với process id bằng giá trị startid"
+                    }]
+            }, {
+                "Id": 25110,
+                "Text": "Câu nào là đúng khi đề cập đến Service?",
+                "Marks": 1,
+                "AnswerId": 104137,
+                "Answers": [{
+                        "Id": 104134,
+                        "Text": "Các ứng dụng khác nhau không thể truy cập đến các Service của chính nó"
+                    }, {
+                        "Id": 104135,
+                        "Text": "Tất cả phương án đều đúng"
+                    }, {
+                        "Id": 104136,
+                        "Text": "Lớp Service luôn luôn được truy cập bởi tất cả ứng dụng Android khác cài trên thiết bị"
+                    }, {
+                        "Id": 104137,
+                        "Text": "Service có thể chạy nền vô hạn kể cả khi thành phần khởi tạo Service đã bị hủy"
+                    }]
+            }, {
+                "Id": 25111,
+                "Text": "Trong IntentService, onBind mặc định trả lại giá trị nào?",
+                "Marks": 1,
+                "AnswerId": 104139,
+                "Answers": [{
+                        "Id": 104138,
+                        "Text": "-1"
+                    }, {
+                        "Id": 104139,
+                        "Text": "null"
+                    }, {
+                        "Id": 104140,
+                        "Text": "0"
+                    }, {
+                        "Id": 104141,
+                        "Text": "\"\""
+                    }]
+            }, {
+                "Id": 25112,
+                "Text": "Phương thức stopSelf dùng để làm gì?",
+                "Marks": 1,
+                "AnswerId": 104145,
+                "Answers": [{
+                        "Id": 104142,
+                        "Text": "Dừng thông báo notification tới người dùng"
+                    }, {
+                        "Id": 104143,
+                        "Text": "Dừng chương trình"
+                    }, {
+                        "Id": 104144,
+                        "Text": "Dừng kết nối Service với Sqlite"
+                    }, {
+                        "Id": 104145,
+                        "Text": "Dừng Service"
+                    }]
+            }, {
+                "Id": 25113,
+                "Text": "Phương thức onStartCommand được gọi khi nào?",
+                "Marks": 1,
+                "AnswerId": 104149,
+                "Answers": [{
+                        "Id": 104146,
+                        "Text": "Khi phương thức bindService được gọi"
+                    }, {
+                        "Id": 104147,
+                        "Text": "Khi phương thức stopSelf được gọi"
+                    }, {
+                        "Id": 104148,
+                        "Text": "Khi phương thức onBind được gọi"
+                    }, {
+                        "Id": 104149,
+                        "Text": "Khi phương thức startService được gọi"
+                    }]
+            }, {
+                "Id": 25114,
+                "Text": "Bạn nên giải phóng tài nguyên mà Service sử dụng trong phương thức nào?",
+                "Marks": 1,
+                "AnswerId": 104152,
+                "Answers": [{
+                        "Id": 104150,
+                        "Text": "onPause"
+                    }, {
+                        "Id": 104151,
+                        "Text": "pauseService"
+                    }, {
+                        "Id": 104152,
+                        "Text": "onDestroy"
+                    }, {
+                        "Id": 104153,
+                        "Text": "startService"
+                    }]
+            }, {
+                "Id": 25115,
+                "Text": "Để hủy Service dùng phương thức nào?",
+                "Marks": 1,
+                "AnswerId": 104155,
+                "Answers": [{
+                        "Id": 104154,
+                        "Text": "PauseService"
+                    }, {
+                        "Id": 104155,
+                        "Text": "StopService"
+                    }, {
+                        "Id": 104156,
+                        "Text": "PauseServices"
+                    }, {
+                        "Id": 104157,
+                        "Text": "StopServices"
+                    }]
+            }, {
+                "Id": 25116,
+                "Text": "Làm thế nào để disable một Broadcast Receiver khi nó đã được đăng ký trong AndroidManifest.xml?",
+                "Marks": 1,
+                "AnswerId": 104161,
+                "Answers": [{
+                        "Id": 104158,
+                        "Text": "Sử dụng lớp PackageReceiverManager"
+                    }, {
+                        "Id": 104159,
+                        "Text": "Sử dụng lớp BroadcastReceiver"
+                    }, {
+                        "Id": 104160,
+                        "Text": "Sử dụng lớp BroadcastReceiverManger"
+                    }, {
+                        "Id": 104161,
+                        "Text": "Sử dụng lớp PackageManager"
+                    }]
+            }, {
+                "Id": 25117,
+                "Text": "Có mấy cách phát, nhận broadcast receiver?",
+                "Marks": 1,
+                "AnswerId": 104163,
+                "Answers": [{
+                        "Id": 104162,
+                        "Text": "1"
+                    }, {
+                        "Id": 104163,
+                        "Text": "2"
+                    }, {
+                        "Id": 104164,
+                        "Text": "4"
+                    }, {
+                        "Id": 104165,
+                        "Text": "3"
+                    }]
+            }, {
+                "Id": 25118,
+                "Text": "Khi sử dụng Intent.ACTION_BOOT_COMPLETED, hệ thống sẽ broadcast mấy lần?",
+                "Marks": 1,
+                "AnswerId": 104167,
+                "Answers": [{
+                        "Id": 104166,
+                        "Text": "4"
+                    }, {
+                        "Id": 104167,
+                        "Text": "1"
+                    }, {
+                        "Id": 104168,
+                        "Text": "3"
+                    }, {
+                        "Id": 104169,
+                        "Text": "2"
+                    }]
+            }, {
+                "Id": 25119,
+                "Text": "Vòng đời của Broadcast Receiver bao gồm mấy phương thức?",
+                "Marks": 1,
+                "AnswerId": 104170,
+                "Answers": [{
+                        "Id": 104170,
+                        "Text": "1"
+                    }, {
+                        "Id": 104171,
+                        "Text": "2"
+                    }, {
+                        "Id": 104172,
+                        "Text": "4"
+                    }, {
+                        "Id": 104173,
+                        "Text": "3"
+                    }]
+            }, {
+                "Id": 25120,
+                "Text": "Lệnh sau dùng để làm gì?                                                                                   \u003creceiver             android:name=\".MyCallReceiver\"             android:exported=\"false\" \u003e  \u003c/receiver\u003e",
+                "Marks": 1,
+                "AnswerId": 104177,
+                "Answers": [{
+                        "Id": 104174,
+                        "Text": "Disable receiver MyCallReceiver"
+                    }, {
+                        "Id": 104175,
+                        "Text": "Khai báo MyCallReceiver là broadcast hệ thống"
+                    }, {
+                        "Id": 104176,
+                        "Text": "Cho phép ứng dụng Calendar của hệ thống gửi broadcast tới receiver MyCallReceiver"
+                    }, {
+                        "Id": 104177,
+                        "Text": "Cấm ứng dụng khác gửi broadcast tới receiver MyCallReceiver"
+                    }]
+            }, {
+                "Id": 25121,
+                "Text": "Nếu ứng dụng của bạn ở trạng thái foreground, bạn chỉ muốn ứng dụng chỉ nhận broadcast nhất định khi nó active, bạn phải làm gì?",
+                "Marks": 1,
+                "AnswerId": 104181,
+                "Answers": [{
+                        "Id": 104178,
+                        "Text": "Load Intent thông qua menu hoặc Action Bar"
+                    }, {
+                        "Id": 104179,
+                        "Text": "Đăng ký BroadcastReceiver với mức độ ưu tiên thấp"
+                    }, {
+                        "Id": 104180,
+                        "Text": "Đăng ký động BroadcastReceiver với mức độ ưu tiếp thấp.Sử dụng abortBroadcast lúc runtime để ngăn cản gửi"
+                    }, {
+                        "Id": 104181,
+                        "Text": "Đăng ký động BroadcastReceiver trong onResume và hủy đăng ký trong onPause"
+                    }]
+            }, {
+                "Id": 25122,
+                "Text": "Broadcast Intent thông thường sẽ biến mất khi hệ thống xử lý xong?",
+                "Marks": 1,
+                "AnswerId": 104183,
+                "Answers": [{
+                        "Id": 104182,
+                        "Text": "Sai"
+                    }, {
+                        "Id": 104183,
+                        "Text": "Đúng"
+                    }]
+            }, {
+                "Id": 25123,
+                "Text": "Phương thức onReceive có mấy tham số đầu vào?",
+                "Marks": 1,
+                "AnswerId": 104184,
+                "Answers": [{
+                        "Id": 104184,
+                        "Text": "2"
+                    }, {
+                        "Id": 104185,
+                        "Text": "4"
+                    }, {
+                        "Id": 104186,
+                        "Text": "1"
+                    }, {
+                        "Id": 104187,
+                        "Text": "3"
+                    }]
+            }, {
+                "Id": 25124,
+                "Text": "Phương thức nào được sử dụng để gửi broadcast intent mà intent này sẽ không mất đi sau khi hệ thống xử lý?",
+                "Marks": 1,
+                "AnswerId": 104191,
+                "Answers": [{
+                        "Id": 104188,
+                        "Text": "Context.sendStickyBroadcast"
+                    }, {
+                        "Id": 104189,
+                        "Text": "Context.sendingStickyBroadcast"
+                    }, {
+                        "Id": 104190,
+                        "Text": "Context.sendingStickyBroadcastIntent"
+                    }, {
+                        "Id": 104191,
+                        "Text": "Context.sendStickyBroadcastIntent"
+                    }]
+            }, {
+                "Id": 25125,
+                "Text": "Để nhận thông tin người dùng qua wifi, phải sử dụng gì?",
+                "Marks": 1,
+                "AnswerId": 104192,
+                "Answers": [{
+                        "Id": 104192,
+                        "Text": "LocationManager.NETWORK_PROVIDER"
+                    }, {
+                        "Id": 104193,
+                        "Text": "LocationManager.WIFI_PROVIDER"
+                    }, {
+                        "Id": 104194,
+                        "Text": "LocationManager.GPS_PROVIDER"
+                    }, {
+                        "Id": 104195,
+                        "Text": "LocationManager.CELLUAR_PROVIDER"
+                    }]
+            }, {
+                "Id": 25126,
+                "Text": "Phương thức callback nào gọi khi vị trí người dùng thay đổi?",
+                "Marks": 1,
+                "AnswerId": 104196,
+                "Answers": [{
+                        "Id": 104196,
+                        "Text": "onLocationChanged"
+                    }, {
+                        "Id": 104197,
+                        "Text": "onCurrentLocationChanged"
+                    }, {
+                        "Id": 104198,
+                        "Text": "onLocationChange"
+                    }, {
+                        "Id": 104199,
+                        "Text": "onCurentLocationChange"
+                    }]
+            }, {
+                "Id": 25127,
+                "Text": "Khi tạo ứng dụng trên trang developer của Facebook, ngoài thông tin username và password, người dùng phải nhập thêm thông tin gì?",
+                "Marks": 1,
+                "AnswerId": 104203,
+                "Answers": [{
+                        "Id": 104200,
+                        "Text": "Không cần thêm thông tin nào"
+                    }, {
+                        "Id": 104201,
+                        "Text": "app id"
+                    }, {
+                        "Id": 104202,
+                        "Text": "certificate"
+                    }, {
+                        "Id": 104203,
+                        "Text": "key hash"
+                    }]
+            }, {
+                "Id": 25128,
+                "Text": "Để đăng nhập ứng dụng Facebook từ ứng dụng Android, Facebook SDK yêu cầu gì?",
+                "Marks": 1,
+                "AnswerId": 104207,
+                "Answers": [{
+                        "Id": 104204,
+                        "Text": "Không có yêu cầu nào"
+                    }, {
+                        "Id": 104205,
+                        "Text": "Sử dụng Google social API"
+                    }, {
+                        "Id": 104206,
+                        "Text": "Sử dụng Facebook Graph API"
+                    }, {
+                        "Id": 104207,
+                        "Text": "Thiết bị phải cài đặt ứng dụng native Facebook"
+                    }]
+            }, {
+                "Id": 25129,
+                "Text": "Có thể cài đặt ứng dụng native Facebook trên Emulator không?",
+                "Marks": 1,
+                "AnswerId": 104208,
+                "Answers": [{
+                        "Id": 104208,
+                        "Text": "Có thể"
+                    }, {
+                        "Id": 104209,
+                        "Text": "Không thể"
+                    }]
+            }, {
+                "Id": 25130,
+                "Text": "Để lấy thông tin vị trí người dùng sử dụng GPS_PROVIDER, phải thêm permission nào vào Android manifest file?",
+                "Marks": 1,
+                "AnswerId": 104213,
+                "Answers": [{
+                        "Id": 104210,
+                        "Text": "android.permission.USE_CREDENTIALS"
+                    }, {
+                        "Id": 104211,
+                        "Text": "android.permission.android.permission.ACCESS_MOCK_LOCATION"
+                    }, {
+                        "Id": 104212,
+                        "Text": "android.permission.INTERNET"
+                    }, {
+                        "Id": 104213,
+                        "Text": "android.permission.ACCESS_FINE_LOCATION"
+                    }]
+            }, {
+                "Id": 25131,
+                "Text": "Để đăng nhập ứng dụng Facebook từ ứng dụng Android, phải thêm Activity nào vào Android manifest?",
+                "Marks": 1,
+                "AnswerId": 104215,
+                "Answers": [{
+                        "Id": 104214,
+                        "Text": "com.facebook.SingleSignInActivity"
+                    }, {
+                        "Id": 104215,
+                        "Text": "com.facebook.LoginActivity"
+                    }, {
+                        "Id": 104216,
+                        "Text": "com.facebook.SignInActivity"
+                    }, {
+                        "Id": 104217,
+                        "Text": "com.facebook.SignOnActivity"
+                    }]
+            }, {
+                "Id": 25132,
+                "Text": "Có thể gửi dữ liệu người dùng giả tới Emulator thông qua DDMS không?",
+                "Marks": 1,
+                "AnswerId": 104218,
+                "Answers": [{
+                        "Id": 104218,
+                        "Text": "Có"
+                    }, {
+                        "Id": 104219,
+                        "Text": "Không"
+                    }]
+            }, {
+                "Id": 25133,
+                "Text": "Địa chỉ trang web nào cung cấp facebook sdk cho ứng dụng Android?",
+                "Marks": 1,
+                "AnswerId": 104222,
+                "Answers": [{
+                        "Id": 104220,
+                        "Text": "http://facebook.com"
+                    }, {
+                        "Id": 104221,
+                        "Text": "http://facebook.com.vn"
+                    }, {
+                        "Id": 104222,
+                        "Text": "https://developers.facebook.com"
+                    }, {
+                        "Id": 104223,
+                        "Text": "http://developers.facebook.com.vn"
+                    }]
+            }, {
+                "Id": 25134,
+                "Text": "Phương thức getLastKnownLocation của LocationManager dùng để làm gì?",
+                "Marks": 1,
+                "AnswerId": 104226,
+                "Answers": [{
+                        "Id": 104224,
+                        "Text": "Trả lại thông tin location của địa điểm đầu tiên ghi nhận được"
+                    }, {
+                        "Id": 104225,
+                        "Text": "Trả lại thông tin location của địa điểm gần nhất"
+                    }, {
+                        "Id": 104226,
+                        "Text": "Trả lại thông tin cache location"
+                    }, {
+                        "Id": 104227,
+                        "Text": "Trả lại thông tin location hiện tại"
+                    }]
+            }, {
+                "Id": 25135,
+                "Text": "Media Player có hỗ trợ một số listener để tương tác với Player?",
+                "Marks": 1,
+                "AnswerId": 104229,
+                "Answers": [{
+                        "Id": 104228,
+                        "Text": "Sai"
+                    }, {
+                        "Id": 104229,
+                        "Text": "Đúng"
+                    }]
+            }, {
+                "Id": 25136,
+                "Text": "Dùng phương thức gì để cho phép media process thao tác với camera?",
+                "Marks": 1,
+                "AnswerId": 104230,
+                "Answers": [{
+                        "Id": 104230,
+                        "Text": "unlock()"
+                    }, {
+                        "Id": 104231,
+                        "Text": "opening()"
+                    }, {
+                        "Id": 104232,
+                        "Text": "unlocking()"
+                    }, {
+                        "Id": 104233,
+                        "Text": "open()"
+                    }]
+            }, {
+                "Id": 25137,
+                "Text": "Google cloud messaging cho phép gửi thông điệp đến tối đa bao nhiêu người?",
+                "Marks": 1,
+                "AnswerId": 104237,
+                "Answers": [{
+                        "Id": 104234,
+                        "Text": "10000"
+                    }, {
+                        "Id": 104235,
+                        "Text": "100"
+                    }, {
+                        "Id": 104236,
+                        "Text": "100"
+                    }, {
+                        "Id": 104237,
+                        "Text": "1000"
+                    }]
+            }, {
+                "Id": 25138,
+                "Text": "Quyền nào là cần thiết để ứng dụng có thể lưu ảnh chụp của Camera trên SD card?",
+                "Marks": 1,
+                "AnswerId": 104238,
+                "Answers": [{
+                        "Id": 104238,
+                        "Text": "android.permission.WRITE_EXTERNAL_STORAGE"
+                    }, {
+                        "Id": 104239,
+                        "Text": "android.permission.WRITE_GSERVICES"
+                    }, {
+                        "Id": 104240,
+                        "Text": "android.permission.WRITE_APN_SETTINGS"
+                    }, {
+                        "Id": 104241,
+                        "Text": "android.permission.WAKE_LOCK"
+                    }]
+            }, {
+                "Id": 25139,
+                "Text": "Phương thức nào của Camera được sử dụng để lấy các thông số thiết lập cho Camera?",
+                "Marks": 1,
+                "AnswerId": 104245,
+                "Answers": [{
+                        "Id": 104242,
+                        "Text": "setParameter"
+                    }, {
+                        "Id": 104243,
+                        "Text": "setParameters"
+                    }, {
+                        "Id": 104244,
+                        "Text": "getParameter"
+                    }, {
+                        "Id": 104245,
+                        "Text": "getParameters"
+                    }]
+            }, {
+                "Id": 25140,
+                "Text": "Lớp nào hỗ trợ xây dựng backup agent?",
+                "Marks": 1,
+                "AnswerId": 104249,
+                "Answers": [{
+                        "Id": 104246,
+                        "Text": "FilesHelper"
+                    }, {
+                        "Id": 104247,
+                        "Text": "BackupHelper"
+                    }, {
+                        "Id": 104248,
+                        "Text": "SharedBackupHelper"
+                    }, {
+                        "Id": 104249,
+                        "Text": "SharedPreferencesBackupHelper"
+                    }]
+            }, {
+                "Id": 25141,
+                "Text": "Khi kết thúc quay phim, sử dụng phương thức nào để khóa camera?",
+                "Marks": 1,
+                "AnswerId": 104250,
+                "Answers": [{
+                        "Id": 104250,
+                        "Text": "reConnect()"
+                    }, {
+                        "Id": 104251,
+                        "Text": "reConnecting()"
+                    }, {
+                        "Id": 104252,
+                        "Text": "reLock()"
+                    }, {
+                        "Id": 104253,
+                        "Text": "reLocking()"
+                    }]
+            }, {
+                "Id": 25142,
+                "Text": "Media Player có thể play mọi loại file audio?",
+                "Marks": 1,
+                "AnswerId": 104254,
+                "Answers": [{
+                        "Id": 104254,
+                        "Text": "Sai"
+                    }, {
+                        "Id": 104255,
+                        "Text": "Đúng"
+                    }]
+            }, {
+                "Id": 25143,
+                "Text": "Sử dụng phương thức gì của Camera để nhận thông tin của Camera?",
+                "Marks": 1,
+                "AnswerId": 104259,
+                "Answers": [{
+                        "Id": 104256,
+                        "Text": "start"
+                    }, {
+                        "Id": 104257,
+                        "Text": "close"
+                    }, {
+                        "Id": 104258,
+                        "Text": "launch"
+                    }, {
+                        "Id": 104259,
+                        "Text": "open"
+                    }]
+            }, {
+                "Id": 25144,
+                "Text": "Phương thức nào được gọi để ngừng cập nhật preview surface?",
+                "Marks": 1,
+                "AnswerId": 104263,
+                "Answers": [{
+                        "Id": 104260,
+                        "Text": "DestroypPreviews()"
+                    }, {
+                        "Id": 104261,
+                        "Text": "stopPreviews()"
+                    }, {
+                        "Id": 104262,
+                        "Text": "DestroyPreview()"
+                    }, {
+                        "Id": 104263,
+                        "Text": "stopPreview()"
+                    }]
+            }, {
+                "Id": 25145,
+                "Text": "Loại Animation nào chỉ sử dụng được cho View?",
+                "Marks": 1,
+                "AnswerId": 104265,
+                "Answers": [{
+                        "Id": 104264,
+                        "Text": "Drawable Animation"
+                    }, {
+                        "Id": 104265,
+                        "Text": "View Animation"
+                    }, {
+                        "Id": 104266,
+                        "Text": "Property Animation"
+                    }, {
+                        "Id": 104267,
+                        "Text": "Không có Animation nào đáp ứng được yêu cầu này"
+                    }]
+            }, {
+                "Id": 25146,
+                "Text": "Phải thiết lập thuộc tính nào bằng true để hỗ trợ tạo hoạt hình cho ViewGroup?",
+                "Marks": 1,
+                "AnswerId": 104268,
+                "Answers": [{
+                        "Id": 104268,
+                        "Text": "android:animateLayoutChanges"
+                    }, {
+                        "Id": 104269,
+                        "Text": "android:animateLayoutChange"
+                    }, {
+                        "Id": 104270,
+                        "Text": "android:animateLayoutModify"
+                    }, {
+                        "Id": 104271,
+                        "Text": "android:animateLayoutModifying"
+                    }]
+            }, {
+                "Id": 25147,
+                "Text": "Đối với drawable animation, phải thiết lập giá trị của thuộc tính android:oneshot bằng true đối với animation-list để làm gì?",
+                "Marks": 1,
+                "AnswerId": 104272,
+                "Answers": [{
+                        "Id": 104272,
+                        "Text": "Cho phép animation chỉ chạy một lần duy nhất"
+                    }, {
+                        "Id": 104273,
+                        "Text": "Thuộc tính android:oneshot không có giá trị true và false"
+                    }, {
+                        "Id": 104274,
+                        "Text": "Cho phép animation chạy lặp đi lặp lại"
+                    }, {
+                        "Id": 104275,
+                        "Text": "Không có thuộc tính android:oneshot của animation-list"
+                    }]
+            }, {
+                "Id": 25148,
+                "Text": "Android có hỗ trợ khai báo animation trong XML hay không?",
+                "Marks": 1,
+                "AnswerId": 104276,
+                "Answers": [{
+                        "Id": 104276,
+                        "Text": "Có"
+                    }, {
+                        "Id": 104277,
+                        "Text": "Không"
+                    }]
+            }, {
+                "Id": 25149,
+                "Text": "Trong animation, có thể định nghĩa tối đa bao nhiêu frame?",
+                "Marks": 1,
+                "AnswerId": 104280,
+                "Answers": [{
+                        "Id": 104278,
+                        "Text": "3"
+                    }, {
+                        "Id": 104279,
+                        "Text": "2"
+                    }, {
+                        "Id": 104280,
+                        "Text": "Không giới hạn số frame"
+                    }, {
+                        "Id": 104281,
+                        "Text": "1"
+                    }]
+            }, {
+                "Id": 25150,
+                "Text": "Khái niệm nào đề cập đến cặp gồm thời gian và giá trị để định nghĩa trạng thái xác định tại thời gian xác định của animation?",
+                "Marks": 1,
+                "AnswerId": 104285,
+                "Answers": [{
+                        "Id": 104282,
+                        "Text": "keys"
+                    }, {
+                        "Id": 104283,
+                        "Text": "frame"
+                    }, {
+                        "Id": 104284,
+                        "Text": "key"
+                    }, {
+                        "Id": 104285,
+                        "Text": "keyframe"
+                    }]
+            }, {
+                "Id": 25151,
+                "Text": "File XML liệt kê danh sách frame tạo nên animation nằm trong thư mục nào?",
+                "Marks": 1,
+                "AnswerId": 104289,
+                "Answers": [{
+                        "Id": 104286,
+                        "Text": "res/layout"
+                    }, {
+                        "Id": 104287,
+                        "Text": "res/values"
+                    }, {
+                        "Id": 104288,
+                        "Text": "res/menu"
+                    }, {
+                        "Id": 104289,
+                        "Text": "res/drawable"
+                    }]
+            }, {
+                "Id": 25152,
+                "Text": "ObjectAnimator là lớp con của lớp nào?",
+                "Marks": 1,
+                "AnswerId": 104290,
+                "Answers": [{
+                        "Id": 104290,
+                        "Text": "ValueAnimator"
+                    }, {
+                        "Id": 104291,
+                        "Text": "ButtonAnimator"
+                    }, {
+                        "Id": 104292,
+                        "Text": "TextAnimator"
+                    }, {
+                        "Id": 104293,
+                        "Text": "ValuableAnimator"
+                    }]
+            }, {
+                "Id": 25153,
+                "Text": "Khi khai báo Broadcast Receiver để nhận biết sự thay đổi kết nối mạng của thiết bị, bạn có thể disable broadcast receiver không?",
+                "Marks": 1,
+                "AnswerId": 104294,
+                "Answers": [{
+                        "Id": 104294,
+                        "Text": "Có"
+                    }, {
+                        "Id": 104295,
+                        "Text": "Không"
+                    }]
+            }, {
+                "Id": 25154,
+                "Text": "Lệnh nào để kiểm tra kết nối 3G của thiết bị?",
+                "Marks": 1,
+                "AnswerId": 104298,
+                "Answers": [{
+                        "Id": 104296,
+                        "Text": "ConnectivityManager connMgr = (ConnectivityManager)           getSystemService(Context.CONNECTIVITY_SERVICE); NetworkInfo networkInfo = connMgr.getNetworkInfo(ConnectivityManager.TYPE_WIMAX);"
+                    }, {
+                        "Id": 104297,
+                        "Text": "ConnectivityManager connMgr = (ConnectivityManager)           getSystemService(Context.CONNECTIVITY_SERVICE); NetworkInfo networkInfo = connMgr.getNetworkInfo(ConnectivityManager.TYPE_2.5G);"
+                    }, {
+                        "Id": 104298,
+                        "Text": "ConnectivityManager connMgr = (ConnectivityManager)           getSystemService(Context.CONNECTIVITY_SERVICE); NetworkInfo networkInfo = connMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);"
+                    }, {
+                        "Id": 104299,
+                        "Text": "ConnectivityManager connMgr = (ConnectivityManager)           getSystemService(Context.CONNECTIVITY_SERVICE); NetworkInfo networkInfo = connMgr.getNetworkInfo(ConnectivityManager.TYPE_3G);"
+                    }]
+            }, {
+                "Id": 25155,
+                "Text": "Để trích xuất dữ liệu link trong XML, phải sử dụng phương thức nào của XmlPullParser?",
+                "Marks": 1,
+                "AnswerId": 104303,
+                "Answers": [{
+                        "Id": 104300,
+                        "Text": "getHrefValue(\"href\")"
+                    }, {
+                        "Id": 104301,
+                        "Text": "getAttributeValue(\"href\")"
+                    }, {
+                        "Id": 104302,
+                        "Text": "getHrefValue(null,\"href\")"
+                    }, {
+                        "Id": 104303,
+                        "Text": "getAttributeValue(null,\"href\")"
+                    }]
+            }, {
+                "Id": 25156,
+                "Text": "Bạn hãy cho biết kết quả khi thực hiện gọi phương thức sau? private String readLink(XmlPullParser parser) throws IOException, XmlPullParserException {         String link = \"\";         parser.require(XmlPullParser.START_TAG, ns, \"link\");         String ta",
+                "Marks": 1,
+                "AnswerId": 104305,
+                "Answers": [{
+                        "Id": 104304,
+                        "Text": "Trả lại giá trị của tag title"
+                    }, {
+                        "Id": 104305,
+                        "Text": "Trả lại giá trị href của link"
+                    }, {
+                        "Id": 104306,
+                        "Text": "Chương trình báo lỗi khi biên dich"
+                    }, {
+                        "Id": 104307,
+                        "Text": "Chương trình báo lỗi khi chạy"
+                    }]
+            }, {
+                "Id": 25157,
+                "Text": "Tại sao phải sử dụng AsyncTask để phân tích dữ liệu XML?",
+                "Marks": 1,
+                "AnswerId": 104310,
+                "Answers": [{
+                        "Id": 104308,
+                        "Text": "Để xử lý dữ liệu XML ngay cả khi máy không có kết nối WiFi"
+                    }, {
+                        "Id": 104309,
+                        "Text": "Để xử lý dữ liệu XML ngay cả khi máy không có kết nối 3G"
+                    }, {
+                        "Id": 104310,
+                        "Text": "Để tránh cho ứng dụng bị treo vì xử lý dữ liệu trên main thread"
+                    }, {
+                        "Id": 104311,
+                        "Text": "Để đỡ tốn tài nguyên khi xử lý dữ liệu XML lưu trong SQLite"
+                    }]
+            }, {
+                "Id": 25158,
+                "Text": "Broadcast Receiver xử lý dữ liệu XML trên mạng cần được đăng ký trong phương thức nào?",
+                "Marks": 1,
+                "AnswerId": 104315,
+                "Answers": [{
+                        "Id": 104312,
+                        "Text": "onStart"
+                    }, {
+                        "Id": 104313,
+                        "Text": "onPause"
+                    }, {
+                        "Id": 104314,
+                        "Text": "onDestroy"
+                    }, {
+                        "Id": 104315,
+                        "Text": "onCreate"
+                    }]
+            }, {
+                "Id": 25159,
+                "Text": "Phím tắt nào dùng để tắt bật kết nối mạng trên Emulator?",
+                "Marks": 1,
+                "AnswerId": 104318,
+                "Answers": [{
+                        "Id": 104316,
+                        "Text": "F9"
+                    }, {
+                        "Id": 104317,
+                        "Text": "F4"
+                    }, {
+                        "Id": 104318,
+                        "Text": "F8"
+                    }, {
+                        "Id": 104319,
+                        "Text": "F5"
+                    }]
+            }, {
+                "Id": 25160,
+                "Text": "Kiểu nào không nằm trong lớp ConnectivityManager?",
+                "Marks": 1,
+                "AnswerId": 104323,
+                "Answers": [{
+                        "Id": 104320,
+                        "Text": "TYPE_WIMAX"
+                    }, {
+                        "Id": 104321,
+                        "Text": "TYPE_MOBILE"
+                    }, {
+                        "Id": 104322,
+                        "Text": "TYPE_WIFI"
+                    }, {
+                        "Id": 104323,
+                        "Text": "TYPE_3G"
+                    }]
+            }, {
+                "Id": 25161,
+                "Text": "Để phân tích XML, bạn sẽ sử dụng lớp nào?",
+                "Marks": 1,
+                "AnswerId": 104325,
+                "Answers": [{
+                        "Id": 104324,
+                        "Text": "XmlPushParser"
+                    }, {
+                        "Id": 104325,
+                        "Text": "XmlPullParser"
+                    }, {
+                        "Id": 104326,
+                        "Text": "XmlParseParser"
+                    }, {
+                        "Id": 104327,
+                        "Text": "XmlPopParser"
+                    }]
+            }, {
+                "Id": 25162,
+                "Text": "Để thực hiện đọc file XML trên SD Card, bạn phải bổ sung thêm quyền gì trong AndroidManifest.xml?",
+                "Marks": 1,
+                "AnswerId": 104328,
+                "Answers": [{
+                        "Id": 104328,
+                        "Text": "android.permission.READ_EXTERNAL_STORAGE"
+                    }, {
+                        "Id": 104329,
+                        "Text": "android.permission.READ"
+                    }, {
+                        "Id": 104330,
+                        "Text": "android.permission.READ_SD_CARD"
+                    }, {
+                        "Id": 104331,
+                        "Text": "Không cần thêm quyền"
+                    }]
+            }, {
+                "Id": 25163,
+                "Text": "Contacts Provider cung cấp mấy loại dữ liệu về person?",
+                "Marks": 1,
+                "AnswerId": 104334,
+                "Answers": [{
+                        "Id": 104332,
+                        "Text": "1"
+                    }, {
+                        "Id": 104333,
+                        "Text": "2"
+                    }, {
+                        "Id": 104334,
+                        "Text": "3"
+                    }, {
+                        "Id": 104335,
+                        "Text": "4"
+                    }]
+            }, {
+                "Id": 25164,
+                "Text": "Trong ứng dụng bạn sử dụng lớp nào để truy xuất thông tin Contact?",
+                "Marks": 1,
+                "AnswerId": 104338,
+                "Answers": [{
+                        "Id": 104336,
+                        "Text": "PersonResolver"
+                    }, {
+                        "Id": 104337,
+                        "Text": "ContactResolver"
+                    }, {
+                        "Id": 104338,
+                        "Text": "ContentResolver"
+                    }, {
+                        "Id": 104339,
+                        "Text": "PeopleResolver"
+                    }]
+            }, {
+                "Id": 25165,
+                "Text": "Hằng số nào dùng để thấy thông tin Contact có số phone hay không?",
+                "Marks": 1,
+                "AnswerId": 104340,
+                "Answers": [{
+                        "Id": 104340,
+                        "Text": "ContactsContract.Contacts.HAS_PHONE_NUMBER"
+                    }, {
+                        "Id": 104341,
+                        "Text": "ContactsContract.Contacts.HAS_MOBILE_NUMBER"
+                    }, {
+                        "Id": 104342,
+                        "Text": "ContactsContract.Contacts.HAS_PHONE"
+                    }, {
+                        "Id": 104343,
+                        "Text": "ContactsContract.Contacts.PHONE_NUMBER"
+                    }]
+            }, {
+                "Id": 25166,
+                "Text": "Content URI nào được sử dụng để lấy thông tin email của Contact?",
+                "Marks": 1,
+                "AnswerId": 104347,
+                "Answers": [{
+                        "Id": 104344,
+                        "Text": "ContactsContracts.CommonDataKinds.Email.CONTENT_URI"
+                    }, {
+                        "Id": 104345,
+                        "Text": "ContactsContract.CommonDataKinds.Email.CONTENT"
+                    }, {
+                        "Id": 104346,
+                        "Text": "ContactsContract.Email.CONTENT_URI"
+                    }, {
+                        "Id": 104347,
+                        "Text": "ContactsContract.CommonDataKinds.Email.CONTENT_URI"
+                    }]
+            }, {
+                "Id": 25167,
+                "Text": "Có thể thêm Contact vào Emulator hay không?",
+                "Marks": 1,
+                "AnswerId": 104348,
+                "Answers": [{
+                        "Id": 104348,
+                        "Text": "Có"
+                    }, {
+                        "Id": 104349,
+                        "Text": "Không"
+                    }]
+            }, {
+                "Id": 25168,
+                "Text": "Content URI nào được sử dụng để lấy thông tin phone của Contact?",
+                "Marks": 1,
+                "AnswerId": 104352,
+                "Answers": [{
+                        "Id": 104350,
+                        "Text": "ContactsContract.Phone.CONTENT_URI"
+                    }, {
+                        "Id": 104351,
+                        "Text": "ContactsContract.CommonDataKinds.Phone.CONTENT"
+                    }, {
+                        "Id": 104352,
+                        "Text": "ContactsContract.CommonDataKinds.Phone.CONTENT_URI"
+                    }, {
+                        "Id": 104353,
+                        "Text": "ContactsContracts.CommonDataKinds.Phone.CONTENT_URI"
+                    }]
+            }, {
+                "Id": 25169,
+                "Text": "Bảng nào cung cấp thông tin về person như thông tin dữ liệu về person, như user account và type?",
+                "Marks": 1,
+                "AnswerId": 104356,
+                "Answers": [{
+                        "Id": 104354,
+                        "Text": "ContactsContract.Contacts"
+                    }, {
+                        "Id": 104355,
+                        "Text": "ContactsContract.DataTable"
+                    }, {
+                        "Id": 104356,
+                        "Text": "ContactsContract.RawContacts"
+                    }, {
+                        "Id": 104357,
+                        "Text": "ContactsContract.Data"
+                    }]
+            }, {
+                "Id": 25170,
+                "Text": "Hãy cho biết kết quả khi thực hiện lệnh sau: Cursor phoneCursor = contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,        null,        Phone_CONTACT_ID + \" = ?\",        new String[] { contact_id }, null);",
+                "Marks": 1,
+                "AnswerId": 104360,
+                "Answers": [{
+                        "Id": 104358,
+                        "Text": "Bị lỗi khi chạy"
+                    }, {
+                        "Id": 104359,
+                        "Text": "Bị lỗi khi biên dịch"
+                    }, {
+                        "Id": 104360,
+                        "Text": "Trả lại một Cursor chức các số điện thoại của Contact với id là contact_id"
+                    }, {
+                        "Id": 104361,
+                        "Text": "Trả lại một Cursor chức các số điện thoại mobile của Contact với id là contact_id"
+                    }]
+            }, {
+                "Id": 25171,
+                "Text": "Contacts Provider có hỗ trợ xóa thông tin một contact trong thiết bị hay không?",
+                "Marks": 1,
+                "AnswerId": 104363,
+                "Answers": [{
+                        "Id": 104362,
+                        "Text": "Không"
+                    }, {
+                        "Id": 104363,
+                        "Text": "Có"
+                    }]
+            }, {
+                "Id": 25172,
+                "Text": "Phương thức nào của ContentResolver để cập nhật thông tin cho nhiều Contact cùng lúc?",
+                "Marks": 1,
+                "AnswerId": 104364,
+                "Answers": [{
+                        "Id": 104364,
+                        "Text": "applyBatch"
+                    }, {
+                        "Id": 104365,
+                        "Text": "applyAllContacts"
+                    }, {
+                        "Id": 104366,
+                        "Text": "applyBatches"
+                    }, {
+                        "Id": 104367,
+                        "Text": "applyGroupContact"
+                    }]
+            }, {
+                "Id": 25173,
+                "Text": "Để lấy thông tin SHA1 fingerprint, phải sử dụng công cụ nào?",
+                "Marks": 1,
+                "AnswerId": 104368,
+                "Answers": [{
+                        "Id": 104368,
+                        "Text": "keytool"
+                    }, {
+                        "Id": 104369,
+                        "Text": "telnet"
+                    }, {
+                        "Id": 104370,
+                        "Text": "logchat"
+                    }, {
+                        "Id": 104371,
+                        "Text": "ping"
+                    }]
+            }, {
+                "Id": 25174,
+                "Text": "Thư mục nào chứa code project Google Play Service?",
+                "Marks": 1,
+                "AnswerId": 104372,
+                "Answers": [{
+                        "Id": 104372,
+                        "Text": "/extras/google/google_play_services"
+                    }, {
+                        "Id": 104373,
+                        "Text": "/google/google_play_services"
+                    }, {
+                        "Id": 104374,
+                        "Text": "/extras/google/play_licensing"
+                    }, {
+                        "Id": 104375,
+                        "Text": "/extras/google/play_billing"
+                    }]
+            }, {
+                "Id": 25175,
+                "Text": "Làm thế nào để cài đặt Google Play Service?",
+                "Marks": 1,
+                "AnswerId": 104378,
+                "Answers": [{
+                        "Id": 104376,
+                        "Text": "Vào SDK Manager, chọn extra \u003e google play billing library"
+                    }, {
+                        "Id": 104377,
+                        "Text": "Vào SDK Manager, chọn extra \u003e google repository"
+                    }, {
+                        "Id": 104378,
+                        "Text": "Vào SDK Manager, chọn extra \u003e google play service"
+                    }, {
+                        "Id": 104379,
+                        "Text": "Vào SDK Manager, chọn extra \u003e google play apk expansion librariry"
+                    }]
+            }, {
+                "Id": 25176,
+                "Text": "Địa chỉ trang web nào cung cấp Google Play API cho ứng dụng sử dụng Google Map?",
+                "Marks": 1,
+                "AnswerId": 104380,
+                "Answers": [{
+                        "Id": 104380,
+                        "Text": "https://code.google.com/apis/console"
+                    }, {
+                        "Id": 104381,
+                        "Text": "https://code.google.com/"
+                    }, {
+                        "Id": 104382,
+                        "Text": "https://code.google.com/apis"
+                    }, {
+                        "Id": 104383,
+                        "Text": "https://google.com/apis"
+                    }]
+            }, {
+                "Id": 25177,
+                "Text": "Khi tạo ứng dụng trên google console, bạn phải kích hoạt chức năng nào cho project để ứng dụng có thể hiển thị google map?",
+                "Marks": 1,
+                "AnswerId": 104386,
+                "Answers": [{
+                        "Id": 104384,
+                        "Text": "Google Notification Service"
+                    }, {
+                        "Id": 104385,
+                        "Text": "Google Cloud SQL"
+                    }, {
+                        "Id": 104386,
+                        "Text": "Google Map Android API v2"
+                    }, {
+                        "Id": 104387,
+                        "Text": "BigQuery API"
+                    }]
+            }, {
+                "Id": 25178,
+                "Text": "Phải tải và cấu hình SDK nào để có thể sử dụng Google Map Android API?",
+                "Marks": 1,
+                "AnswerId": 104390,
+                "Answers": [{
+                        "Id": 104388,
+                        "Text": "Google Admob Ads SDK"
+                    }, {
+                        "Id": 104389,
+                        "Text": "Google Analytics App Tracking SDK"
+                    }, {
+                        "Id": 104390,
+                        "Text": "Google Play Service SDK"
+                    }, {
+                        "Id": 104391,
+                        "Text": "Android Support Library"
+                    }]
+            }, {
+                "Id": 25179,
+                "Text": "Trong các quyền dưới đây, quyền nào không cần thiết để hiển thị Google Map?",
+                "Marks": 1,
+                "AnswerId": 104392,
+                "Answers": [{
+                        "Id": 104392,
+                        "Text": "android.permission.CHANGE_CONFIGURATION"
+                    }, {
+                        "Id": 104393,
+                        "Text": "android.permission.ACCESS_NETWORK_STATE"
+                    }, {
+                        "Id": 104394,
+                        "Text": "android.permission.WRITE_EXTERNAL_STORAGE"
+                    }, {
+                        "Id": 104395,
+                        "Text": "android.permission.INTERNET"
+                    }]
+            }, {
+                "Id": 25180,
+                "Text": "Để nhận API key cho phép hiển thị map trong ứng dụng, trang nào được sử dụng để nhận API key?",
+                "Marks": 1,
+                "AnswerId": 104396,
+                "Answers": [{
+                        "Id": 104396,
+                        "Text": "Trang web của Google API Console"
+                    }, {
+                        "Id": 104397,
+                        "Text": "Trang chủ Microsoft"
+                    }, {
+                        "Id": 104398,
+                        "Text": "Trang chủ Google"
+                    }, {
+                        "Id": 104399,
+                        "Text": "Trang trủ Apple"
+                    }]
+            }, {
+                "Id": 25181,
+                "Text": "Trong Eclipse, làm thế nào để biết được đường dẫn của debug keystore?",
+                "Marks": 1,
+                "AnswerId": 104401,
+                "Answers": [{
+                        "Id": 104400,
+                        "Text": "Không có cách nào để biết được đường dẫn debug keystore"
+                    }, {
+                        "Id": 104401,
+                        "Text": "Vào Eclipse, Preferences-\u003eAndroid-\u003eBuild"
+                    }, {
+                        "Id": 104402,
+                        "Text": "Vào Eclipse, Preferences-\u003eAndroid-\u003eDDMS"
+                    }, {
+                        "Id": 104403,
+                        "Text": "Vào Eclipse, Preferences-\u003eAndroid-\u003eNDK"
+                    }]
+            }, {
+                "Id": 25182,
+                "Text": "Google Map Android API đòi hỏi thư viện nào để hiển thị Map?",
+                "Marks": 1,
+                "AnswerId": 104405,
+                "Answers": [{
+                        "Id": 104404,
+                        "Text": "UserVoice SDK"
+                    }, {
+                        "Id": 104405,
+                        "Text": "OpenGL ES version 2"
+                    }, {
+                        "Id": 104406,
+                        "Text": "HttpClient"
+                    }, {
+                        "Id": 104407,
+                        "Text": "Maven SDK"
+                    }]
+            }];
+    }
+};
+MainServiceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], MainServiceService);
+
+
+
+/***/ }),
+
 /***/ "./src/app/menu/menu.component.css":
 /*!*****************************************!*\
   !*** ./src/app/menu/menu.component.css ***!
@@ -879,7 +2271,7 @@ LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".menu-logo {\r\n    width:200px;\r\n    height:50px;\r\n}\r\nnav {\r\n    background-color: rgba(0,0,0,0.8);\r\n}\r\n.nav-item{\r\n    padding: 5px 10px;\r\n    width: 150px;\r\n}\r\n.nav-link {\r\n    text-align: center;\r\n    color :white;\r\n    border-radius: 20px;\r\n}\r\n.nav-link:hover {\r\n    background-color: white;\r\n    color :rgba(0,0,0,0.8);\r\n}\r\n.nav-log {\r\n    background-color: white;\r\n    color :rgba(0,0,0,0.8);\r\n    padding: 5px 15px;\r\n    border-radius: 20px;\r\n}\r\n.log-link {\r\n    color: tomato;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9tZW51L21lbnUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7SUFDWCxXQUFXO0FBQ2Y7QUFDQTtJQUNJLGlDQUFpQztBQUNyQztBQUNBO0lBQ0ksaUJBQWlCO0lBQ2pCLFlBQVk7QUFDaEI7QUFDQTtJQUNJLGtCQUFrQjtJQUNsQixZQUFZO0lBQ1osbUJBQW1CO0FBQ3ZCO0FBQ0E7SUFDSSx1QkFBdUI7SUFDdkIsc0JBQXNCO0FBQzFCO0FBQ0E7SUFDSSx1QkFBdUI7SUFDdkIsc0JBQXNCO0lBQ3RCLGlCQUFpQjtJQUNqQixtQkFBbUI7QUFDdkI7QUFDQTtJQUNJLGFBQWE7QUFDakIiLCJmaWxlIjoiYXBwL21lbnUvbWVudS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1lbnUtbG9nbyB7XHJcbiAgICB3aWR0aDoyMDBweDtcclxuICAgIGhlaWdodDo1MHB4O1xyXG59XHJcbm5hdiB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsMCwwLDAuOCk7XHJcbn1cclxuLm5hdi1pdGVte1xyXG4gICAgcGFkZGluZzogNXB4IDEwcHg7XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbn1cclxuLm5hdi1saW5rIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGNvbG9yIDp3aGl0ZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbn1cclxuLm5hdi1saW5rOmhvdmVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgY29sb3IgOnJnYmEoMCwwLDAsMC44KTtcclxufVxyXG4ubmF2LWxvZyB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGNvbG9yIDpyZ2JhKDAsMCwwLDAuOCk7XHJcbiAgICBwYWRkaW5nOiA1cHggMTVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbn1cclxuLmxvZy1saW5rIHtcclxuICAgIGNvbG9yOiB0b21hdG87XHJcbn1cclxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".menu-logo {\r\n    width:200px;\r\n    height:50px;\r\n}\r\nnav {\r\n    background-color: rgba(0,0,0,0.8);\r\n}\r\n.nav-item{\r\n    width: 150px;\r\n}\r\n.nav-link {\r\n    text-align: center;\r\n    color :white;\r\n    border-radius: 20px;\r\n}\r\n.nav-link:hover {\r\n    background-color: white;\r\n    color :rgba(0,0,0,0.8);\r\n}\r\n.nav-log {\r\n    background-color: white;\r\n    color :rgba(0,0,0,0.8);\r\n    padding: 5px 15px;\r\n    border-radius: 20px;\r\n}\r\n.log-link {\r\n    color: tomato;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9tZW51L21lbnUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7SUFDWCxXQUFXO0FBQ2Y7QUFDQTtJQUNJLGlDQUFpQztBQUNyQztBQUNBO0lBQ0ksWUFBWTtBQUNoQjtBQUNBO0lBQ0ksa0JBQWtCO0lBQ2xCLFlBQVk7SUFDWixtQkFBbUI7QUFDdkI7QUFDQTtJQUNJLHVCQUF1QjtJQUN2QixzQkFBc0I7QUFDMUI7QUFDQTtJQUNJLHVCQUF1QjtJQUN2QixzQkFBc0I7SUFDdEIsaUJBQWlCO0lBQ2pCLG1CQUFtQjtBQUN2QjtBQUNBO0lBQ0ksYUFBYTtBQUNqQiIsImZpbGUiOiJhcHAvbWVudS9tZW51LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWVudS1sb2dvIHtcclxuICAgIHdpZHRoOjIwMHB4O1xyXG4gICAgaGVpZ2h0OjUwcHg7XHJcbn1cclxubmF2IHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwwLDAsMC44KTtcclxufVxyXG4ubmF2LWl0ZW17XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbn1cclxuLm5hdi1saW5rIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGNvbG9yIDp3aGl0ZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbn1cclxuLm5hdi1saW5rOmhvdmVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgY29sb3IgOnJnYmEoMCwwLDAsMC44KTtcclxufVxyXG4ubmF2LWxvZyB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGNvbG9yIDpyZ2JhKDAsMCwwLDAuOCk7XHJcbiAgICBwYWRkaW5nOiA1cHggMTVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbn1cclxuLmxvZy1saW5rIHtcclxuICAgIGNvbG9yOiB0b21hdG87XHJcbn1cclxuIl19 */");
 
 /***/ }),
 
@@ -895,13 +2287,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuComponent", function() { return MenuComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _main_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../main-service.service */ "./src/app/main-service.service.ts");
+
 
 
 let MenuComponent = class MenuComponent {
-    constructor() { }
+    constructor(mainSer) {
+        this.mainSer = mainSer;
+    }
     ngOnInit() {
+        this.listMon = this.mainSer.listMon;
     }
 };
+MenuComponent.ctorParameters = () => [
+    { type: _main_service_service__WEBPACK_IMPORTED_MODULE_2__["MainServiceService"] }
+];
 MenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-menu',
@@ -967,7 +2367,7 @@ SignupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".quest {\r\n    width:100%;\r\n    position: relative;\r\n}\r\n.quest-choose {\r\n    margin-right : 15px;\r\n    vertical-align: middle;\r\n}\r\n.quest-ans {\r\n    vertical-align: top;\r\n}\r\n.answer-box {\r\n    padding-left: 30px;\r\n}\r\n.quest-title {\r\n    margin-bottom:0;\r\n}\r\n.user-info {\r\n    width:100%;\r\n    margin: 10px auto;\r\n}\r\n.user-img-test {\r\n    width:100px;\r\n    height:100px;\r\n    \r\n}\r\n.pad-t-b-20 {\r\n    margin: 20px auto;\r\n}\r\n.quest-num-box {\r\n    width:100%;\r\n}\r\n.quest-num {\r\n    border-radius : 10px;\r\n    padding: 5px 15px;\r\n    background-color:lightblue;\r\n    font-size:14px;\r\n    font-weight: 400;\r\n    margin:0 3px;\r\n}\r\n.card-bg {\r\n    background-color: lightgoldenrodyellow;\r\n}\r\n.count-down {\r\n    position: absolute;\r\n    top :10px;\r\n    right :20px;\r\n    padding:5px;\r\n    border-radius: 20px;\r\n    background-color: lightblue;\r\n    color :white;\r\n    width:30px;\r\n    height:30px;\r\n    line-height: 15px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC90ZXN0L3Rlc3QuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFVBQVU7SUFDVixrQkFBa0I7QUFDdEI7QUFDQTtJQUNJLG1CQUFtQjtJQUNuQixzQkFBc0I7QUFDMUI7QUFDQTtJQUNJLG1CQUFtQjtBQUN2QjtBQUNBO0lBQ0ksa0JBQWtCO0FBQ3RCO0FBQ0E7SUFDSSxlQUFlO0FBQ25CO0FBQ0E7SUFDSSxVQUFVO0lBQ1YsaUJBQWlCO0FBQ3JCO0FBQ0E7SUFDSSxXQUFXO0lBQ1gsWUFBWTs7QUFFaEI7QUFDQTtJQUNJLGlCQUFpQjtBQUNyQjtBQUNBO0lBQ0ksVUFBVTtBQUNkO0FBQ0E7SUFDSSxvQkFBb0I7SUFDcEIsaUJBQWlCO0lBQ2pCLDBCQUEwQjtJQUMxQixjQUFjO0lBQ2QsZ0JBQWdCO0lBQ2hCLFlBQVk7QUFDaEI7QUFDQTtJQUNJLHNDQUFzQztBQUMxQztBQUNBO0lBQ0ksa0JBQWtCO0lBQ2xCLFNBQVM7SUFDVCxXQUFXO0lBQ1gsV0FBVztJQUNYLG1CQUFtQjtJQUNuQiwyQkFBMkI7SUFDM0IsWUFBWTtJQUNaLFVBQVU7SUFDVixXQUFXO0lBQ1gsaUJBQWlCO0FBQ3JCIiwiZmlsZSI6ImFwcC90ZXN0L3Rlc3QuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5xdWVzdCB7XHJcbiAgICB3aWR0aDoxMDAlO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcbi5xdWVzdC1jaG9vc2Uge1xyXG4gICAgbWFyZ2luLXJpZ2h0IDogMTVweDtcclxuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbn1cclxuLnF1ZXN0LWFucyB7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG59XHJcbi5hbnN3ZXItYm94IHtcclxuICAgIHBhZGRpbmctbGVmdDogMzBweDtcclxufVxyXG4ucXVlc3QtdGl0bGUge1xyXG4gICAgbWFyZ2luLWJvdHRvbTowO1xyXG59XHJcbi51c2VyLWluZm8ge1xyXG4gICAgd2lkdGg6MTAwJTtcclxuICAgIG1hcmdpbjogMTBweCBhdXRvO1xyXG59XHJcbi51c2VyLWltZy10ZXN0IHtcclxuICAgIHdpZHRoOjEwMHB4O1xyXG4gICAgaGVpZ2h0OjEwMHB4O1xyXG4gICAgXHJcbn1cclxuLnBhZC10LWItMjAge1xyXG4gICAgbWFyZ2luOiAyMHB4IGF1dG87XHJcbn1cclxuLnF1ZXN0LW51bS1ib3gge1xyXG4gICAgd2lkdGg6MTAwJTtcclxufVxyXG4ucXVlc3QtbnVtIHtcclxuICAgIGJvcmRlci1yYWRpdXMgOiAxMHB4O1xyXG4gICAgcGFkZGluZzogNXB4IDE1cHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOmxpZ2h0Ymx1ZTtcclxuICAgIGZvbnQtc2l6ZToxNHB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcclxuICAgIG1hcmdpbjowIDNweDtcclxufVxyXG4uY2FyZC1iZyB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBsaWdodGdvbGRlbnJvZHllbGxvdztcclxufVxyXG4uY291bnQtZG93biB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3AgOjEwcHg7XHJcbiAgICByaWdodCA6MjBweDtcclxuICAgIHBhZGRpbmc6NXB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGxpZ2h0Ymx1ZTtcclxuICAgIGNvbG9yIDp3aGl0ZTtcclxuICAgIHdpZHRoOjMwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIGxpbmUtaGVpZ2h0OiAxNXB4O1xyXG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".quest {\r\n    width:100%;\r\n    position: relative;\r\n}\r\n.quest-choose {\r\n    margin-right : 15px;\r\n    vertical-align: middle;\r\n}\r\n.quest-ans {\r\n    vertical-align: top;\r\n}\r\n.answer-box {\r\n    padding-left: 30px;\r\n}\r\n.quest-title {\r\n    margin-bottom:0;\r\n}\r\n.user-info {\r\n    width:100%;\r\n    margin: 10px auto;\r\n}\r\n.user-img-test {\r\n    width:100px;\r\n    height:100px;\r\n    \r\n}\r\n.pad-t-b-20 {\r\n    margin: 20px auto;\r\n}\r\n.quest-num-box {\r\n    align-content: center;\r\n}\r\n.quest-num {\r\n    border-radius : 10px;\r\n    background-color:lightblue;\r\n    font-size:14px;\r\n    font-weight: 400;\r\n    padding: 5px;\r\n    margin: 5px;\r\n    width: 30px;\r\n    height:30px;\r\n    float:left;\r\n    cursor: pointer;\r\n}\r\n.card-bg {\r\n    background-color: lightgoldenrodyellow;\r\n}\r\n.count-down {\r\n    position: absolute;\r\n    top :10px;\r\n    right :20px;\r\n    padding:5px;\r\n    border-radius: 20px;\r\n    background-color: lightblue;\r\n    color :white;\r\n    width:30px;\r\n    height:30px;\r\n    line-height: 15px;\r\n}\r\n.test-title {\r\n    text-transform: uppercase;\r\n    font-size:20px;\r\n\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC90ZXN0L3Rlc3QuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFVBQVU7SUFDVixrQkFBa0I7QUFDdEI7QUFDQTtJQUNJLG1CQUFtQjtJQUNuQixzQkFBc0I7QUFDMUI7QUFDQTtJQUNJLG1CQUFtQjtBQUN2QjtBQUNBO0lBQ0ksa0JBQWtCO0FBQ3RCO0FBQ0E7SUFDSSxlQUFlO0FBQ25CO0FBQ0E7SUFDSSxVQUFVO0lBQ1YsaUJBQWlCO0FBQ3JCO0FBQ0E7SUFDSSxXQUFXO0lBQ1gsWUFBWTs7QUFFaEI7QUFDQTtJQUNJLGlCQUFpQjtBQUNyQjtBQUNBO0lBQ0kscUJBQXFCO0FBQ3pCO0FBQ0E7SUFDSSxvQkFBb0I7SUFDcEIsMEJBQTBCO0lBQzFCLGNBQWM7SUFDZCxnQkFBZ0I7SUFDaEIsWUFBWTtJQUNaLFdBQVc7SUFDWCxXQUFXO0lBQ1gsV0FBVztJQUNYLFVBQVU7SUFDVixlQUFlO0FBQ25CO0FBQ0E7SUFDSSxzQ0FBc0M7QUFDMUM7QUFDQTtJQUNJLGtCQUFrQjtJQUNsQixTQUFTO0lBQ1QsV0FBVztJQUNYLFdBQVc7SUFDWCxtQkFBbUI7SUFDbkIsMkJBQTJCO0lBQzNCLFlBQVk7SUFDWixVQUFVO0lBQ1YsV0FBVztJQUNYLGlCQUFpQjtBQUNyQjtBQUNBO0lBQ0kseUJBQXlCO0lBQ3pCLGNBQWM7O0FBRWxCIiwiZmlsZSI6ImFwcC90ZXN0L3Rlc3QuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5xdWVzdCB7XHJcbiAgICB3aWR0aDoxMDAlO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcbi5xdWVzdC1jaG9vc2Uge1xyXG4gICAgbWFyZ2luLXJpZ2h0IDogMTVweDtcclxuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbn1cclxuLnF1ZXN0LWFucyB7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG59XHJcbi5hbnN3ZXItYm94IHtcclxuICAgIHBhZGRpbmctbGVmdDogMzBweDtcclxufVxyXG4ucXVlc3QtdGl0bGUge1xyXG4gICAgbWFyZ2luLWJvdHRvbTowO1xyXG59XHJcbi51c2VyLWluZm8ge1xyXG4gICAgd2lkdGg6MTAwJTtcclxuICAgIG1hcmdpbjogMTBweCBhdXRvO1xyXG59XHJcbi51c2VyLWltZy10ZXN0IHtcclxuICAgIHdpZHRoOjEwMHB4O1xyXG4gICAgaGVpZ2h0OjEwMHB4O1xyXG4gICAgXHJcbn1cclxuLnBhZC10LWItMjAge1xyXG4gICAgbWFyZ2luOiAyMHB4IGF1dG87XHJcbn1cclxuLnF1ZXN0LW51bS1ib3gge1xyXG4gICAgYWxpZ24tY29udGVudDogY2VudGVyO1xyXG59XHJcbi5xdWVzdC1udW0ge1xyXG4gICAgYm9yZGVyLXJhZGl1cyA6IDEwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOmxpZ2h0Ymx1ZTtcclxuICAgIGZvbnQtc2l6ZToxNHB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcclxuICAgIHBhZGRpbmc6IDVweDtcclxuICAgIG1hcmdpbjogNXB4O1xyXG4gICAgd2lkdGg6IDMwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIGZsb2F0OmxlZnQ7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLmNhcmQtYmcge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogbGlnaHRnb2xkZW5yb2R5ZWxsb3c7XHJcbn1cclxuLmNvdW50LWRvd24ge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wIDoxMHB4O1xyXG4gICAgcmlnaHQgOjIwcHg7XHJcbiAgICBwYWRkaW5nOjVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBsaWdodGJsdWU7XHJcbiAgICBjb2xvciA6d2hpdGU7XHJcbiAgICB3aWR0aDozMHB4O1xyXG4gICAgaGVpZ2h0OjMwcHg7XHJcbiAgICBsaW5lLWhlaWdodDogMTVweDtcclxufVxyXG4udGVzdC10aXRsZSB7XHJcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG4gICAgZm9udC1zaXplOjIwcHg7XHJcblxyXG59Il19 */");
 
 /***/ }),
 
@@ -983,13 +2383,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestComponent", function() { return TestComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _main_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../main-service.service */ "./src/app/main-service.service.ts");
+
 
 
 let TestComponent = class TestComponent {
-    constructor() { }
+    constructor(mainSer) {
+        this.mainSer = mainSer;
+        this.curPage = 1;
+    }
+    toQuiz(index) {
+        this.curPage = index;
+    }
     ngOnInit() {
+        this.androidQuiz = this.mainSer.androidQuiz;
     }
 };
+TestComponent.ctorParameters = () => [
+    { type: _main_service_service__WEBPACK_IMPORTED_MODULE_2__["MainServiceService"] }
+];
 TestComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-test',
@@ -997,6 +2409,50 @@ TestComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./test.component.css */ "./src/app/test/test.component.css")).default]
     })
 ], TestComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/user/user.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/user/user.component.css ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".front, .back {\r\n    width: 600px;\r\n    border-radius: 20px;\r\n    background-color: white;\r\n    position: absolute;\r\n    height:550px;\r\n    transition: all 1s;\r\n}\r\n.back {\r\n    top: 20px;\r\n    right:0px;\r\n    border: 2px solid lightblue;\r\n    z-index: 1;\r\n}\r\n.back:hover {\r\n    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 500px rgba(0,0,0,0.22);\r\n    z-index :10;\r\n}\r\n.back:hover .front {\r\n    z-index: 5;\r\n    box-shadow:none;\r\n}\r\n.front {\r\n    left:0;\r\n    border: 2px solid khaki;\r\n    z-index:2;\r\n    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);\r\n    padding: 20px;\r\n}\r\n.front:hover {\r\n    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 500px rgba(0,0,0,0.22);\r\n    z-index :10;\r\n}\r\n.front:hover .back {\r\n    z-index: 5;\r\n    box-shadow:none;\r\n}\r\n.user {\r\n    margin:100px 0;\r\n    position: relative;\r\n    bottom:0;\r\n    left:0;\r\n    width:100%;\r\n    height:700px;\r\n}\r\n.user-image {\r\n    width: 100%;\r\n}\r\n.fas {\r\n    margin-right:20px;\r\n}\r\n.info-title {\r\n    color:lightblue;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC91c2VyL3VzZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFlBQVk7SUFDWixtQkFBbUI7SUFDbkIsdUJBQXVCO0lBQ3ZCLGtCQUFrQjtJQUNsQixZQUFZO0lBQ1osa0JBQWtCO0FBQ3RCO0FBQ0E7SUFDSSxTQUFTO0lBQ1QsU0FBUztJQUNULDJCQUEyQjtJQUMzQixVQUFVO0FBQ2Q7QUFDQTtJQUNJLHVFQUF1RTtJQUN2RSxXQUFXO0FBQ2Y7QUFDQTtJQUNJLFVBQVU7SUFDVixlQUFlO0FBQ25CO0FBQ0E7SUFDSSxNQUFNO0lBQ04sdUJBQXVCO0lBQ3ZCLFNBQVM7SUFDVCxrRUFBa0U7SUFDbEUsYUFBYTtBQUNqQjtBQUNBO0lBQ0ksdUVBQXVFO0lBQ3ZFLFdBQVc7QUFDZjtBQUNBO0lBQ0ksVUFBVTtJQUNWLGVBQWU7QUFDbkI7QUFDQTtJQUNJLGNBQWM7SUFDZCxrQkFBa0I7SUFDbEIsUUFBUTtJQUNSLE1BQU07SUFDTixVQUFVO0lBQ1YsWUFBWTtBQUNoQjtBQUNBO0lBQ0ksV0FBVztBQUNmO0FBQ0E7SUFDSSxpQkFBaUI7QUFDckI7QUFDQTtJQUNJLGVBQWU7QUFDbkIiLCJmaWxlIjoiYXBwL3VzZXIvdXNlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZyb250LCAuYmFjayB7XHJcbiAgICB3aWR0aDogNjAwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBoZWlnaHQ6NTUwcHg7XHJcbiAgICB0cmFuc2l0aW9uOiBhbGwgMXM7XHJcbn1cclxuLmJhY2sge1xyXG4gICAgdG9wOiAyMHB4O1xyXG4gICAgcmlnaHQ6MHB4O1xyXG4gICAgYm9yZGVyOiAycHggc29saWQgbGlnaHRibHVlO1xyXG4gICAgei1pbmRleDogMTtcclxufVxyXG4uYmFjazpob3ZlciB7XHJcbiAgICBib3gtc2hhZG93OiAwIDE5cHggMzhweCByZ2JhKDAsMCwwLDAuMzApLCAwIDE1cHggNTAwcHggcmdiYSgwLDAsMCwwLjIyKTtcclxuICAgIHotaW5kZXggOjEwO1xyXG59XHJcbi5iYWNrOmhvdmVyIC5mcm9udCB7XHJcbiAgICB6LWluZGV4OiA1O1xyXG4gICAgYm94LXNoYWRvdzpub25lO1xyXG59XHJcbi5mcm9udCB7XHJcbiAgICBsZWZ0OjA7XHJcbiAgICBib3JkZXI6IDJweCBzb2xpZCBraGFraTtcclxuICAgIHotaW5kZXg6MjtcclxuICAgIGJveC1zaGFkb3c6IDAgM3B4IDZweCByZ2JhKDAsMCwwLDAuMTYpLCAwIDNweCA2cHggcmdiYSgwLDAsMCwwLjIzKTtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbn1cclxuLmZyb250OmhvdmVyIHtcclxuICAgIGJveC1zaGFkb3c6IDAgMTlweCAzOHB4IHJnYmEoMCwwLDAsMC4zMCksIDAgMTVweCA1MDBweCByZ2JhKDAsMCwwLDAuMjIpO1xyXG4gICAgei1pbmRleCA6MTA7XHJcbn1cclxuLmZyb250OmhvdmVyIC5iYWNrIHtcclxuICAgIHotaW5kZXg6IDU7XHJcbiAgICBib3gtc2hhZG93Om5vbmU7XHJcbn1cclxuLnVzZXIge1xyXG4gICAgbWFyZ2luOjEwMHB4IDA7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBib3R0b206MDtcclxuICAgIGxlZnQ6MDtcclxuICAgIHdpZHRoOjEwMCU7XHJcbiAgICBoZWlnaHQ6NzAwcHg7XHJcbn1cclxuLnVzZXItaW1hZ2Uge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn1cclxuLmZhcyB7XHJcbiAgICBtYXJnaW4tcmlnaHQ6MjBweDtcclxufVxyXG4uaW5mby10aXRsZSB7XHJcbiAgICBjb2xvcjpsaWdodGJsdWU7XHJcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/user/user.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/user/user.component.ts ***!
+  \****************************************/
+/*! exports provided: UserComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserComponent", function() { return UserComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let UserComponent = class UserComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+UserComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-user',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./user.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/user/user.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./user.component.css */ "./src/app/user/user.component.css")).default]
+    })
+], UserComponent);
 
 
 
