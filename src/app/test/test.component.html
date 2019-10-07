@@ -1,21 +1,59 @@
 <app-menu></app-menu>
 <div class="container">
   <div class="row pad-t-b-20">
-    <div class="col-md-8">
-      <div class="card">
+    <div class="col-md-8 text-right">
+      <div class="card text-left">
         <div class="card-header card-bg"><i class="fas fa-file-code"></i> Cơ sở lập trình</div>
         <div class="card-body">
           <div class="quest" *ngFor='let quiz of androidQuiz | paginate : {itemsPerPage : 1, currentPage: curPage}'>
             <p class="quest-title">{{curPage}} . {{quiz.Text}}</p>
             <div class="answer-box" *ngFor="let ind of quiz.Answers">
-              <input type="radio" name="cau-1" class="quest-choose"> <span class="quest-ans" >{{ind.Text}}</span><br>
+              <input type="radio" name="cau-1" class="quest-choose"> <span class="quest-ans">{{ind.Text}}</span><br>
             </div>
           </div>
-          <div class="count-down">15</div>
+          <div class="count-down-box">
+              <countdown [config]="{leftTime: countDown}"></countdown>
+          </div>
         </div>
         <div class="card-footer card-bg">Số câu : {{curPage}} / {{this.androidQuiz.length}}</div>
       </div>
-      <pagination-controls (pageChange)="curPage = $event"></pagination-controls>
+      <hr>
+      <div class="control-quest">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="icon-paginate"></div>
+          </div>
+          <div class="col-md-9">
+            <pagination-controls (pageChange)="curPage = $event"></pagination-controls>
+          </div>
+        </div>
+      </div>
+      <div class="instruction container-fluid text-left">
+        <div class="row">
+          <div class="col-md-6 instruct-bg">
+            <div class="instruct-box">
+              <p>Trả lời câu hỏi bằng việc tích vào các radio button</p>
+            </div>
+          </div>
+          <div class="col-md-6 instruct-bg">
+            <div class="instruct-box">
+              <p>Chỉ chọn được một đáp án cho mỗi câu</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 instruct-bg">
+            <div class="instruct-box">
+              <p>Thời gian để trả lời mỗi câu hỏi là {{countDown}} giây</p>
+            </div>
+          </div>
+          <div class="col-md-6 instruct-bg">
+            <div class="instruct-box">
+              <p>Lựa chọn câu hỏi cần làm ở thanh điều hướng hoặc click vào các ô câu hỏi ở cột bên phải</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-md-4" style="background-color:lightgoldenrodyellow; border-radius: 10px;">
       <div class="user-info">
@@ -31,9 +69,10 @@
         <hr>
         <div class="row">
           <div class="col-md-12 text-center">
-            <p class="test-title">cac cau hoi kiem tra</p>
+            <p class="test-title">Các câu hỏi</p>
             <div class="quest-num-box">
-              <div class="quest-num text-center" *ngFor="let quiz of androidQuiz; let i = index" (click) = "toQuiz(i+1)  "> {{i+1}} </div>
+              <div class="quest-num text-center" *ngFor="let quiz of androidQuiz; let i = index"
+                (click)="toQuiz(i+1)  "> {{i+1}} </div>
             </div>
             <div class="clear"></div>
           </div>
@@ -41,7 +80,7 @@
         <div class="row">
           <div class="col-md-12">
             <br>
-            <button type="submit" class="btn btn-danger">ket thuc bai thi</button>
+            <button type="submit" class="btn btn-danger">Kết thúc</button>
           </div>
         </div>
       </div>

@@ -89944,6 +89944,316 @@ const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('8.2.7
 
 /***/ }),
 
+/***/ "./node_modules/ngx-countdown/fesm2015/ngx-countdown.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/ngx-countdown/fesm2015/ngx-countdown.js ***!
+  \**************************************************************/
+/*! exports provided: CountdownComponent, CountdownGlobalConfig, CountdownModule, CountdownStatus, CountdownTimer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CountdownComponent", function() { return CountdownComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CountdownGlobalConfig", function() { return CountdownGlobalConfig; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CountdownModule", function() { return CountdownModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CountdownStatus", function() { return CountdownStatus; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CountdownTimer", function() { return CountdownTimer; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+
+
+
+
+var CountdownStatus;
+(function (CountdownStatus) {
+    CountdownStatus[CountdownStatus["ing"] = 0] = "ing";
+    CountdownStatus[CountdownStatus["pause"] = 1] = "pause";
+    CountdownStatus[CountdownStatus["stop"] = 2] = "stop";
+    CountdownStatus[CountdownStatus["done"] = 3] = "done";
+})(CountdownStatus || (CountdownStatus = {}));
+
+let CountdownTimer = class CountdownTimer {
+    constructor() {
+        this.fns = [];
+        this.commands = [];
+        this.ing = false;
+    }
+    start() {
+        if (this.ing === true)
+            return;
+        this.ing = true;
+        this.nextTime = +new Date();
+        this.process();
+    }
+    process() {
+        while (this.commands.length) {
+            this.commands.shift()();
+        }
+        let diff = +new Date() - this.nextTime;
+        const count = 1 + Math.floor(diff / 100);
+        diff = 100 - (diff % 100);
+        this.nextTime += 100 * count;
+        for (let i = 0, len = this.fns.length; i < len; i += 2) {
+            let frequency = this.fns[i + 1];
+            // 100/s
+            if (0 === frequency) {
+                this.fns[i](count);
+                // 1000/s
+            }
+            else {
+                // 先把末位至0，再每次加2
+                frequency += 2 * count - 1;
+                const step = Math.floor(frequency / 20);
+                if (step > 0) {
+                    this.fns[i](step);
+                }
+                // 把末位还原成1
+                this.fns[i + 1] = (frequency % 20) + 1;
+            }
+        }
+        if (!this.ing)
+            return;
+        setTimeout(() => this.process(), diff);
+    }
+    add(fn, frequency) {
+        this.commands.push(() => {
+            this.fns.push(fn);
+            this.fns.push(frequency === 1000 ? 1 : 0);
+            this.ing = true;
+        });
+        return this;
+    }
+    remove(fn) {
+        this.commands.push(() => {
+            const i = this.fns.indexOf(fn);
+            if (i !== -1) {
+                this.fns.splice(i, 2);
+            }
+            this.ing = this.fns.length > 0;
+        });
+        return this;
+    }
+};
+CountdownTimer = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+], CountdownTimer);
+
+let CountdownGlobalConfig = class CountdownGlobalConfig {
+    constructor(locale) {
+        this.locale = locale;
+        this.demand = false;
+        this.leftTime = 0;
+        this.format = 'HH:mm:ss';
+        this.timezone = '+0000';
+        this.formatDate = ({ date, formatStr, timezone }) => {
+            return Object(_angular_common__WEBPACK_IMPORTED_MODULE_2__["formatDate"])(new Date(date), formatStr, this.locale, timezone || this.timezone || '+0000');
+        };
+    }
+};
+CountdownGlobalConfig.ngInjectableDef = Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"])({ factory: function CountdownGlobalConfig_Factory() { return new CountdownGlobalConfig(Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"])(_angular_core__WEBPACK_IMPORTED_MODULE_1__["LOCALE_ID"])); }, token: CountdownGlobalConfig, providedIn: "root" });
+CountdownGlobalConfig = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({ providedIn: 'root' }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_1__["LOCALE_ID"])),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [String])
+], CountdownGlobalConfig);
+
+let CountdownComponent = class CountdownComponent {
+    constructor(locale, timer, defCog, cdr) {
+        this.locale = locale;
+        this.timer = timer;
+        this.defCog = defCog;
+        this.cdr = cdr;
+        this.frequency = 1000;
+        this._notify = {};
+        this.left = 0;
+        this.status = CountdownStatus.ing;
+        this.isDestroy = false;
+        this.i = {};
+        this.event = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+    }
+    /**
+     * Start countdown, you must manually call when `demand: false`
+     */
+    begin() {
+        this.status = CountdownStatus.ing;
+        this.callEvent('start');
+    }
+    /**
+     * Restart countdown
+     */
+    restart() {
+        if (this.status !== CountdownStatus.stop) {
+            this.destroy();
+        }
+        this.init();
+        this.callEvent('restart');
+    }
+    /**
+     * Stop countdown, must call `restart` when stopped, it's different from pause, unable to recover
+     */
+    stop() {
+        if (this.status === CountdownStatus.stop) {
+            return;
+        }
+        this.status = CountdownStatus.stop;
+        this.destroy();
+        this.callEvent('stop');
+    }
+    /**
+     * Pause countdown, you can use `resume` to recover again
+     */
+    pause() {
+        if (this.status === CountdownStatus.stop || this.status === CountdownStatus.pause)
+            return;
+        this.status = CountdownStatus.pause;
+        this.callEvent('pause');
+    }
+    /**
+     * Resume countdown
+     */
+    resume() {
+        if (this.status === CountdownStatus.stop || this.status !== CountdownStatus.pause)
+            return;
+        this.status = CountdownStatus.ing;
+        this.callEvent('resume');
+    }
+    callEvent(action) {
+        this.event.emit({ action, left: this.left, status: this.status, text: this.i.text });
+    }
+    init() {
+        const { locale, defCog } = this;
+        const config = (this.config = Object.assign({}, new CountdownGlobalConfig(locale), defCog, this.config));
+        // tslint:disable-next-line: no-bitwise
+        const frq = (this.frequency = ~config.format.indexOf('S') ? 100 : 1000);
+        this.status = config.demand ? CountdownStatus.pause : CountdownStatus.ing;
+        this.getLeft();
+        // bind reflow to me
+        const _reflow = this.reflow;
+        this.reflow = (count = 0) => _reflow.apply(this, [count]);
+        if (Array.isArray(config.notify)) {
+            config.notify.forEach((time) => {
+                if (time < 1)
+                    throw new Error(`The notify config must be a positive integer.`);
+                time = time * 1000;
+                time = time - (time % frq);
+                this._notify[time] = true;
+            });
+        }
+        this.timer.add(this.reflow, frq).start();
+        this.reflow(0, true);
+    }
+    destroy() {
+        this.timer.remove(this.reflow);
+        return this;
+    }
+    /**
+     * 更新时钟
+     */
+    reflow(count = 0, force = false) {
+        if (this.isDestroy)
+            return;
+        const { status, config, _notify } = this;
+        if (!force && status !== CountdownStatus.ing)
+            return;
+        const value = (this.left = this.left - this.frequency * count);
+        this.i = {
+            value,
+            text: config.formatDate({ date: value, formatStr: config.format, timezone: config.timezone }),
+        };
+        if (typeof config.prettyText === 'function') {
+            this.i.text = config.prettyText(this.i.text);
+        }
+        this.cdr.detectChanges();
+        if (config.notify === 0 || _notify[value]) {
+            this.callEvent('notify');
+        }
+        if (value < 1) {
+            this.status = CountdownStatus.done;
+            this.callEvent('done');
+            this.destroy();
+        }
+    }
+    /**
+     * 获取倒计时剩余帧数
+     */
+    getLeft() {
+        const { config, frequency } = this;
+        let left = config.leftTime * 1000;
+        const end = config.stopTime;
+        if (!left && end) {
+            left = end - new Date().getTime();
+        }
+        this.left = left - (left % frequency);
+    }
+    ngOnInit() {
+        this.init();
+        if (!this.config.demand) {
+            this.begin();
+        }
+    }
+    ngOnDestroy() {
+        this.isDestroy = true;
+        this.destroy();
+    }
+    ngOnChanges(changes) {
+        if (!changes.config.firstChange) {
+            this.restart();
+        }
+    }
+};
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Object)
+], CountdownComponent.prototype, "config", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"])
+], CountdownComponent.prototype, "render", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Object)
+], CountdownComponent.prototype, "event", void 0);
+CountdownComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'countdown',
+        template: `
+    <ng-container *ngIf="!render">
+      <span [innerHTML]="i.text"></span>
+    </ng-container>
+    <ng-container *ngTemplateOutlet="render; context: { $implicit: i }"></ng-container>
+  `,
+        host: { '[class.count-down]': 'true' },
+        encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
+        changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectionStrategy"].OnPush
+    }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_1__["LOCALE_ID"])),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [String, CountdownTimer,
+        CountdownGlobalConfig,
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]])
+], CountdownComponent);
+
+let CountdownModule = class CountdownModule {
+};
+CountdownModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]],
+        providers: [CountdownTimer],
+        declarations: [CountdownComponent],
+        exports: [CountdownComponent],
+    })
+], CountdownModule);
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=ngx-countdown.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/ngx-pagination/dist/ngx-pagination.js":
 /*!************************************************************!*\
   !*** ./node_modules/ngx-pagination/dist/ngx-pagination.js ***!

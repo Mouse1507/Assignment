@@ -15,6 +15,8 @@ import { NgxPaginationModule} from 'ngx-pagination';
 import { TestComponent } from './test/test.component';
 import { UserComponent } from './user/user.component';
 import { MainServiceService } from './main-service.service';
+import { CountdownModule } from 'ngx-countdown';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,7 @@ import { MainServiceService } from './main-service.service';
     BrowserModule,
     NgxPaginationModule,
     AppRoutingModule,
+    CountdownModule,
     RouterModule.forRoot([
       {path : '',  component : HomeComponent},
       {path : 'home', component : HomeComponent},
