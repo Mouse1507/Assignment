@@ -16,7 +16,6 @@ import { TestComponent } from './test/test.component';
 import { UserComponent } from './user/user.component';
 import { MainServiceService } from './main-service.service';
 import { CountdownModule } from 'ngx-countdown';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +42,7 @@ import { CountdownModule } from 'ngx-countdown';
       {path : 'signup', component:SignupComponent},
       {path : 'introduce', component : IntroduceComponent},
       {path : 'contact', component: ContactComponent},
-      {path : 'test', component: TestComponent},
+      {path : 'test/:monId', component: TestComponent},
       {path : 'user', component: UserComponent},
 
     ])
