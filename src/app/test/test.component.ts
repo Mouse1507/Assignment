@@ -23,13 +23,24 @@ export class TestComponent implements OnInit {
   listQuiz: any = []
   mon: any;
   quizMon: any;
-  toQuiz(index: Number, event: any) {
+  toQuiz(index: Number) {
     this.curPage = index;
-    document.querySelectorAll('.quest-num').forEach(element => {
+    this.changeActive('.quest-num');
+  }
+  changeActive(nameClass:string){
+    let list = document.querySelectorAll(nameClass);
+    list.forEach(element => {
       element.classList.remove('active');
     });
-    event.target.classList.add('active');
+    list.forEach(element => {
+      if(Number(element.innerHTML) == this.curPage) {
+        element.classList.add('active');
+        return;
+      }
+    });
+    
   }
+  
   listAns = [];
   eachAns:any;
   lessonId: any;
@@ -42,7 +53,13 @@ export class TestComponent implements OnInit {
     this.mon = this.listMon.find(m => m.Id === this.lessonId);
     this.quizMon = this.listQuiz.find(q => q.Id === this.lessonId);
   }
-  radioEvent(event: any) {
-    
+  activeRadio(event: any) {
+    document.querySelectorAll('.quest-ans').forEach(ans => {
+      ans.classList.remove('active');
+    })
+    event.target.nextSibling.classList.add('active');
+  }
+  radioEvent(event:any){
+    this.activeRadio(event);
   }
 }
