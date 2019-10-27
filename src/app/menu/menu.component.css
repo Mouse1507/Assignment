@@ -26,3 +26,11 @@ nav {
 .log-link {
     color: tomato;
 }
+.user-name {
+    color:white;
+    text-transform: capitalize;
+    margin-left:10px;
+}
+.nav-link:hover .user-name {
+    color:black;
+}

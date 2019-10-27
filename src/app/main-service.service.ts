@@ -6,7 +6,30 @@ import {
   providedIn: 'root'
 })
 export class MainServiceService {
-  constructor() {}
+  constructor() {
+    
+  }
+  userLogin:any;
+  userPass:any;
+  listUser = [
+    {
+      id : 1,
+      user : 'nam',
+      password : '123456',
+      email : 'nam@gmail.com',
+      address : '123nvt, q1 , hcm',
+      phone : '0152587698',
+    },
+    {
+      id : 2,
+      user : 'luong',
+      password : '123456',
+      email : 'luong@gmail.com',
+      address : '453abc, tdh, hn',
+      phone : '0258746951',
+    }
+  ]
+  listAns = [];
   listMon = [{
       "Id": "ADAV",
       "Name": "Lập trình Android nâng cao",

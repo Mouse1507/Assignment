@@ -8,7 +8,7 @@
           <div class="quest" *ngFor='let quizs of quizMon.quiz | paginate : {itemsPerPage : 1, currentPage: curPage}'>
             <p class="quest-title">{{curPage}} . {{quizs.Text}}</p>
             <div class="answer-box" *ngFor="let ans of quizs.Answers">
-              <input type="radio" name="quiz.Id" class="quest-choose" value="{{ans.Id}}" (change)='activeRadio($event)'> <span class="quest-ans">{{ans.Text}}</span><br>
+              <input type="radio" name="{{quizs.Id}}" class="quest-choose" value="{{ans.Id}}" (change)='activeRadio(quizs.Id, ans.Id,$event)'> <span class="quest-ans">{{ans.Text}}</span><br>
             </div>
           </div>
           <div class="count-down-box">
@@ -24,7 +24,7 @@
             <div class="icon-paginate"></div>
           </div>
           <div class="col-md-9">
-            <pagination-controls (pageChange)="curPage = $event; testTime.restart(); changeActive('.quest-num')"></pagination-controls>
+            <pagination-controls (pageChange)="curPage = $event; testTime.restart(); activeQuestNum('.quest-num');"></pagination-controls>
           </div>
         </div>
       </div>
@@ -71,8 +71,8 @@
           <div class="col-md-12 text-center">
             <p class="test-title">Các câu hỏi</p>
             <div class="quest-num-box">
-              <div class="quest-num text-center" *ngFor="let quiz of quizMon.quiz; let i = index"
-                (click)="toQuiz(i+1,$event)"> {{i+1}} </div>
+              <div  class="quest-num text-center" *ngFor="let quiz of quizMon.quiz; let i = index"
+                (click)="toQuiz(i+1,$event)" id='{{quiz.Id}}'> {{i+1}} </div>
             </div>
             <div class="clear"></div>
           </div>
@@ -80,7 +80,7 @@
         <div class="row">
           <div class="col-md-12">
             <br>
-            <button type="submit" class="btn btn-danger">Kết thúc</button>
+            <button type="submit" class="btn btn-danger" (click)='checkEndTest()'>Kết thúc</button>
           </div>
         </div>
       </div>

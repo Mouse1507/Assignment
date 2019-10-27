@@ -30,5 +30,6 @@ export class ContentComponent implements OnInit {
   ngOnInit() {
     this.listMon = this.mainSer.listMon;
   }
+  
 
 }

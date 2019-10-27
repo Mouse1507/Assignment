@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<div class=\"container mar-t-b-20\">\n  <div class=\"row\">\n    <div class=\"col-md-5 text-left\">\n      <h2 class=\"map-title\">Chi nhánh</h2>\n      <p class=\"cn-text\"><i class=\"fas fa-search-location\"></i> Chi nhánh 1 : 123 Lê đại hành, TP.HCM </p>\n      <p class=\"cn-text\"><i class=\"fas fa-search-location\"></i> Chi nhánh 2 : 30 Cao Thắng, Q3, TP.HCM</p>\n    </div>\n    <div class=\"col-md-7 text-right\">\n      <iframe\n        src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.650655176696!2d106.65525331440884!3d10.76138399233174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752eedcb763559%3A0xf92e387d65fb8295!2zMTIzIEzDqiDEkOG6oWkgSMOgbmgsIFBoxrDhu51uZyA2LCBRdeG6rW4gMTEsIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1569737489575!5m2!1svi!2s\"\n        width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\"></iframe>\n      <!-- <iframe\n        src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.547439284105!2d106.68104241440886!3d10.769319392326315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f22114ccbc5%3A0xf61e0ac7497a621a!2zMzAgQ2FvIFRo4bqvbmcsIFBoxrDhu51uZyA1LCBRdeG6rW4gMywgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1569737687250!5m2!1svi!2s\"\n        width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\"></iframe> -->\n    </div>\n  </div>\n</div>\n<div class=\"container\">\n  <p class=\"contact-title text-center\"><span>Contact Us</span></p>\n  <div class=\"row\">\n    <div class=\"col-md-6 flex-layout\">\n      <img src=\"assets/images/contact-bg.png\" alt=\"\" class=\"contact-bg\">\n    </div>\n    <div class=\"col-md-6 flex-layout\">\n      <form action=\"\" method=\"POST\" class=\"contact-form\">\n        <div class=\"form-group\">\n          <label for=\"\">Họ và tên</label><br>\n          <input type=\"text\" class=\"field-contact\" />\n        </div>\n        <div class=\"form-group\">\n          <label for=\"\">Số điện thoại</label><br>\n          <input type=\"text\" class=\"field-contact\" />\n        </div>\n        <div class=\"form-group\">\n          <label for=\"\">Email</label><br>\n          <input type=\"text\" class=\"field-contact\" />\n        </div>\n        <div class=\"form-group\">\n          <label for=\"message\">Lời nhắn</label><br>\n          <textarea name=\"message\" id=\"message\" cols=\"30\" rows=\"10\" class=\"field-contact message\"></textarea>\n        </div>\n        <button type=\"submit\" class=\"btn btn-primary\">Send Message</button>\n      </form>\n    </div>\n  </div>\n</div>\n<app-footer></app-footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<div class=\"container mar-t-b-20\">\n  <div class=\"row\">\n    <div class=\"col-md-5 text-left\">\n      <h2 class=\"map-title\">Chi nhánh</h2>\n      <p class=\"cn-text\" (click)='showMap(true)'><i class=\"fas fa-search-location\"></i> Chi nhánh 1 : 123 Lê đại hành, TP.HCM </p>\n      <p class=\"cn-text\" (click)='showMap(false)'><i class=\"fas fa-search-location\"></i> Chi nhánh 2 : 30 Cao Thắng, Q3, TP.HCM</p>\n    </div>\n    <div class=\"col-md-7 text-right\">\n      <iframe *ngIf='showMap1' id='map1'\n        src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.650655176696!2d106.65525331440884!3d10.76138399233174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752eedcb763559%3A0xf92e387d65fb8295!2zMTIzIEzDqiDEkOG6oWkgSMOgbmgsIFBoxrDhu51uZyA2LCBRdeG6rW4gMTEsIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1569737489575!5m2!1svi!2s\"\n        width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\"></iframe>\n      <iframe *ngIf='showMap2' id='map2'\n        src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.547439284105!2d106.68104241440886!3d10.769319392326315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f22114ccbc5%3A0xf61e0ac7497a621a!2zMzAgQ2FvIFRo4bqvbmcsIFBoxrDhu51uZyA1LCBRdeG6rW4gMywgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1569737687250!5m2!1svi!2s\"\n        width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\"></iframe>\n    </div>\n  </div>\n</div>\n<div class=\"container\">\n  <p class=\"contact-title text-center\"><span>Contact Us</span></p>\n  <div class=\"row\">\n    <div class=\"col-md-6 flex-layout\">\n      <img src=\"assets/images/contact-bg.png\" alt=\"\" class=\"contact-bg\">\n    </div>\n    <div class=\"col-md-6 flex-layout\">\n      <form action=\"\" method=\"POST\" class=\"contact-form\">\n        <div class=\"form-group\">\n          <label for=\"\">Họ và tên</label><br>\n          <input type=\"text\" class=\"field-contact\" />\n        </div>\n        <div class=\"form-group\">\n          <label for=\"\">Số điện thoại</label><br>\n          <input type=\"text\" class=\"field-contact\" />\n        </div>\n        <div class=\"form-group\">\n          <label for=\"\">Email</label><br>\n          <input type=\"text\" class=\"field-contact\" />\n        </div>\n        <div class=\"form-group\">\n          <label for=\"message\">Lời nhắn</label><br>\n          <textarea name=\"message\" id=\"message\" cols=\"30\" rows=\"10\" class=\"field-contact message\"></textarea>\n        </div>\n        <button type=\"submit\" class=\"btn btn-primary\">Send Message</button>\n      </form>\n    </div>\n  </div>\n</div>\n<app-footer></app-footer>\n");
 
 /***/ }),
 
@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<div class=\"login\">\n  <p class=\"bg-light login-title\">Login to our world</p>\n  <div class=\"container-fluid\">\n    <div class=\"row pad-10\">\n      <div class=\"col-md-12\">\n        <img src=\"assets/images/login-logo.png\" alt=\"logo\" class=\"login-logo\">\n      </div>\n    </div>\n    <div class=\"row bg-light\">\n      <div class=\"col-md-12 \">\n        <form class=\"login-form\">\n          <div class=\"form-group\">\n            <label for=\"username\">Tên đăng nhập</label>\n            <input type=\"text\" name=\"username\"  />\n          </div>\n          <div class=\"forn-group\">\n            <label for=\"password\">Mật khẩu</label>\n            <input type=\"text\" name=\"password\"  />\n          </div>\n          <div class=\"form-group\">\n            <p class=\"no-acc-text\">Chưa có tài khoản ? <a routerLink = '/signup'>Đăng ký tại đây</a></p>\n            <div class=\"btn-group\" style=\"width:100%\">\n              <button type=\"button\" class=\"btn btn-danger\">Quên mật khẩu</button>\n              <button type=\"submit\" class=\"btn btn-info login-but\">Đăng nhập</button>\n            </div>  \n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n\n</div>\n<app-footer></app-footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<div class=\"container-fluid\">\n  <div class=\"login\">\n    <p class=\"bg-light login-title\">Login to our world</p>\n    <div class=\"container-fluid\">\n      <div class=\"row pad-10\">\n        <div class=\"col-md-12\">\n          <img src=\"assets/images/login-logo.png\" alt=\"logo\" class=\"login-logo\">\n        </div>\n      </div>\n      <div class=\"row bg-light\">\n        <div class=\"col-md-12 \">\n          <form class=\"login-form\" method=\"POST\" action=\"/user\">\n            <div class=\"form-group\">\n              <label for=\"username\" >Tên đăng nhập</label>\n              <input type=\"text\" name=\"username\" [(ngModel)]=\"userName\"/>\n            </div>\n            <div class=\"forn-group\">\n              <label for=\"password\">Mật khẩu</label>\n              <input type=\"password\" name=\"password\" [(ngModel)]=\"password\" />\n            </div>\n            <div class=\"form-group\">\n              <p class=\"no-acc-text\">Chưa có tài khoản ? <a routerLink='/signup'>Đăng ký tại đây</a></p>\n              <div class=\"btn-group\" style=\"width:100%\">\n                <button type=\"button\" class=\"btn btn-danger\">Quên mật khẩu</button>\n                <button type=\"submit\" class=\"btn btn-info login-but\" (click)=\"login()\">Đăng nhập</button>\n              </div>\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"forgot-pass\">\n    <div class=\"container-fluid\">\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <form action=\"\" method=\"POST\">\n            \n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<app-footer></app-footer>\n");
 
 /***/ }),
 
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<header>\n  <nav class=\"navbar navbar-expand-md fixed-top\">\n    <div class=\"container\">\n      <!-- Brand -->\n      <a class=\"navbar-brand\" href=\"#\"><img src=\"assets/images/logo.png\" alt=\"\" class=\"menu-logo\"></a>\n\n      <!-- Toggler/collapsibe Button -->\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsibleNavbar\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n\n      <!-- Navbar links -->\n      <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">\n        <ul class=\"navbar-nav\" style=\"margin-right:auto!important\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/home\">Trang chủ</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/introduce\">Giới thiệu</a>\n          </li>\n          <li class=\"nav-item dropdown\">\n            <a class=\"nav-link dropdown-toggle\" routerLink=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">\n              Môn học\n            </a>\n            <div class=\"dropdown-menu\">\n              <a class=\"dropdown-item\" href=\"/test/{{mon.Id}}\" *ngFor=\"let mon of listMon\"> {{mon.Name}}</a>\n            </div>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/contact\">Liên hệ</a>\n          </li>\n        </ul>\n        <ul class=\"navbar-nav\">\n          <li class=\"nav-log\">\n            <a routerLink=\"/login\" class=\"log-link\">Đăng nhập</a>\n          </li>\n          <!-- <li class=\"nav-sup\">\n            <a routerLink=\"/login\">Đăng ký</a>\n          </li> -->\n        </ul>\n      </div>\n    </div>\n  </nav>\n</header>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<header>\n  <nav class=\"navbar navbar-expand-md fixed-top\">\n    <div class=\"container\">\n      <!-- Brand -->\n      <a class=\"navbar-brand\" href=\"#\"><img src=\"assets/images/logo.png\" alt=\"\" class=\"menu-logo\"></a>\n\n      <!-- Toggler/collapsibe Button -->\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsibleNavbar\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n\n      <!-- Navbar links -->\n      <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">\n        <ul class=\"navbar-nav\" style=\"margin-right:auto!important\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/home\">Trang chủ</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/introduce\">Giới thiệu</a>\n          </li>\n          <li class=\"nav-item dropdown\">\n            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">\n              Môn học\n            </a>\n            <div class=\"dropdown-menu\">\n              <a class=\"dropdown-item\" href=\"/test/{{mon.Id}}\" *ngFor=\"let mon of listMon\"> {{mon.Name}}</a>\n            </div>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/contact\">Liên hệ</a>\n          </li>\n        </ul>\n        <ul class=\"navbar-nav\">\n          <li class=\"nav-log\" *ngIf=\"!loginTus\">\n            <a routerLink=\"/login\" class=\"log-link\">Đăng nhập</a>\n          </li>\n          <li class=\"nav-user dropdown\" *ngIf=\"loginTus\">\n            <a class=\"nav-link dropdown-toggle\" id=\"navbardrop\" data-toggle=\"dropdown\">\n              <img src=\"assets/images/user.png\" alt=\"\" class=\"rounded-circle img-thumbnail\" style=\"width:50px;\" />\n              <span class=\"user-name\">{{curUser.user}}</span>\n            </a>\n            <div class=\"dropdown-menu\">\n              <a class=\"dropdown-item\" href='/user'> User Info</a>\n              <a class=\"dropdown-item\" href='/home' (click)='logOut()'> Đăng xuất</a>\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n</header>\n");
 
 /***/ }),
 
@@ -149,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<div class=\"container\">\n  <div class=\"row pad-t-b-20\">\n    <div class=\"col-md-8 text-right\">\n      <div class=\"card text-left\">\n        <div class=\"card-header card-bg\"><i class=\"fas fa-file-code\"></i> {{mon.Name}}</div>\n        <div class=\"card-body\">\n          <div class=\"quest\" *ngFor='let quizs of quizMon.quiz | paginate : {itemsPerPage : 1, currentPage: curPage}'>\n            <p class=\"quest-title\">{{curPage}} . {{quizs.Text}}</p>\n            <div class=\"answer-box\" *ngFor=\"let ans of quizs.Answers\">\n              <input type=\"radio\" name=\"quiz.Id\" class=\"quest-choose\" value=\"{{ans.Id}}\" (change)='activeRadio($event)'> <span class=\"quest-ans\">{{ans.Text}}</span><br>\n            </div>\n          </div>\n          <div class=\"count-down-box\">\n              <countdown #testTime [config]=\"{leftTime: countDown}\"></countdown>\n          </div>\n        </div>\n        <div class=\"card-footer card-bg\">Số câu : {{curPage}} / {{quizMon.quiz.length}}</div>\n      </div>\n      <hr>\n      <div class=\"control-quest\">\n        <div class=\"row\">\n          <div class=\"col-md-3\">\n            <div class=\"icon-paginate\"></div>\n          </div>\n          <div class=\"col-md-9\">\n            <pagination-controls (pageChange)=\"curPage = $event; testTime.restart(); changeActive('.quest-num')\"></pagination-controls>\n          </div>\n        </div>\n      </div>\n      <div class=\"instruction container-fluid text-left\">\n        <div class=\"row\">\n          <div class=\"col-md-6 instruct-bg\">\n            <div class=\"instruct-box\">\n              <p>Trả lời câu hỏi bằng việc tích vào các radio button</p>\n            </div>\n          </div>\n          <div class=\"col-md-6 instruct-bg\">\n            <div class=\"instruct-box\">\n              <p>Chỉ chọn được một đáp án cho mỗi câu</p>\n            </div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6 instruct-bg\">\n            <div class=\"instruct-box\">\n              <p>Thời gian để trả lời mỗi câu hỏi là {{countDown}} giây</p>\n            </div>\n          </div>\n          <div class=\"col-md-6 instruct-bg\">\n            <div class=\"instruct-box\">\n              <p>Lựa chọn câu hỏi cần làm ở thanh điều hướng hoặc click vào các ô câu hỏi ở cột bên phải</p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-4\" style=\"background-color:lightgoldenrodyellow; border-radius: 10px;\">\n      <div class=\"user-info\">\n        <div class=\"row\">\n          <div class=\"col-md-4\">\n            <img src=\"assets/images/user.png\" alt=\"user-info\" class=\"user-img-test rounded-circle img-thumbnail\">\n          </div>\n          <div class=\"col-md-8\">\n            <p>Hoang Van Luong</p>\n            <p>206737</p>\n          </div>\n        </div>\n        <hr>\n        <div class=\"row\">\n          <div class=\"col-md-12 text-center\">\n            <p class=\"test-title\">Các câu hỏi</p>\n            <div class=\"quest-num-box\">\n              <div class=\"quest-num text-center\" *ngFor=\"let quiz of quizMon.quiz; let i = index\"\n                (click)=\"toQuiz(i+1,$event)\"> {{i+1}} </div>\n            </div>\n            <div class=\"clear\"></div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <br>\n            <button type=\"submit\" class=\"btn btn-danger\">Kết thúc</button>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n<app-footer></app-footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<div class=\"container\">\n  <div class=\"row pad-t-b-20\">\n    <div class=\"col-md-8 text-right\">\n      <div class=\"card text-left\">\n        <div class=\"card-header card-bg\"><i class=\"fas fa-file-code\"></i> {{mon.Name}}</div>\n        <div class=\"card-body\">\n          <div class=\"quest\" *ngFor='let quizs of quizMon.quiz | paginate : {itemsPerPage : 1, currentPage: curPage}'>\n            <p class=\"quest-title\">{{curPage}} . {{quizs.Text}}</p>\n            <div class=\"answer-box\" *ngFor=\"let ans of quizs.Answers\">\n              <input type=\"radio\" name=\"{{quizs.Id}}\" class=\"quest-choose\" value=\"{{ans.Id}}\" (change)='activeRadio(quizs.Id, ans.Id,$event)'> <span class=\"quest-ans\">{{ans.Text}}</span><br>\n            </div>\n          </div>\n          <div class=\"count-down-box\">\n              <countdown #testTime [config]=\"{leftTime: countDown}\"></countdown>\n          </div>\n        </div>\n        <div class=\"card-footer card-bg\">Số câu : {{curPage}} / {{quizMon.quiz.length}}</div>\n      </div>\n      <hr>\n      <div class=\"control-quest\">\n        <div class=\"row\">\n          <div class=\"col-md-3\">\n            <div class=\"icon-paginate\"></div>\n          </div>\n          <div class=\"col-md-9\">\n            <pagination-controls (pageChange)=\"curPage = $event; testTime.restart(); activeQuestNum('.quest-num');\"></pagination-controls>\n          </div>\n        </div>\n      </div>\n      <div class=\"instruction container-fluid text-left\">\n        <div class=\"row\">\n          <div class=\"col-md-6 instruct-bg\">\n            <div class=\"instruct-box\">\n              <p>Trả lời câu hỏi bằng việc tích vào các radio button</p>\n            </div>\n          </div>\n          <div class=\"col-md-6 instruct-bg\">\n            <div class=\"instruct-box\">\n              <p>Chỉ chọn được một đáp án cho mỗi câu</p>\n            </div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6 instruct-bg\">\n            <div class=\"instruct-box\">\n              <p>Thời gian để trả lời mỗi câu hỏi là {{countDown}} giây</p>\n            </div>\n          </div>\n          <div class=\"col-md-6 instruct-bg\">\n            <div class=\"instruct-box\">\n              <p>Lựa chọn câu hỏi cần làm ở thanh điều hướng hoặc click vào các ô câu hỏi ở cột bên phải</p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-4\" style=\"background-color:lightgoldenrodyellow; border-radius: 10px;\">\n      <div class=\"user-info\">\n        <div class=\"row\">\n          <div class=\"col-md-4\">\n            <img src=\"assets/images/user.png\" alt=\"user-info\" class=\"user-img-test rounded-circle img-thumbnail\">\n          </div>\n          <div class=\"col-md-8\">\n            <p>Hoang Van Luong</p>\n            <p>206737</p>\n          </div>\n        </div>\n        <hr>\n        <div class=\"row\">\n          <div class=\"col-md-12 text-center\">\n            <p class=\"test-title\">Các câu hỏi</p>\n            <div class=\"quest-num-box\">\n              <div  class=\"quest-num text-center\" *ngFor=\"let quiz of quizMon.quiz; let i = index\"\n                (click)=\"toQuiz(i+1,$event)\" id='{{quiz.Id}}'> {{i+1}} </div>\n            </div>\n            <div class=\"clear\"></div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <br>\n            <button type=\"submit\" class=\"btn btn-danger\" (click)='checkEndTest()'>Kết thúc</button>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n<app-footer></app-footer>\n");
 
 /***/ }),
 
@@ -162,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<div class=\"user\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <div class=\"front\">\n          <div class=\"row\">\n            <div class=col-md-4>\n              <img src=\"assets/images/user.png\" alt=\"\" class=\"user-image img-thumbnail\">\n            </div>\n            <div class=\"col-md-8\">\n              <p class=\"info-title\"><i class=\"fas fa-user\"></i> Name</p>\n              <p>Nguyen Van A</p>\n              <p class=\"info-title\"><i class=\"fas fa-dumbbell\"></i> Age</p>\n              <p>20</p>\n              <p class=\"info-title\"><i class=\"fas fa-venus-mars\"></i> Gender</p>\n              <p>Male</p>\n              <p class=\"info-title\"><i class=\"fas fa-at\"></i> Email</p>\n              <p>luonghv1997@gmail.com</p>\n            </div>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-md-12\">\n              <hr>\n            </div>\n          </div>\n        </div>\n        <div class=\"back\">\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<app-footer></app-footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<div class=\"user\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <div class=\"front\">\n          <div class=\"row\">\n            <div class=col-md-4>\n              <img src=\"assets/images/user.png\" alt=\"\" class=\"user-image img-thumbnail\">\n            </div>\n            <div class=\"col-md-8\">\n              <p class=\"info-title\"><i class=\"fas fa-user\"></i> Name</p>\n              <p>{{curUser.user}}</p>\n              <p class=\"info-title\"><i class=\"fas fa-dumbbell\"></i> Phone</p>\n              <p>{{curUser.phone}}</p>\n              <p class=\"info-title\"><i class=\"fas fa-venus-mars\"></i> Address  </p>\n              <p>{{curUser.address}}</p>\n              <p class=\"info-title\"><i class=\"fas fa-at\"></i> Email</p>\n              <p>{{curUser.email}}</p>\n            </div>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-md-12\">\n              <hr>\n            </div>\n          </div>\n        </div>\n        <div class=\"back\">\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<app-footer></app-footer>\n");
 
 /***/ }),
 
@@ -498,6 +498,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user_user_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./user/user.component */ "./src/app/user/user.component.ts");
 /* harmony import */ var _main_service_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./main-service.service */ "./src/app/main-service.service.ts");
 /* harmony import */ var ngx_countdown__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ngx-countdown */ "./node_modules/ngx-countdown/fesm2015/ngx-countdown.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+
 
 
 
@@ -539,6 +541,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             ngx_pagination__WEBPACK_IMPORTED_MODULE_14__["NgxPaginationModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
             ngx_countdown__WEBPACK_IMPORTED_MODULE_18__["CountdownModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_19__["FormsModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forRoot([
                 { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"] },
                 { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"] },
@@ -589,6 +592,11 @@ __webpack_require__.r(__webpack_exports__);
 let ContactComponent = class ContactComponent {
     constructor() { }
     ngOnInit() {
+        this.showMap1 = true;
+    }
+    showMap(choice) {
+        this.showMap1 = choice;
+        this.showMap2 = !choice;
     }
 };
 ContactComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -738,13 +746,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _main_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../main-service.service */ "./src/app/main-service.service.ts");
+
 
 
 let HomeComponent = class HomeComponent {
-    constructor() { }
+    constructor(mainSer) {
+        this.mainSer = mainSer;
+    }
     ngOnInit() {
+        // localStorage.setItem('listUser',JSON.stringify(this.mainSer.listUser));
     }
 };
+HomeComponent.ctorParameters = () => [
+    { type: _main_service_service__WEBPACK_IMPORTED_MODULE_2__["MainServiceService"] }
+];
 HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-home',
@@ -827,20 +843,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _main_service_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../main-service.service */ "./src/app/main-service.service.ts");
+
 
 
 
 let LoginComponent = class LoginComponent {
-    constructor(route) {
+    constructor(route, mainSer) {
         this.route = route;
+        this.mainSer = mainSer;
+        this.listUser = this.mainSer.listUser;
     }
     lostPass() {
     }
     ngOnInit() {
     }
+    login() {
+        this.listUser.forEach(user => {
+            if (this.userName == user.user && this.password == user.password) {
+                sessionStorage.setItem('loginTus', 'true');
+                localStorage.setItem('userId', JSON.stringify(user.id));
+                window.location.href = '/user';
+            }
+        });
+    }
 };
 LoginComponent.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"] },
+    { type: _main_service_service__WEBPACK_IMPORTED_MODULE_3__["MainServiceService"] }
 ];
 LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -870,6 +900,25 @@ __webpack_require__.r(__webpack_exports__);
 
 let MainServiceService = class MainServiceService {
     constructor() {
+        this.listUser = [
+            {
+                id: 1,
+                user: 'nam',
+                password: '123456',
+                email: 'nam@gmail.com',
+                address: '123nvt, q1 , hcm',
+                phone: '0152587698',
+            },
+            {
+                id: 2,
+                user: 'luong',
+                password: '123456',
+                email: 'luong@gmail.com',
+                address: '453abc, tdh, hn',
+                phone: '0258746951',
+            }
+        ];
+        this.listAns = [];
         this.listMon = [{
                 "Id": "ADAV",
                 "Name": "Lập trình Android nâng cao",
@@ -13827,7 +13876,7 @@ MainServiceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".menu-logo {\r\n    width:200px;\r\n    height:50px;\r\n}\r\nnav {\r\n    background-color: rgba(0,0,0,0.8);\r\n}\r\n.nav-item{\r\n    width: 150px;\r\n}\r\n.nav-link {\r\n    text-align: center;\r\n    color :white;\r\n    border-radius: 20px;\r\n}\r\n.nav-link:hover {\r\n    background-color: white;\r\n    color :rgba(0,0,0,0.8);\r\n}\r\n.nav-log {\r\n    background-color: white;\r\n    color :rgba(0,0,0,0.8);\r\n    padding: 5px 15px;\r\n    border-radius: 20px;\r\n}\r\n.log-link {\r\n    color: tomato;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9tZW51L21lbnUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7SUFDWCxXQUFXO0FBQ2Y7QUFDQTtJQUNJLGlDQUFpQztBQUNyQztBQUNBO0lBQ0ksWUFBWTtBQUNoQjtBQUNBO0lBQ0ksa0JBQWtCO0lBQ2xCLFlBQVk7SUFDWixtQkFBbUI7QUFDdkI7QUFDQTtJQUNJLHVCQUF1QjtJQUN2QixzQkFBc0I7QUFDMUI7QUFDQTtJQUNJLHVCQUF1QjtJQUN2QixzQkFBc0I7SUFDdEIsaUJBQWlCO0lBQ2pCLG1CQUFtQjtBQUN2QjtBQUNBO0lBQ0ksYUFBYTtBQUNqQiIsImZpbGUiOiJhcHAvbWVudS9tZW51LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWVudS1sb2dvIHtcclxuICAgIHdpZHRoOjIwMHB4O1xyXG4gICAgaGVpZ2h0OjUwcHg7XHJcbn1cclxubmF2IHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwwLDAsMC44KTtcclxufVxyXG4ubmF2LWl0ZW17XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbn1cclxuLm5hdi1saW5rIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGNvbG9yIDp3aGl0ZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbn1cclxuLm5hdi1saW5rOmhvdmVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgY29sb3IgOnJnYmEoMCwwLDAsMC44KTtcclxufVxyXG4ubmF2LWxvZyB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGNvbG9yIDpyZ2JhKDAsMCwwLDAuOCk7XHJcbiAgICBwYWRkaW5nOiA1cHggMTVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbn1cclxuLmxvZy1saW5rIHtcclxuICAgIGNvbG9yOiB0b21hdG87XHJcbn1cclxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".menu-logo {\r\n    width:200px;\r\n    height:50px;\r\n}\r\nnav {\r\n    background-color: rgba(0,0,0,0.8);\r\n}\r\n.nav-item{\r\n    width: 150px;\r\n}\r\n.nav-link {\r\n    text-align: center;\r\n    color :white;\r\n    border-radius: 20px;\r\n}\r\n.nav-link:hover {\r\n    background-color: white;\r\n    color :rgba(0,0,0,0.8);\r\n}\r\n.nav-log {\r\n    background-color: white;\r\n    color :rgba(0,0,0,0.8);\r\n    padding: 5px 15px;\r\n    border-radius: 20px;\r\n}\r\n.log-link {\r\n    color: tomato;\r\n}\r\n.user-name {\r\n    color:white;\r\n    text-transform: capitalize;\r\n    margin-left:10px;\r\n}\r\n.nav-link:hover .user-name {\r\n    color:black;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9tZW51L21lbnUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7SUFDWCxXQUFXO0FBQ2Y7QUFDQTtJQUNJLGlDQUFpQztBQUNyQztBQUNBO0lBQ0ksWUFBWTtBQUNoQjtBQUNBO0lBQ0ksa0JBQWtCO0lBQ2xCLFlBQVk7SUFDWixtQkFBbUI7QUFDdkI7QUFDQTtJQUNJLHVCQUF1QjtJQUN2QixzQkFBc0I7QUFDMUI7QUFDQTtJQUNJLHVCQUF1QjtJQUN2QixzQkFBc0I7SUFDdEIsaUJBQWlCO0lBQ2pCLG1CQUFtQjtBQUN2QjtBQUNBO0lBQ0ksYUFBYTtBQUNqQjtBQUNBO0lBQ0ksV0FBVztJQUNYLDBCQUEwQjtJQUMxQixnQkFBZ0I7QUFDcEI7QUFDQTtJQUNJLFdBQVc7QUFDZiIsImZpbGUiOiJhcHAvbWVudS9tZW51LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWVudS1sb2dvIHtcclxuICAgIHdpZHRoOjIwMHB4O1xyXG4gICAgaGVpZ2h0OjUwcHg7XHJcbn1cclxubmF2IHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwwLDAsMC44KTtcclxufVxyXG4ubmF2LWl0ZW17XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbn1cclxuLm5hdi1saW5rIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGNvbG9yIDp3aGl0ZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbn1cclxuLm5hdi1saW5rOmhvdmVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgY29sb3IgOnJnYmEoMCwwLDAsMC44KTtcclxufVxyXG4ubmF2LWxvZyB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGNvbG9yIDpyZ2JhKDAsMCwwLDAuOCk7XHJcbiAgICBwYWRkaW5nOiA1cHggMTVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbn1cclxuLmxvZy1saW5rIHtcclxuICAgIGNvbG9yOiB0b21hdG87XHJcbn1cclxuLnVzZXItbmFtZSB7XHJcbiAgICBjb2xvcjp3aGl0ZTtcclxuICAgIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xyXG4gICAgbWFyZ2luLWxlZnQ6MTBweDtcclxufVxyXG4ubmF2LWxpbms6aG92ZXIgLnVzZXItbmFtZSB7XHJcbiAgICBjb2xvcjpibGFjaztcclxufVxyXG4iXX0= */");
 
 /***/ }),
 
@@ -13852,7 +13901,20 @@ let MenuComponent = class MenuComponent {
         this.mainSer = mainSer;
     }
     ngOnInit() {
+        this.listUser = this.mainSer.listUser;
         this.listMon = this.mainSer.listMon;
+        this.userId = localStorage.getItem('userId');
+        this.loginTus = JSON.parse(sessionStorage.getItem('loginTus'));
+        // console.log(this.mainSer.userLogin);
+        this.listUser.forEach(user => {
+            if (this.userId == user.id) {
+                this.curUser = user;
+                return;
+            }
+        });
+    }
+    logOut() {
+        localStorage.setItem('loginTus', 'false');
     }
 };
 MenuComponent.ctorParameters = () => [
@@ -13923,7 +13985,7 @@ SignupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".quest {\r\n    width:100%;\r\n    position: relative;\r\n}\r\n.quest-choose {\r\n    margin-right : 15px;\r\n    vertical-align: middle;\r\n}\r\n.quest-ans {\r\n    vertical-align: top;\r\n    color: rgba(0,0,0,0.5);\r\n}\r\n.answer-box {\r\n    padding-left: 30px;\r\n}\r\n.quest-title {\r\n    margin-bottom:0;\r\n}\r\n.user-info {\r\n    width:100%;\r\n    margin: 10px auto;\r\n}\r\n.user-img-test {\r\n    width:100px;\r\n    height:100px;\r\n    \r\n}\r\n.pad-t-b-20 {\r\n    margin: 20px auto;\r\n}\r\n.quest-num-box {\r\n    align-content: center;\r\n}\r\n.quest-num {\r\n    border-radius : 10px;\r\n    background-color:lightblue;\r\n    font-size:14px;\r\n    font-weight: 400;\r\n    padding: 5px;\r\n    margin: 5px;\r\n    width: 30px;\r\n    height:30px;\r\n    float:left;\r\n    cursor: pointer;\r\n}\r\n.card-bg {\r\n    background-color: lightgoldenrodyellow;\r\n}\r\n.count-down-box {\r\n    position: absolute;\r\n    top :10px;\r\n    right :20px;\r\n    padding:5px;\r\n    border-radius: 20px;\r\n    background-color: lightblue;\r\n    color :white;\r\n    width:auto;\r\n    height:30px;\r\n    line-height: 15px;\r\n}\r\n.test-title {\r\n    text-transform: uppercase;\r\n    font-size:20px;\r\n\r\n}\r\n.control-quest {\r\n    width:100%;\r\n    text-align: right;\r\n}\r\n.instruct-box {\r\n    width: 100%;\r\n    background-color: indianred;\r\n    color:white;\r\n    border-radius: 10px;\r\n    box-shadow: 0 7px 4px #777;\r\n    padding: 10px;   \r\n    margin : 20px 0;\r\n    height: 100px;\r\n    overflow: hidden;\r\n}\r\n.quest-num.active {\r\n    background-color: lightcoral;\r\n}\r\n.quest-ans.active {\r\n    color: lightcoral;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC90ZXN0L3Rlc3QuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFVBQVU7SUFDVixrQkFBa0I7QUFDdEI7QUFDQTtJQUNJLG1CQUFtQjtJQUNuQixzQkFBc0I7QUFDMUI7QUFDQTtJQUNJLG1CQUFtQjtJQUNuQixzQkFBc0I7QUFDMUI7QUFDQTtJQUNJLGtCQUFrQjtBQUN0QjtBQUNBO0lBQ0ksZUFBZTtBQUNuQjtBQUNBO0lBQ0ksVUFBVTtJQUNWLGlCQUFpQjtBQUNyQjtBQUNBO0lBQ0ksV0FBVztJQUNYLFlBQVk7O0FBRWhCO0FBQ0E7SUFDSSxpQkFBaUI7QUFDckI7QUFDQTtJQUNJLHFCQUFxQjtBQUN6QjtBQUNBO0lBQ0ksb0JBQW9CO0lBQ3BCLDBCQUEwQjtJQUMxQixjQUFjO0lBQ2QsZ0JBQWdCO0lBQ2hCLFlBQVk7SUFDWixXQUFXO0lBQ1gsV0FBVztJQUNYLFdBQVc7SUFDWCxVQUFVO0lBQ1YsZUFBZTtBQUNuQjtBQUNBO0lBQ0ksc0NBQXNDO0FBQzFDO0FBQ0E7SUFDSSxrQkFBa0I7SUFDbEIsU0FBUztJQUNULFdBQVc7SUFDWCxXQUFXO0lBQ1gsbUJBQW1CO0lBQ25CLDJCQUEyQjtJQUMzQixZQUFZO0lBQ1osVUFBVTtJQUNWLFdBQVc7SUFDWCxpQkFBaUI7QUFDckI7QUFDQTtJQUNJLHlCQUF5QjtJQUN6QixjQUFjOztBQUVsQjtBQUNBO0lBQ0ksVUFBVTtJQUNWLGlCQUFpQjtBQUNyQjtBQUNBO0lBQ0ksV0FBVztJQUNYLDJCQUEyQjtJQUMzQixXQUFXO0lBQ1gsbUJBQW1CO0lBQ25CLDBCQUEwQjtJQUMxQixhQUFhO0lBQ2IsZUFBZTtJQUNmLGFBQWE7SUFDYixnQkFBZ0I7QUFDcEI7QUFDQTtJQUNJLDRCQUE0QjtBQUNoQztBQUNBO0lBQ0ksaUJBQWlCO0FBQ3JCIiwiZmlsZSI6ImFwcC90ZXN0L3Rlc3QuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5xdWVzdCB7XHJcbiAgICB3aWR0aDoxMDAlO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcbi5xdWVzdC1jaG9vc2Uge1xyXG4gICAgbWFyZ2luLXJpZ2h0IDogMTVweDtcclxuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbn1cclxuLnF1ZXN0LWFucyB7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG4gICAgY29sb3I6IHJnYmEoMCwwLDAsMC41KTtcclxufVxyXG4uYW5zd2VyLWJveCB7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDMwcHg7XHJcbn1cclxuLnF1ZXN0LXRpdGxlIHtcclxuICAgIG1hcmdpbi1ib3R0b206MDtcclxufVxyXG4udXNlci1pbmZvIHtcclxuICAgIHdpZHRoOjEwMCU7XHJcbiAgICBtYXJnaW46IDEwcHggYXV0bztcclxufVxyXG4udXNlci1pbWctdGVzdCB7XHJcbiAgICB3aWR0aDoxMDBweDtcclxuICAgIGhlaWdodDoxMDBweDtcclxuICAgIFxyXG59XHJcbi5wYWQtdC1iLTIwIHtcclxuICAgIG1hcmdpbjogMjBweCBhdXRvO1xyXG59XHJcbi5xdWVzdC1udW0tYm94IHtcclxuICAgIGFsaWduLWNvbnRlbnQ6IGNlbnRlcjtcclxufVxyXG4ucXVlc3QtbnVtIHtcclxuICAgIGJvcmRlci1yYWRpdXMgOiAxMHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpsaWdodGJsdWU7XHJcbiAgICBmb250LXNpemU6MTRweDtcclxuICAgIGZvbnQtd2VpZ2h0OiA0MDA7XHJcbiAgICBwYWRkaW5nOiA1cHg7XHJcbiAgICBtYXJnaW46IDVweDtcclxuICAgIHdpZHRoOiAzMHB4O1xyXG4gICAgaGVpZ2h0OjMwcHg7XHJcbiAgICBmbG9hdDpsZWZ0O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5jYXJkLWJnIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGxpZ2h0Z29sZGVucm9keWVsbG93O1xyXG59XHJcbi5jb3VudC1kb3duLWJveCB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3AgOjEwcHg7XHJcbiAgICByaWdodCA6MjBweDtcclxuICAgIHBhZGRpbmc6NXB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGxpZ2h0Ymx1ZTtcclxuICAgIGNvbG9yIDp3aGl0ZTtcclxuICAgIHdpZHRoOmF1dG87XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIGxpbmUtaGVpZ2h0OiAxNXB4O1xyXG59XHJcbi50ZXN0LXRpdGxlIHtcclxuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcbiAgICBmb250LXNpemU6MjBweDtcclxuXHJcbn1cclxuLmNvbnRyb2wtcXVlc3Qge1xyXG4gICAgd2lkdGg6MTAwJTtcclxuICAgIHRleHQtYWxpZ246IHJpZ2h0O1xyXG59XHJcbi5pbnN0cnVjdC1ib3gge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBpbmRpYW5yZWQ7XHJcbiAgICBjb2xvcjp3aGl0ZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICBib3gtc2hhZG93OiAwIDdweCA0cHggIzc3NztcclxuICAgIHBhZGRpbmc6IDEwcHg7ICAgXHJcbiAgICBtYXJnaW4gOiAyMHB4IDA7XHJcbiAgICBoZWlnaHQ6IDEwMHB4O1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxufVxyXG4ucXVlc3QtbnVtLmFjdGl2ZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBsaWdodGNvcmFsO1xyXG59XHJcbi5xdWVzdC1hbnMuYWN0aXZlIHtcclxuICAgIGNvbG9yOiBsaWdodGNvcmFsO1xyXG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".quest {\r\n    width:100%;\r\n    position: relative;\r\n}\r\n.quest-choose {\r\n    margin-right : 15px;\r\n    vertical-align: middle;\r\n}\r\n.quest-ans {\r\n    vertical-align: top;\r\n    color: rgba(0,0,0,0.5);\r\n}\r\n.answer-box {\r\n    padding-left: 30px;\r\n}\r\n.quest-title {\r\n    margin-bottom:0;\r\n}\r\n.user-info {\r\n    width:100%;\r\n    margin: 10px auto;\r\n}\r\n.user-img-test {\r\n    width:100px;\r\n    height:100px;\r\n    \r\n}\r\n.pad-t-b-20 {\r\n    margin: 20px auto;\r\n}\r\n.quest-num-box {\r\n    align-content: center;\r\n}\r\n.quest-num {\r\n    border-radius : 10px;\r\n    background-color:lightblue;\r\n    font-size:14px;\r\n    font-weight: 400;\r\n    padding: 5px;\r\n    margin: 5px;\r\n    width: 30px;\r\n    height:30px;\r\n    float:left;\r\n    cursor: pointer;\r\n}\r\n.card-bg {\r\n    background-color: lightgoldenrodyellow;\r\n}\r\n.count-down-box {\r\n    position: absolute;\r\n    top :10px;\r\n    right :20px;\r\n    padding:5px;\r\n    border-radius: 20px;\r\n    background-color: lightblue;\r\n    color :white;\r\n    width:auto;\r\n    height:30px;\r\n    line-height: 15px;\r\n}\r\n.test-title {\r\n    text-transform: uppercase;\r\n    font-size:20px;\r\n\r\n}\r\n.control-quest {\r\n    width:100%;\r\n    text-align: right;\r\n}\r\n.instruct-box {\r\n    width: 100%;\r\n    background-color: indianred;\r\n    color:white;\r\n    border-radius: 10px;\r\n    box-shadow: 0 7px 4px #777;\r\n    padding: 10px;   \r\n    margin : 20px 0;\r\n    height: 100px;\r\n    overflow: hidden;\r\n}\r\n.quest-num.active {\r\n    background-color: lightcoral!important;\r\n    color:white!important;\r\n}\r\n.quest-ans.active {\r\n    color: lightcoral;\r\n    font-weight: bold;\r\n}\r\n.quest-ans.answer {\r\n    color: lightgreen;\r\n    font-weight: bold;\r\n}\r\n.quest-num.answer {\r\n    background-color:lightgreen;\r\n    color:black;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC90ZXN0L3Rlc3QuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFVBQVU7SUFDVixrQkFBa0I7QUFDdEI7QUFDQTtJQUNJLG1CQUFtQjtJQUNuQixzQkFBc0I7QUFDMUI7QUFDQTtJQUNJLG1CQUFtQjtJQUNuQixzQkFBc0I7QUFDMUI7QUFDQTtJQUNJLGtCQUFrQjtBQUN0QjtBQUNBO0lBQ0ksZUFBZTtBQUNuQjtBQUNBO0lBQ0ksVUFBVTtJQUNWLGlCQUFpQjtBQUNyQjtBQUNBO0lBQ0ksV0FBVztJQUNYLFlBQVk7O0FBRWhCO0FBQ0E7SUFDSSxpQkFBaUI7QUFDckI7QUFDQTtJQUNJLHFCQUFxQjtBQUN6QjtBQUNBO0lBQ0ksb0JBQW9CO0lBQ3BCLDBCQUEwQjtJQUMxQixjQUFjO0lBQ2QsZ0JBQWdCO0lBQ2hCLFlBQVk7SUFDWixXQUFXO0lBQ1gsV0FBVztJQUNYLFdBQVc7SUFDWCxVQUFVO0lBQ1YsZUFBZTtBQUNuQjtBQUNBO0lBQ0ksc0NBQXNDO0FBQzFDO0FBQ0E7SUFDSSxrQkFBa0I7SUFDbEIsU0FBUztJQUNULFdBQVc7SUFDWCxXQUFXO0lBQ1gsbUJBQW1CO0lBQ25CLDJCQUEyQjtJQUMzQixZQUFZO0lBQ1osVUFBVTtJQUNWLFdBQVc7SUFDWCxpQkFBaUI7QUFDckI7QUFDQTtJQUNJLHlCQUF5QjtJQUN6QixjQUFjOztBQUVsQjtBQUNBO0lBQ0ksVUFBVTtJQUNWLGlCQUFpQjtBQUNyQjtBQUNBO0lBQ0ksV0FBVztJQUNYLDJCQUEyQjtJQUMzQixXQUFXO0lBQ1gsbUJBQW1CO0lBQ25CLDBCQUEwQjtJQUMxQixhQUFhO0lBQ2IsZUFBZTtJQUNmLGFBQWE7SUFDYixnQkFBZ0I7QUFDcEI7QUFDQTtJQUNJLHNDQUFzQztJQUN0QyxxQkFBcUI7QUFDekI7QUFDQTtJQUNJLGlCQUFpQjtJQUNqQixpQkFBaUI7QUFDckI7QUFDQTtJQUNJLGlCQUFpQjtJQUNqQixpQkFBaUI7QUFDckI7QUFDQTtJQUNJLDJCQUEyQjtJQUMzQixXQUFXO0FBQ2YiLCJmaWxlIjoiYXBwL3Rlc3QvdGVzdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnF1ZXN0IHtcclxuICAgIHdpZHRoOjEwMCU7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbn1cclxuLnF1ZXN0LWNob29zZSB7XHJcbiAgICBtYXJnaW4tcmlnaHQgOiAxNXB4O1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxufVxyXG4ucXVlc3QtYW5zIHtcclxuICAgIHZlcnRpY2FsLWFsaWduOiB0b3A7XHJcbiAgICBjb2xvcjogcmdiYSgwLDAsMCwwLjUpO1xyXG59XHJcbi5hbnN3ZXItYm94IHtcclxuICAgIHBhZGRpbmctbGVmdDogMzBweDtcclxufVxyXG4ucXVlc3QtdGl0bGUge1xyXG4gICAgbWFyZ2luLWJvdHRvbTowO1xyXG59XHJcbi51c2VyLWluZm8ge1xyXG4gICAgd2lkdGg6MTAwJTtcclxuICAgIG1hcmdpbjogMTBweCBhdXRvO1xyXG59XHJcbi51c2VyLWltZy10ZXN0IHtcclxuICAgIHdpZHRoOjEwMHB4O1xyXG4gICAgaGVpZ2h0OjEwMHB4O1xyXG4gICAgXHJcbn1cclxuLnBhZC10LWItMjAge1xyXG4gICAgbWFyZ2luOiAyMHB4IGF1dG87XHJcbn1cclxuLnF1ZXN0LW51bS1ib3gge1xyXG4gICAgYWxpZ24tY29udGVudDogY2VudGVyO1xyXG59XHJcbi5xdWVzdC1udW0ge1xyXG4gICAgYm9yZGVyLXJhZGl1cyA6IDEwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOmxpZ2h0Ymx1ZTtcclxuICAgIGZvbnQtc2l6ZToxNHB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcclxuICAgIHBhZGRpbmc6IDVweDtcclxuICAgIG1hcmdpbjogNXB4O1xyXG4gICAgd2lkdGg6IDMwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIGZsb2F0OmxlZnQ7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLmNhcmQtYmcge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogbGlnaHRnb2xkZW5yb2R5ZWxsb3c7XHJcbn1cclxuLmNvdW50LWRvd24tYm94IHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcCA6MTBweDtcclxuICAgIHJpZ2h0IDoyMHB4O1xyXG4gICAgcGFkZGluZzo1cHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogbGlnaHRibHVlO1xyXG4gICAgY29sb3IgOndoaXRlO1xyXG4gICAgd2lkdGg6YXV0bztcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgbGluZS1oZWlnaHQ6IDE1cHg7XHJcbn1cclxuLnRlc3QtdGl0bGUge1xyXG4gICAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcclxuICAgIGZvbnQtc2l6ZToyMHB4O1xyXG5cclxufVxyXG4uY29udHJvbC1xdWVzdCB7XHJcbiAgICB3aWR0aDoxMDAlO1xyXG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbn1cclxuLmluc3RydWN0LWJveCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGluZGlhbnJlZDtcclxuICAgIGNvbG9yOndoaXRlO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICAgIGJveC1zaGFkb3c6IDAgN3B4IDRweCAjNzc3O1xyXG4gICAgcGFkZGluZzogMTBweDsgICBcclxuICAgIG1hcmdpbiA6IDIwcHggMDtcclxuICAgIGhlaWdodDogMTAwcHg7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG59XHJcbi5xdWVzdC1udW0uYWN0aXZlIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGxpZ2h0Y29yYWwhaW1wb3J0YW50O1xyXG4gICAgY29sb3I6d2hpdGUhaW1wb3J0YW50O1xyXG59XHJcbi5xdWVzdC1hbnMuYWN0aXZlIHtcclxuICAgIGNvbG9yOiBsaWdodGNvcmFsO1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuLnF1ZXN0LWFucy5hbnN3ZXIge1xyXG4gICAgY29sb3I6IGxpZ2h0Z3JlZW47XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG4ucXVlc3QtbnVtLmFuc3dlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOmxpZ2h0Z3JlZW47XHJcbiAgICBjb2xvcjpibGFjaztcclxufSJdfQ== */");
 
 /***/ }),
 
@@ -13953,13 +14015,15 @@ let TestComponent = class TestComponent {
         this.countDown = 30;
         this.listMon = [];
         this.listQuiz = [];
-        this.listAns = [];
+        this.isEndTest = false;
+        this.trung = false;
     }
     toQuiz(index) {
         this.curPage = index;
-        this.changeActive('.quest-num');
+        this.activeQuestNum('.quest-num');
     }
-    changeActive(nameClass) {
+    //Active quest number
+    activeQuestNum(nameClass) {
         let list = document.querySelectorAll(nameClass);
         list.forEach(element => {
             element.classList.remove('active');
@@ -13971,6 +14035,18 @@ let TestComponent = class TestComponent {
             }
         });
     }
+    activeAnsNum() {
+        var listUserAns = JSON.parse(sessionStorage.getItem('listUserAns'));
+        var questNum = document.querySelectorAll('.quest-num');
+        listUserAns.forEach(user => {
+            questNum.forEach(quest => {
+                var questId = quest.getAttribute('id');
+                if (questId == user.Id) {
+                    quest.classList.add('answer');
+                }
+            });
+        });
+    }
     ngOnInit() {
         this.listMon = this.mainSer.listMon;
         this.listQuiz = this.mainSer.listQuiz;
@@ -13980,15 +14056,78 @@ let TestComponent = class TestComponent {
         });
         this.mon = this.listMon.find(m => m.Id === this.lessonId);
         this.quizMon = this.listQuiz.find(q => q.Id === this.lessonId);
+        sessionStorage.setItem('listWebAns', JSON.stringify(this.quizMon.quiz));
+        this.toQuiz(this.curPage);
+        setInterval(this.showUserAns, 100);
+        setInterval(this.activeAnsNum, 100);
     }
-    activeRadio(event) {
+    activeRadio(quizsId, ansId, event) {
+        let checkHave = false;
         document.querySelectorAll('.quest-ans').forEach(ans => {
             ans.classList.remove('active');
         });
         event.target.nextSibling.classList.add('active');
+        if (this.mainSer.listAns.length == 0) {
+            this.mainSer.listAns.push({
+                Id: quizsId,
+                ansId: ansId
+            });
+        }
+        else {
+            this.mainSer.listAns.forEach(ele => {
+                if (quizsId == ele.Id) {
+                    ele.ansId = ansId;
+                    checkHave = true;
+                    return;
+                }
+                else {
+                    checkHave = false;
+                }
+            });
+            if (checkHave == false) {
+                this.mainSer.listAns.push({
+                    Id: quizsId,
+                    ansId: ansId
+                });
+            }
+        }
+        // sessionStorage.removeItem('listAns');
+        sessionStorage.setItem('listUserAns', JSON.stringify(this.mainSer.listAns));
     }
-    radioEvent(event) {
-        this.activeRadio(event);
+    // check question
+    checkEndTest() {
+        this.isEndTest = true;
+        if (this.isEndTest)
+            setInterval(this.showWebAns, 100);
+    }
+    showWebAns() {
+        var questList = document.querySelectorAll('.quest-choose');
+        let webAns = JSON.parse(sessionStorage.getItem('listWebAns'));
+        questList.forEach(quest => {
+            quest.setAttribute('disabled', 'true');
+            var questId = quest.getAttribute('name');
+            var ansId = quest.getAttribute('value');
+            webAns.forEach(ans => {
+                if (questId == ans.Id && ansId == ans.AnswerId) {
+                    quest.nextElementSibling.classList.add('answer');
+                    quest.setAttribute('checked', 'true');
+                }
+            });
+        });
+    }
+    showUserAns() {
+        var userAns = JSON.parse(sessionStorage.getItem('listUserAns'));
+        var questList = document.querySelectorAll('.quest-choose');
+        questList.forEach(quest => {
+            var questId = quest.getAttribute('name');
+            var ansId = quest.getAttribute('value');
+            userAns.forEach(user => {
+                if (user.Id == questId && user.ansId == ansId) {
+                    quest.nextElementSibling.classList.add('active');
+                    quest.setAttribute('checked', 'true');
+                }
+            });
+        });
     }
 };
 TestComponent.ctorParameters = () => [
@@ -14032,13 +14171,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserComponent", function() { return UserComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _main_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../main-service.service */ "./src/app/main-service.service.ts");
+
 
 
 let UserComponent = class UserComponent {
-    constructor() { }
+    constructor(mainSer) {
+        this.mainSer = mainSer;
+    }
     ngOnInit() {
+        this.listUser = this.mainSer.listUser;
+        this.userId = localStorage.getItem('userId');
+        this.listUser.forEach(user => {
+            if (this.userId == user.id) {
+                this.curUser = user;
+                return;
+            }
+        });
     }
 };
+UserComponent.ctorParameters = () => [
+    { type: _main_service_service__WEBPACK_IMPORTED_MODULE_2__["MainServiceService"] }
+];
 UserComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-user',

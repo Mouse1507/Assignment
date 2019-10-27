@@ -79,8 +79,18 @@
     overflow: hidden;
 }
 .quest-num.active {
-    background-color: lightcoral;
+    background-color: lightcoral!important;
+    color:white!important;
 }
 .quest-ans.active {
     color: lightcoral;
+    font-weight: bold;
+}
+.quest-ans.answer {
+    color: lightgreen;
+    font-weight: bold;
+}
+.quest-num.answer {
+    background-color:lightgreen;
+    color:black;
 }

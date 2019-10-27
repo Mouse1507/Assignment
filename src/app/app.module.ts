@@ -16,6 +16,8 @@ import { TestComponent } from './test/test.component';
 import { UserComponent } from './user/user.component';
 import { MainServiceService } from './main-service.service';
 import { CountdownModule } from 'ngx-countdown';
+import {FormsModule} from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +37,7 @@ import { CountdownModule } from 'ngx-countdown';
     NgxPaginationModule,
     AppRoutingModule,
     CountdownModule,
+    FormsModule,
     RouterModule.forRoot([
       {path : '',  component : HomeComponent},
       {path : 'home', component : HomeComponent},
