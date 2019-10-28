@@ -10,7 +10,6 @@ export class HomeComponent implements OnInit {
   constructor(private mainSer : MainServiceService) { }
 
   ngOnInit() {
-    // localStorage.setItem('listUser',JSON.stringify(this.mainSer.listUser));
   }
 
 }

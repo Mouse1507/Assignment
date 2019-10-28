@@ -26,10 +26,14 @@ export class ContentComponent implements OnInit {
     },
   ]
   listMon : any;
-  curPage: Number = 1;
+  curPage: number = 1;
+  checkLogin = this.mainSer.checkLogin;
   ngOnInit() {
     this.listMon = this.mainSer.listMon;
   }
-  
+  switchModalBox(x:string) {
+    document.getElementById('overlay').style.display = x;
+    document.getElementById('box-message').style.display = x;
+  }
 
 }

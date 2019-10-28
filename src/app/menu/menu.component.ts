@@ -13,12 +13,13 @@ export class MenuComponent implements OnInit {
   loginTus :boolean;
   curUser:any;
   listUser:any;
+  checkLogin = this.mainSer.checkLogin;
+  switchModalBox = this.mainSer.switchModalBox;
   ngOnInit() {
     this.listUser = this.mainSer.listUser;
     this.listMon = this.mainSer.listMon;
-    this.userId = localStorage.getItem('userId');
+    this.userId = sessionStorage.getItem('userId');
     this.loginTus = JSON.parse(sessionStorage.getItem('loginTus'));
-    // console.log(this.mainSer.userLogin);
     this.listUser.forEach(user => {
       if(this.userId == user.id) {
         this.curUser = user;
@@ -26,7 +27,10 @@ export class MenuComponent implements OnInit {
       }
     });
   }
+  
   logOut() {
-    localStorage.setItem('loginTus','false');
+    sessionStorage.setItem('loginTus','false');
+    sessionStorage.removeItem('listUserAns');
+    sessionStorage.removeItem('userId');
   }
 }

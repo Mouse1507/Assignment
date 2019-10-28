@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     this.listUser.forEach(user => {
       if(this.userName == user.user && this.password == user.password){
         sessionStorage.setItem('loginTus', 'true');
-        localStorage.setItem('userId', JSON.stringify(user.id));
+        sessionStorage.setItem('userId', JSON.stringify(user.id));
         window.location.href = '/user';
       }
     })

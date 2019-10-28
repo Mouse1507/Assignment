@@ -14,7 +14,7 @@ export class UserComponent implements OnInit {
   userId: any;
   ngOnInit() {
     this.listUser = this.mainSer.listUser;
-    this.userId = localStorage.getItem('userId');
+    this.userId = sessionStorage.getItem('userId');
     this.listUser.forEach(user => {
       if(this.userId == user.id) {
         this.curUser = user;

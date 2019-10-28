@@ -12965,4 +12965,16 @@ export class MainServiceService {
       }]
     }
   ];
+  switchModalBox(x:string) {
+    document.getElementById('overlay').style.display = x;
+    document.getElementById('box-message').style.display = x;
+  }
+  checkLogin(event, x:string) {
+    var loginTus = JSON.parse(sessionStorage.getItem('loginTus'));
+    if(loginTus != true){
+      event.preventDefault();
+      this.switchModalBox(x);
+    }
+  }
+  
 }

@@ -34,3 +34,7 @@ nav {
 .nav-link:hover .user-name {
     color:black;
 }
+.alert-login-box {
+    width:200px;
+    height:200px
+}

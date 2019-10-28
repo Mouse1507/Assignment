@@ -30,7 +30,7 @@ import {FormsModule} from '@angular/forms';
     IntroduceComponent,
     ContactComponent,
     TestComponent,
-    UserComponent
+    UserComponent,
   ],
   imports: [
     BrowserModule,
