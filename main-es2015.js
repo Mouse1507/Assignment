@@ -101,19 +101,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/load-local/load-local.component.html":
-/*!********************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/load-local/load-local.component.html ***!
-  \********************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>load-local works!</p>\n");
-
-/***/ }),
-
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/login/login.component.html":
 /*!**********************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/login/login.component.html ***!
@@ -123,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<div class=\"container-fluid\">\n  <div class=\"login\">\n    <p class=\"bg-light login-title\">Login to our world</p>\n    <div class=\"container-fluid\">\n      <div class=\"row pad-10\">\n        <div class=\"col-md-12\">\n          <img src=\"assets/images/login-logo.png\" alt=\"logo\" class=\"login-logo\">\n        </div>\n      </div>\n      <div class=\"row bg-light\">\n        <div class=\"col-md-12 \">\n          <form class=\"login-form\" method=\"POST\" action=\"/user\">\n            <div class=\"form-group\">\n              <label for=\"username\" >Tên đăng nhập</label>\n              <input type=\"text\" name=\"username\" [(ngModel)]=\"userName\"/>\n            </div>\n            <div class=\"forn-group\">\n              <label for=\"password\">Mật khẩu</label>\n              <input type=\"password\" name=\"password\" [(ngModel)]=\"password\" />\n            </div>\n            <div class=\"form-group\">\n              <p class=\"no-acc-text\">Chưa có tài khoản ? <a routerLink='/signup'>Đăng ký tại đây</a></p>\n              <div class=\"btn-group\" style=\"width:100%\">\n                <button type=\"button\" class=\"btn btn-danger\">Quên mật khẩu</button>\n                <button type=\"submit\" class=\"btn btn-info login-but\" (click)=\"login()\">Đăng nhập</button>\n              </div>\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"forgot-pass\">\n    <div class=\"container-fluid\">\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <form action=\"\" method=\"POST\">\n            \n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<app-footer></app-footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<div class=\"container-fluid\">\n  <div class=\"login\">\n    <p class=\"bg-light login-title\">Login to our world</p>\n    <div class=\"container-fluid\">\n      <div class=\"row pad-10\">\n        <div class=\"col-md-12\">\n          <img src=\"assets/images/login-logo.png\" alt=\"logo\" class=\"login-logo\">\n        </div>\n      </div>\n      <div class=\"row bg-light\">\n        <div class=\"col-md-12 \">\n          <form class=\"login-form\" method=\"POST\">\n            <div class=\"form-group\">\n              <label for=\"username\" >Tên đăng nhập</label>\n              <input type=\"text\" name=\"username\" [(ngModel)]=\"userName\"/>\n            </div>\n            <div class=\"forn-group\">\n              <label for=\"password\">Mật khẩu</label>\n              <input type=\"password\" name=\"password\" [(ngModel)]=\"password\" />\n            </div>\n            <div class=\"form-group\">\n              <p class=\"no-acc-text\">Chưa có tài khoản ? <a routerLink='/signup'>Đăng ký tại đây</a></p>\n              <div class=\"btn-group\" style=\"width:100%\">\n                <button type=\"button\" class=\"btn btn-danger\">Quên mật khẩu</button>\n                <button type=\"submit\" class=\"btn btn-info login-but\" (click)=\"login()\">Đăng nhập</button>\n              </div>\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"forgot-pass\">\n    <div class=\"container-fluid\">\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <form action=\"\" method=\"POST\">\n            \n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<app-footer></app-footer>\n");
 
 /***/ }),
 
@@ -512,8 +499,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_service_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./main-service.service */ "./src/app/main-service.service.ts");
 /* harmony import */ var ngx_countdown__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ngx-countdown */ "./node_modules/ngx-countdown/fesm2015/ngx-countdown.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var _load_local_load_local_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./load-local/load-local.component */ "./src/app/load-local/load-local.component.ts");
-
 
 
 
@@ -550,7 +535,6 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _contact_contact_component__WEBPACK_IMPORTED_MODULE_13__["ContactComponent"],
             _test_test_component__WEBPACK_IMPORTED_MODULE_15__["TestComponent"],
             _user_user_component__WEBPACK_IMPORTED_MODULE_16__["UserComponent"],
-            _load_local_load_local_component__WEBPACK_IMPORTED_MODULE_20__["LoadLocalComponent"],
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -567,7 +551,6 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 { path: 'contact', component: _contact_contact_component__WEBPACK_IMPORTED_MODULE_13__["ContactComponent"] },
                 { path: 'test/:monId', component: _test_test_component__WEBPACK_IMPORTED_MODULE_15__["TestComponent"] },
                 { path: 'user', component: _user_user_component__WEBPACK_IMPORTED_MODULE_16__["UserComponent"] },
-                { path: 'loadlocal', component: _load_local_load_local_component__WEBPACK_IMPORTED_MODULE_20__["LoadLocalComponent"] },
             ])
         ],
         providers: [_main_service_service__WEBPACK_IMPORTED_MODULE_17__["MainServiceService"]],
@@ -838,72 +821,6 @@ IntroduceComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/load-local/load-local.component.css":
-/*!*****************************************************!*\
-  !*** ./src/app/load-local/load-local.component.css ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAvbG9hZC1sb2NhbC9sb2FkLWxvY2FsLmNvbXBvbmVudC5jc3MifQ== */");
-
-/***/ }),
-
-/***/ "./src/app/load-local/load-local.component.ts":
-/*!****************************************************!*\
-  !*** ./src/app/load-local/load-local.component.ts ***!
-  \****************************************************/
-/*! exports provided: LoadLocalComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadLocalComponent", function() { return LoadLocalComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-
-
-let LoadLocalComponent = class LoadLocalComponent {
-    constructor() {
-        this.listUser = [
-            {
-                id: 1,
-                user: 'nam',
-                password: '123456',
-                name: 'nam',
-                email: 'nam@gmail.com',
-                address: '123nvt, q1 , hcm',
-                phone: '0152587698',
-            },
-            {
-                id: 2,
-                user: 'luong',
-                password: '123456',
-                name: 'luong',
-                email: 'luong@gmail.com',
-                address: '453abc, tdh, hn',
-                phone: '0258746951',
-            }
-        ];
-    }
-    ngOnInit() {
-        localStorage.setItem('listUser', JSON.stringify(this.listUser));
-    }
-};
-LoadLocalComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-load-local',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./load-local.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/load-local/load-local.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./load-local.component.css */ "./src/app/load-local/load-local.component.css")).default]
-    })
-], LoadLocalComponent);
-
-
-
-/***/ }),
-
 /***/ "./src/app/login/login.component.css":
 /*!*******************************************!*\
   !*** ./src/app/login/login.component.css ***!
@@ -936,8 +853,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let LoginComponent = class LoginComponent {
-    constructor(route, mainSer) {
+    constructor(route, router, mainSer) {
         this.route = route;
+        this.router = router;
         this.mainSer = mainSer;
         this.listUser = JSON.parse(localStorage.getItem('listUser'));
     }
@@ -950,13 +868,14 @@ let LoginComponent = class LoginComponent {
             if (this.userName == user.user && this.password == user.password) {
                 sessionStorage.setItem('loginTus', 'true');
                 sessionStorage.setItem('userId', JSON.stringify(user.id));
-                window.location.href = '/user';
+                this.router.navigate(['/user']);
             }
         });
     }
 };
 LoginComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
     { type: _main_service_service__WEBPACK_IMPORTED_MODULE_3__["MainServiceService"] }
 ];
 LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -14062,10 +13981,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignupComponent", function() { return SignupComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 let SignupComponent = class SignupComponent {
-    constructor() {
+    constructor(router) {
+        this.router = router;
         this.listUser = [];
         this.confirmPass = '';
         this.checkAgree = false;
@@ -14087,7 +14009,7 @@ let SignupComponent = class SignupComponent {
     checkSignup() {
         this.listUser.push(this.signupInfo);
         localStorage.setItem('listUser', JSON.stringify(this.listUser));
-        window.location.href = '/login';
+        this.router.navigate(['/login']);
     }
     checkConfirmPass() {
         if (this.confirmPass == this.signupInfo.password) {
@@ -14098,6 +14020,9 @@ let SignupComponent = class SignupComponent {
         }
     }
 };
+SignupComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
 SignupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-signup',

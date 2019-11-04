@@ -17,7 +17,6 @@ import { UserComponent } from './user/user.component';
 import { MainServiceService } from './main-service.service';
 import { CountdownModule } from 'ngx-countdown';
 import {FormsModule} from '@angular/forms';
-import { LoadLocalComponent } from './load-local/load-local.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,6 @@ import { LoadLocalComponent } from './load-local/load-local.component';
     ContactComponent,
     TestComponent,
     UserComponent,
-    LoadLocalComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,8 +47,6 @@ import { LoadLocalComponent } from './load-local/load-local.component';
       {path : 'contact', component: ContactComponent},
       {path : 'test/:monId', component: TestComponent},
       {path : 'user', component: UserComponent},
-      {path : 'loadlocal', component: LoadLocalComponent},
-
     ])
   ],
   providers: [MainServiceService],

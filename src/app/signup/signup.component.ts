@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
   listUser = [];
   confirmPass = '';
   checkAgree = false;
@@ -28,7 +28,7 @@ export class SignupComponent implements OnInit {
   checkSignup() {
     this.listUser.push(this.signupInfo);
     localStorage.setItem('listUser', JSON.stringify(this.listUser));
-    window.location.href = '/login';
+    this.router.navigate(['/login']);
   }
   checkConfirmPass() {
     if(this.confirmPass == this.signupInfo.password) {
