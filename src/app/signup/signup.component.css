@@ -23,7 +23,7 @@
     width:70%;
     margin:0 auto;
 }
-input[type="text"] {
+.signup-field {
     width:100%;
 }
 .sup-but, .can-but {

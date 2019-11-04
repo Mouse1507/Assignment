@@ -7,28 +7,10 @@ import {
 })
 export class MainServiceService {
   constructor() {
-    
+
   }
-  userLogin:any;
-  userPass:any;
-  listUser = [
-    {
-      id : 1,
-      user : 'nam',
-      password : '123456',
-      email : 'nam@gmail.com',
-      address : '123nvt, q1 , hcm',
-      phone : '0152587698',
-    },
-    {
-      id : 2,
-      user : 'luong',
-      password : '123456',
-      email : 'luong@gmail.com',
-      address : '453abc, tdh, hn',
-      phone : '0258746951',
-    }
-  ]
+  userLogin: any;
+  userPass: any;
   listAns = [];
   listMon = [{
       "Id": "ADAV",
@@ -78,8 +60,7 @@ export class MainServiceService {
   ];
   listQuiz = [{
       "Id": "ADAV",
-      "quiz": [
-        {
+      "quiz": [{
         "Id": 25106,
         "Text": "Có mấy loại Service?",
         "Marks": 1,
@@ -1414,8 +1395,7 @@ export class MainServiceService {
         }, {
           "Id": 104407,
           "Text": "Maven SDK"
-        }
-      ]
+        }]
       }]
     },
     {
@@ -12965,16 +12945,16 @@ export class MainServiceService {
       }]
     }
   ];
-  switchModalBox(x:string) {
+  switchModalBox(x: string) {
     document.getElementById('overlay').style.display = x;
     document.getElementById('box-message').style.display = x;
   }
-  checkLogin(event, x:string) {
+  checkLogin(event, x: string) {
     var loginTus = JSON.parse(sessionStorage.getItem('loginTus'));
-    if(loginTus != true){
+    if (loginTus != true) {
       event.preventDefault();
       this.switchModalBox(x);
     }
   }
-  
+
 }

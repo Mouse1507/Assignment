@@ -101,6 +101,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/load-local/load-local.component.html":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/load-local/load-local.component.html ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>load-local works!</p>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/login/login.component.html":
 /*!**********************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/login/login.component.html ***!
@@ -123,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<header>\n  <nav class=\"navbar navbar-expand-md fixed-top\">\n    <div class=\"container\">\n      <!-- Brand -->\n      <a class=\"navbar-brand\" href=\"#\"><img src=\"assets/images/logo.png\" alt=\"\" class=\"menu-logo\"></a>\n\n      <!-- Toggler/collapsibe Button -->\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsibleNavbar\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n\n      <!-- Navbar links -->\n      <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">\n        <ul class=\"navbar-nav\" style=\"margin-right:auto!important\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/home\">Trang chủ</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/introduce\">Giới thiệu</a>\n          </li>\n          <li class=\"nav-item dropdown\">\n            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">\n              Môn học\n            </a>\n            <div class=\"dropdown-menu\">\n              <a class=\"dropdown-item menu-mon\" (click)='checkLogin($event,\"block\")' href=\"/test/{{mon.Id}}\" *ngFor=\"let mon of listMon\"> {{mon.Name}}</a>\n            </div>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/contact\">Liên hệ</a>\n          </li>\n        </ul>\n        <ul class=\"navbar-nav\">\n          <li class=\"nav-log\" *ngIf=\"!loginTus\">\n            <a routerLink=\"/login\" class=\"log-link\">Đăng nhập</a>\n          </li>\n          <li class=\"nav-user dropdown\" *ngIf=\"loginTus\">\n            <a class=\"nav-link dropdown-toggle\" id=\"navbardrop\" data-toggle=\"dropdown\">\n              <img src=\"assets/images/user.png\" alt=\"\" class=\"rounded-circle img-thumbnail\" style=\"width:50px;\" />\n              <span class=\"user-name\">{{curUser.user}}</span>\n            </a>\n            <div class=\"dropdown-menu\">\n              <a class=\"dropdown-item\" href='/user'> User Info</a>\n              <a class=\"dropdown-item\" href='/home' (click)='logOut()'> Đăng xuất</a>\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n</header>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<header>\n  <nav class=\"navbar navbar-expand-md fixed-top\">\n    <div class=\"container\">\n      <!-- Brand -->\n      <a class=\"navbar-brand\" href=\"#\"><img src=\"assets/images/logo.png\" alt=\"\" class=\"menu-logo\"></a>\n\n      <!-- Toggler/collapsibe Button -->\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsibleNavbar\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n\n      <!-- Navbar links -->\n      <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">\n        <ul class=\"navbar-nav\" style=\"margin-right:auto!important\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/home\">Trang chủ</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/introduce\">Giới thiệu</a>\n          </li>\n          <li class=\"nav-item dropdown\">\n            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">\n              Môn học\n            </a>\n            <div class=\"dropdown-menu\">\n              <a class=\"dropdown-item menu-mon\" (click)='checkLogin($event,\"block\")' href=\"/test/{{mon.Id}}\" *ngFor=\"let mon of listMon\"> {{mon.Name}}</a>\n            </div>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/contact\">Liên hệ</a>\n          </li>\n        </ul>\n        <ul class=\"navbar-nav\">\n          <li class=\"nav-log\" *ngIf=\"!loginTus\">\n            <a routerLink=\"/login\" class=\"log-link\">Đăng nhập</a>\n          </li>\n          <li class=\"nav-user dropdown\" *ngIf=\"loginTus\">\n            <a class=\"nav-link dropdown-toggle\" id=\"navbardrop\" data-toggle=\"dropdown\">\n              <img src=\"assets/images/user.png\" alt=\"\" class=\"rounded-circle img-thumbnail\" style=\"width:50px;\" />\n              <span class=\"user-name\">{{curUser.name}}</span>\n            </a>\n            <div class=\"dropdown-menu\">\n              <a class=\"dropdown-item\" href='/user'> User Info</a>\n              <a class=\"dropdown-item\" href='/home' (click)='logOut()'> Đăng xuất</a>\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n</header>\n");
 
 /***/ }),
 
@@ -136,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<div class=\"container mar-t-b-20\">\n  <div class=\"row\">\n    <div class=\"col-md-7 left-sup\">\n      <div class=\"signup text-center\">\n        <p class=\"bg-light signup-title\">Sign up to our world</p>\n        <form action=\"\" method=\"POST\" class=\"form-signup\">\n          <div class=\"container-fluid\">\n            <div class=\"row\">\n              <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                  <label for=\"\">Tên đăng nhập</label> <br>\n                  <input type=\"text\" />\n                </div>\n              </div>\n              <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                  <label for=\"\">Mật khẩu</label> <br>\n                  <input type=\"text\" />\n                </div>\n              </div>\n            </div>\n            <div class=\"row\">\n              <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                  <label for=\"\">Email</label> <br>\n                  <input type=\"text\" />\n                </div>\n              </div>\n              <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                  <label for=\"\">Xác nhận mật khẩu</label> <br>\n                  <input type=\"text\" />\n                </div>\n              </div>\n            </div>\n            <div class=\"row\">\n              <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                  <label for=\"\">Địa chỉ</label> <br>\n                  <input type=\"text\" />\n                </div>\n              </div>\n              <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                  <label for=\"\">Số điện thoại</label> <br>\n                  <input type=\"text\" />\n                </div>\n              </div>\n            </div>\n            <div class=\"row\">\n              <div class=\"col-md-12 text-left\">\n                <input type=\"checkbox\" />đồng ý với điều khoản sử dụng\n              </div>\n            </div>\n            <br>\n            <div class=\"row\">\n              <div class=\"col-md-6\">\n                <button type=\"submit\" class=\"btn btn-success sup-but\">Đăng ký</button>\n              </div>\n              <div class=\"col-md-6\">\n                <button type=\"reset\" class=\"btn btn-info can-but\">Hủy bỏ</button>\n              </div>\n            </div>\n          </div>\n        </form><br>\n      </div>\n    </div>\n    <div class=\"col-md-5 right-sup\">\n      <img src=\"assets/images/signup-bg.png\" alt=\"signup-bg\" class=\"signup-bg\" />\n    </div>\n  </div>\n</div>\n\n<app-footer></app-footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<div class=\"container mar-t-b-20\">\n  <div class=\"row\">\n    <div class=\"col-md-7 left-sup\">\n      <div class=\"signup text-center\">\n        <p class=\"bg-light signup-title\">Sign up to our world</p>\n        <form  method=\"POST\" class=\"form-signup\">\n          <div class=\"container-fluid\">\n            <div class=\"row\">\n              <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                  <label for=\"\">Tên đăng nhập</label> <br>\n                  <input class='signup-field' type=\"text\" [(ngModel)]=\"signupInfo.user\" [ngModelOptions]=\"{standalone: true}\"/>\n                </div>\n              </div>\n              <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                  <label for=\"\">Mật khẩu</label> <br>\n                  <input class='signup-field' type=\"password\" [(ngModel)]=\"signupInfo.password\" [ngModelOptions]=\"{standalone: true}\"/>\n                </div>\n              </div>\n            </div>\n            <div class=\"row\">\n              <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                  <label for=\"\">Email</label> <br>\n                  <input class='signup-field' type=\"email\" [(ngModel)]=\"signupInfo.email\" [ngModelOptions]=\"{standalone: true}\"/>\n                </div>\n              </div>\n              <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                  <label for=\"\">Xác nhận mật khẩu</label> <br>\n                  <input class='signup-field' type=\"password\" (blur) = 'checkConfirmPass()' [(ngModel)]=\"confirmPass\" [ngModelOptions]=\"{standalone: true}\"/>\n                  <!-- <div class=\"message-confirm\">\n                    <p>Khong dung</p>\n                    <p>Đung</p>\n                  </div> -->\n                </div>\n              </div>\n            </div>\n            <div class=\"row\">\n              <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                  <label for=\"\">Địa chỉ</label> <br>\n                  <input class='signup-field' type=\"text\" [(ngModel)]=\"signupInfo.address\" [ngModelOptions]=\"{standalone: true}\"/>\n                </div>\n              </div>\n              <div class=\"col-md-6\">\n                <div class=\"form-group\">\n                  <label for=\"\">Số điện thoại</label> <br>\n                  <input class='signup-field' type=\"text\" [(ngModel)]=\"signupInfo.phone\" [ngModelOptions]=\"{standalone: true}\"/>\n                </div>\n              </div>\n            </div>\n            <div class=\"row\">\n              <div class=\"col-md-12 text-left\">\n                <input type=\"checkbox\" [(ngModel)]=\"checkAgree\" [ngModelOptions]=\"{standalone: true}\"/> đồng ý với điều khoản sử dụng\n              </div>\n            </div>\n            <br>\n            <div class=\"row\">\n              <div class=\"col-md-6\">\n                <button type=\"click\" class=\"btn btn-success sup-but\" (click) = 'checkSignup()'>Đăng ký</button>\n              </div>\n              <div class=\"col-md-6\">\n                <button type=\"reset\" class=\"btn btn-info can-but\">Hủy bỏ</button>\n              </div>\n            </div>\n          </div>\n        </form><br>\n      </div>\n    </div>\n    <div class=\"col-md-5 right-sup\">\n      <img src=\"assets/images/signup-bg.png\" alt=\"signup-bg\" class=\"signup-bg\" />\n    </div>\n  </div>\n</div>\n\n<app-footer></app-footer>\n");
 
 /***/ }),
 
@@ -162,7 +175,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<div class=\"user\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <div class=\"front\">\n          <div class=\"row\">\n            <div class=col-md-4>\n              <img src=\"assets/images/user.png\" alt=\"\" class=\"user-image img-thumbnail\">\n            </div>\n            <div class=\"col-md-8\">\n              <p class=\"info-title\"><i class=\"fas fa-user\"></i> Name</p>\n              <p>{{curUser.user}}</p>\n              <p class=\"info-title\"><i class=\"fas fa-dumbbell\"></i> Phone</p>\n              <p>{{curUser.phone}}</p>\n              <p class=\"info-title\"><i class=\"fas fa-venus-mars\"></i> Address  </p>\n              <p>{{curUser.address}}</p>\n              <p class=\"info-title\"><i class=\"fas fa-at\"></i> Email</p>\n              <p>{{curUser.email}}</p>\n            </div>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-md-12\">\n              <hr>\n            </div>\n          </div>\n        </div>\n        <div class=\"back\">\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<app-footer></app-footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu>\n<div class=\"user\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <div class=\"front\">\n          <div class=\"row\">\n            <div class=col-md-4>\n              <img src=\"assets/images/user.png\" alt=\"\" class=\"user-image img-thumbnail\">\n            </div>\n            <div class=\"col-md-8\">\n              <p class=\"info-title\"><i class=\"fas fa-user\"></i> Name</p>\n              <div class=\"input-group mb-3\">\n                <input type=\"text\" class=\"form-control user-info-field\" [(ngModel)]=\"curUser.name\" name='user'>\n                <div class=\"input-group-append\">\n                  <span class=\"input-group-text edit-but\">Sửa</span>\n                  <span class=\"input-group-text save-but\">Xong</span>\n                </div>\n              </div>\n              <p class=\"info-title\"><i class=\"fas fa-dumbbell\"></i> Phone</p>\n              <div class=\"input-group mb-3\">\n                <input type=\"text\" class=\"form-control user-info-field\" [(ngModel)]=\"curUser.phone\" name='phone'>\n                <div class=\"input-group-append\">\n                  <span class=\"input-group-text edit-but\" >Sửa</span>\n                  <span class=\"input-group-text save-but\">Xong</span>\n                </div>\n              </div>\n              <p class=\"info-title\"><i class=\"fas fa-venus-mars\"></i> Address  </p>\n              <div class=\"input-group mb-3\">\n                <input type=\"text\" class=\"form-control user-info-field\" [(ngModel)]=\"curUser.address\" name='address'>\n                <div class=\"input-group-append\">\n                  <span class=\"input-group-text edit-but\">Sửa</span>\n                  <span class=\"input-group-text save-but\">Xong</span>\n                </div>\n              </div>\n              <p class=\"info-title\"><i class=\"fas fa-at\"></i> Email</p>\n              <div class=\"input-group mb-3\">\n                <input type=\"email\" class=\"form-control user-info-field\" [(ngModel)]=\"curUser.email\" name='email'>\n                <div class=\"input-group-append\">\n                  <span class=\"input-group-text edit-but\">Sửa</span>\n                  <span class=\"input-group-text save-but\">Xong</span>\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-md-12\">\n              <hr>\n            </div>\n          </div>\n        </div>\n        <div class=\"back\">\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<app-footer></app-footer>\n");
 
 /***/ }),
 
@@ -499,6 +512,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_service_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./main-service.service */ "./src/app/main-service.service.ts");
 /* harmony import */ var ngx_countdown__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ngx-countdown */ "./node_modules/ngx-countdown/fesm2015/ngx-countdown.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _load_local_load_local_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./load-local/load-local.component */ "./src/app/load-local/load-local.component.ts");
+
 
 
 
@@ -535,6 +550,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _contact_contact_component__WEBPACK_IMPORTED_MODULE_13__["ContactComponent"],
             _test_test_component__WEBPACK_IMPORTED_MODULE_15__["TestComponent"],
             _user_user_component__WEBPACK_IMPORTED_MODULE_16__["UserComponent"],
+            _load_local_load_local_component__WEBPACK_IMPORTED_MODULE_20__["LoadLocalComponent"],
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -551,6 +567,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 { path: 'contact', component: _contact_contact_component__WEBPACK_IMPORTED_MODULE_13__["ContactComponent"] },
                 { path: 'test/:monId', component: _test_test_component__WEBPACK_IMPORTED_MODULE_15__["TestComponent"] },
                 { path: 'user', component: _user_user_component__WEBPACK_IMPORTED_MODULE_16__["UserComponent"] },
+                { path: 'loadlocal', component: _load_local_load_local_component__WEBPACK_IMPORTED_MODULE_20__["LoadLocalComponent"] },
             ])
         ],
         providers: [_main_service_service__WEBPACK_IMPORTED_MODULE_17__["MainServiceService"]],
@@ -821,6 +838,72 @@ IntroduceComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/load-local/load-local.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/load-local/load-local.component.css ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAvbG9hZC1sb2NhbC9sb2FkLWxvY2FsLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/load-local/load-local.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/load-local/load-local.component.ts ***!
+  \****************************************************/
+/*! exports provided: LoadLocalComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadLocalComponent", function() { return LoadLocalComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let LoadLocalComponent = class LoadLocalComponent {
+    constructor() {
+        this.listUser = [
+            {
+                id: 1,
+                user: 'nam',
+                password: '123456',
+                name: 'nam',
+                email: 'nam@gmail.com',
+                address: '123nvt, q1 , hcm',
+                phone: '0152587698',
+            },
+            {
+                id: 2,
+                user: 'luong',
+                password: '123456',
+                name: 'luong',
+                email: 'luong@gmail.com',
+                address: '453abc, tdh, hn',
+                phone: '0258746951',
+            }
+        ];
+    }
+    ngOnInit() {
+        localStorage.setItem('listUser', JSON.stringify(this.listUser));
+    }
+};
+LoadLocalComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-load-local',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./load-local.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/load-local/load-local.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./load-local.component.css */ "./src/app/load-local/load-local.component.css")).default]
+    })
+], LoadLocalComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/login/login.component.css":
 /*!*******************************************!*\
   !*** ./src/app/login/login.component.css ***!
@@ -856,7 +939,7 @@ let LoginComponent = class LoginComponent {
     constructor(route, mainSer) {
         this.route = route;
         this.mainSer = mainSer;
-        this.listUser = this.mainSer.listUser;
+        this.listUser = JSON.parse(localStorage.getItem('listUser'));
     }
     lostPass() {
     }
@@ -904,24 +987,6 @@ __webpack_require__.r(__webpack_exports__);
 
 let MainServiceService = class MainServiceService {
     constructor() {
-        this.listUser = [
-            {
-                id: 1,
-                user: 'nam',
-                password: '123456',
-                email: 'nam@gmail.com',
-                address: '123nvt, q1 , hcm',
-                phone: '0152587698',
-            },
-            {
-                id: 2,
-                user: 'luong',
-                password: '123456',
-                email: 'luong@gmail.com',
-                address: '453abc, tdh, hn',
-                phone: '0258746951',
-            }
-        ];
         this.listAns = [];
         this.listMon = [{
                 "Id": "ADAV",
@@ -971,8 +1036,7 @@ let MainServiceService = class MainServiceService {
         ];
         this.listQuiz = [{
                 "Id": "ADAV",
-                "quiz": [
-                    {
+                "quiz": [{
                         "Id": 25106,
                         "Text": "Có mấy loại Service?",
                         "Marks": 1,
@@ -2307,10 +2371,8 @@ let MainServiceService = class MainServiceService {
                             }, {
                                 "Id": 104407,
                                 "Text": "Maven SDK"
-                            }
-                        ]
-                    }
-                ]
+                            }]
+                    }]
             },
             {
                 "Id": "ADBS",
@@ -13916,9 +13978,31 @@ let MenuComponent = class MenuComponent {
         this.mainSer = mainSer;
         this.checkLogin = this.mainSer.checkLogin;
         this.switchModalBox = this.mainSer.switchModalBox;
+        this.defauUser = [{
+                id: 1,
+                user: 'luong',
+                password: '123456',
+                name: 'luong',
+                phone: '123456234',
+                address: '123 NVT, Q12',
+                email: 'vluong514@gmail.com'
+            },
+            {
+                id: 2,
+                user: 'nam',
+                password: '123456',
+                name: 'nam',
+                phone: '123456234',
+                address: '456 SJW, Q23, HCM',
+                email: 'vluong514@gmail.com'
+            }
+        ];
     }
     ngOnInit() {
-        this.listUser = this.mainSer.listUser;
+        if (localStorage.length == 0) {
+            localStorage.setItem('listUser', JSON.stringify(this.defauUser));
+        }
+        this.listUser = JSON.parse(localStorage.getItem('listUser'));
         this.listMon = this.mainSer.listMon;
         this.userId = sessionStorage.getItem('userId');
         this.loginTus = JSON.parse(sessionStorage.getItem('loginTus'));
@@ -13928,6 +14012,9 @@ let MenuComponent = class MenuComponent {
                 return;
             }
         });
+        if (JSON.parse(sessionStorage.getItem('loginTus')) && this.curUser.name == '') {
+            this.curUser.name = this.curUser.user;
+        }
     }
     logOut() {
         sessionStorage.setItem('loginTus', 'false');
@@ -13959,7 +14046,7 @@ MenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".signup {\r\n    border : 2px dotted lightpink;\r\n    width:100%;\r\n\r\n}\r\n.signup-title {\r\n    padding: 15px;\r\n    text-transform: uppercase;\r\n    font-size: 20px;\r\n    font-weight: 400;\r\n    letter-spacing: 4px;\r\n}\r\n.signup-bg {\r\n    width:100%;\r\n}\r\n.mar-t-b-20 {\r\n    margin:20px auto;\r\n}\r\n.form-group {\r\n    text-align: left;\r\n}\r\n.form-signup {\r\n    width:70%;\r\n    margin:0 auto;\r\n}\r\ninput[type=\"text\"] {\r\n    width:100%;\r\n}\r\n.sup-but, .can-but {\r\n    width:100%;\r\n}\r\n.left-sup, .right-sup {\r\n    display:flex;\r\n    flex:1\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9zaWdudXAvc2lnbnVwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSw2QkFBNkI7SUFDN0IsVUFBVTs7QUFFZDtBQUNBO0lBQ0ksYUFBYTtJQUNiLHlCQUF5QjtJQUN6QixlQUFlO0lBQ2YsZ0JBQWdCO0lBQ2hCLG1CQUFtQjtBQUN2QjtBQUNBO0lBQ0ksVUFBVTtBQUNkO0FBQ0E7SUFDSSxnQkFBZ0I7QUFDcEI7QUFDQTtJQUNJLGdCQUFnQjtBQUNwQjtBQUNBO0lBQ0ksU0FBUztJQUNULGFBQWE7QUFDakI7QUFDQTtJQUNJLFVBQVU7QUFDZDtBQUNBO0lBQ0ksVUFBVTtBQUNkO0FBQ0E7SUFDSSxZQUFZO0lBQ1o7QUFDSiIsImZpbGUiOiJhcHAvc2lnbnVwL3NpZ251cC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnNpZ251cCB7XHJcbiAgICBib3JkZXIgOiAycHggZG90dGVkIGxpZ2h0cGluaztcclxuICAgIHdpZHRoOjEwMCU7XHJcblxyXG59XHJcbi5zaWdudXAtdGl0bGUge1xyXG4gICAgcGFkZGluZzogMTVweDtcclxuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBmb250LXdlaWdodDogNDAwO1xyXG4gICAgbGV0dGVyLXNwYWNpbmc6IDRweDtcclxufVxyXG4uc2lnbnVwLWJnIHtcclxuICAgIHdpZHRoOjEwMCU7XHJcbn1cclxuLm1hci10LWItMjAge1xyXG4gICAgbWFyZ2luOjIwcHggYXV0bztcclxufVxyXG4uZm9ybS1ncm91cCB7XHJcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG59XHJcbi5mb3JtLXNpZ251cCB7XHJcbiAgICB3aWR0aDo3MCU7XHJcbiAgICBtYXJnaW46MCBhdXRvO1xyXG59XHJcbmlucHV0W3R5cGU9XCJ0ZXh0XCJdIHtcclxuICAgIHdpZHRoOjEwMCU7XHJcbn1cclxuLnN1cC1idXQsIC5jYW4tYnV0IHtcclxuICAgIHdpZHRoOjEwMCU7XHJcbn1cclxuLmxlZnQtc3VwLCAucmlnaHQtc3VwIHtcclxuICAgIGRpc3BsYXk6ZmxleDtcclxuICAgIGZsZXg6MVxyXG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".signup {\r\n    border : 2px dotted lightpink;\r\n    width:100%;\r\n\r\n}\r\n.signup-title {\r\n    padding: 15px;\r\n    text-transform: uppercase;\r\n    font-size: 20px;\r\n    font-weight: 400;\r\n    letter-spacing: 4px;\r\n}\r\n.signup-bg {\r\n    width:100%;\r\n}\r\n.mar-t-b-20 {\r\n    margin:20px auto;\r\n}\r\n.form-group {\r\n    text-align: left;\r\n}\r\n.form-signup {\r\n    width:70%;\r\n    margin:0 auto;\r\n}\r\n.signup-field {\r\n    width:100%;\r\n}\r\n.sup-but, .can-but {\r\n    width:100%;\r\n}\r\n.left-sup, .right-sup {\r\n    display:flex;\r\n    flex:1\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9zaWdudXAvc2lnbnVwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSw2QkFBNkI7SUFDN0IsVUFBVTs7QUFFZDtBQUNBO0lBQ0ksYUFBYTtJQUNiLHlCQUF5QjtJQUN6QixlQUFlO0lBQ2YsZ0JBQWdCO0lBQ2hCLG1CQUFtQjtBQUN2QjtBQUNBO0lBQ0ksVUFBVTtBQUNkO0FBQ0E7SUFDSSxnQkFBZ0I7QUFDcEI7QUFDQTtJQUNJLGdCQUFnQjtBQUNwQjtBQUNBO0lBQ0ksU0FBUztJQUNULGFBQWE7QUFDakI7QUFDQTtJQUNJLFVBQVU7QUFDZDtBQUNBO0lBQ0ksVUFBVTtBQUNkO0FBQ0E7SUFDSSxZQUFZO0lBQ1o7QUFDSiIsImZpbGUiOiJhcHAvc2lnbnVwL3NpZ251cC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnNpZ251cCB7XHJcbiAgICBib3JkZXIgOiAycHggZG90dGVkIGxpZ2h0cGluaztcclxuICAgIHdpZHRoOjEwMCU7XHJcblxyXG59XHJcbi5zaWdudXAtdGl0bGUge1xyXG4gICAgcGFkZGluZzogMTVweDtcclxuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBmb250LXdlaWdodDogNDAwO1xyXG4gICAgbGV0dGVyLXNwYWNpbmc6IDRweDtcclxufVxyXG4uc2lnbnVwLWJnIHtcclxuICAgIHdpZHRoOjEwMCU7XHJcbn1cclxuLm1hci10LWItMjAge1xyXG4gICAgbWFyZ2luOjIwcHggYXV0bztcclxufVxyXG4uZm9ybS1ncm91cCB7XHJcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG59XHJcbi5mb3JtLXNpZ251cCB7XHJcbiAgICB3aWR0aDo3MCU7XHJcbiAgICBtYXJnaW46MCBhdXRvO1xyXG59XHJcbi5zaWdudXAtZmllbGQge1xyXG4gICAgd2lkdGg6MTAwJTtcclxufVxyXG4uc3VwLWJ1dCwgLmNhbi1idXQge1xyXG4gICAgd2lkdGg6MTAwJTtcclxufVxyXG4ubGVmdC1zdXAsIC5yaWdodC1zdXAge1xyXG4gICAgZGlzcGxheTpmbGV4O1xyXG4gICAgZmxleDoxXHJcbn0iXX0= */");
 
 /***/ }),
 
@@ -13978,8 +14065,37 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let SignupComponent = class SignupComponent {
-    constructor() { }
+    constructor() {
+        this.listUser = [];
+        this.confirmPass = '';
+        this.checkAgree = false;
+        this.signupInfo = {
+            id: 0,
+            user: '',
+            password: '',
+            name: '',
+            phone: '',
+            address: '',
+            email: ''
+        };
+    }
     ngOnInit() {
+        this.listUser = JSON.parse(localStorage.getItem('listUser'));
+        this.signupInfo.name = this.signupInfo.user;
+        this.signupInfo.id = this.listUser.length + 1;
+    }
+    checkSignup() {
+        this.listUser.push(this.signupInfo);
+        localStorage.setItem('listUser', JSON.stringify(this.listUser));
+        window.location.href = '/login';
+    }
+    checkConfirmPass() {
+        if (this.confirmPass == this.signupInfo.password) {
+            alert('khop mat khau');
+        }
+        else {
+            alert('khong khop mat khau');
+        }
     }
 };
 SignupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -14173,7 +14289,7 @@ TestComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".front, .back {\r\n    width: 600px;\r\n    border-radius: 20px;\r\n    background-color: white;\r\n    position: absolute;\r\n    height:550px;\r\n    transition: all 1s;\r\n}\r\n.back {\r\n    top: 20px;\r\n    right:0px;\r\n    border: 2px solid lightblue;\r\n    z-index: 1;\r\n}\r\n.back:hover {\r\n    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 500px rgba(0,0,0,0.22);\r\n    z-index :10;\r\n}\r\n.back:hover .front {\r\n    z-index: 5;\r\n    box-shadow:none;\r\n}\r\n.front {\r\n    left:0;\r\n    border: 2px solid khaki;\r\n    z-index:2;\r\n    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);\r\n    padding: 20px;\r\n}\r\n.front:hover {\r\n    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 500px rgba(0,0,0,0.22);\r\n    z-index :10;\r\n}\r\n.front:hover .back {\r\n    z-index: 5;\r\n    box-shadow:none;\r\n}\r\n.user {\r\n    margin:100px 0;\r\n    position: relative;\r\n    bottom:0;\r\n    left:0;\r\n    width:100%;\r\n    height:700px;\r\n}\r\n.user-image {\r\n    width: 100%;\r\n}\r\n.fas {\r\n    margin-right:20px;\r\n}\r\n.info-title {\r\n    color:lightblue;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC91c2VyL3VzZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFlBQVk7SUFDWixtQkFBbUI7SUFDbkIsdUJBQXVCO0lBQ3ZCLGtCQUFrQjtJQUNsQixZQUFZO0lBQ1osa0JBQWtCO0FBQ3RCO0FBQ0E7SUFDSSxTQUFTO0lBQ1QsU0FBUztJQUNULDJCQUEyQjtJQUMzQixVQUFVO0FBQ2Q7QUFDQTtJQUNJLHVFQUF1RTtJQUN2RSxXQUFXO0FBQ2Y7QUFDQTtJQUNJLFVBQVU7SUFDVixlQUFlO0FBQ25CO0FBQ0E7SUFDSSxNQUFNO0lBQ04sdUJBQXVCO0lBQ3ZCLFNBQVM7SUFDVCxrRUFBa0U7SUFDbEUsYUFBYTtBQUNqQjtBQUNBO0lBQ0ksdUVBQXVFO0lBQ3ZFLFdBQVc7QUFDZjtBQUNBO0lBQ0ksVUFBVTtJQUNWLGVBQWU7QUFDbkI7QUFDQTtJQUNJLGNBQWM7SUFDZCxrQkFBa0I7SUFDbEIsUUFBUTtJQUNSLE1BQU07SUFDTixVQUFVO0lBQ1YsWUFBWTtBQUNoQjtBQUNBO0lBQ0ksV0FBVztBQUNmO0FBQ0E7SUFDSSxpQkFBaUI7QUFDckI7QUFDQTtJQUNJLGVBQWU7QUFDbkIiLCJmaWxlIjoiYXBwL3VzZXIvdXNlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZyb250LCAuYmFjayB7XHJcbiAgICB3aWR0aDogNjAwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBoZWlnaHQ6NTUwcHg7XHJcbiAgICB0cmFuc2l0aW9uOiBhbGwgMXM7XHJcbn1cclxuLmJhY2sge1xyXG4gICAgdG9wOiAyMHB4O1xyXG4gICAgcmlnaHQ6MHB4O1xyXG4gICAgYm9yZGVyOiAycHggc29saWQgbGlnaHRibHVlO1xyXG4gICAgei1pbmRleDogMTtcclxufVxyXG4uYmFjazpob3ZlciB7XHJcbiAgICBib3gtc2hhZG93OiAwIDE5cHggMzhweCByZ2JhKDAsMCwwLDAuMzApLCAwIDE1cHggNTAwcHggcmdiYSgwLDAsMCwwLjIyKTtcclxuICAgIHotaW5kZXggOjEwO1xyXG59XHJcbi5iYWNrOmhvdmVyIC5mcm9udCB7XHJcbiAgICB6LWluZGV4OiA1O1xyXG4gICAgYm94LXNoYWRvdzpub25lO1xyXG59XHJcbi5mcm9udCB7XHJcbiAgICBsZWZ0OjA7XHJcbiAgICBib3JkZXI6IDJweCBzb2xpZCBraGFraTtcclxuICAgIHotaW5kZXg6MjtcclxuICAgIGJveC1zaGFkb3c6IDAgM3B4IDZweCByZ2JhKDAsMCwwLDAuMTYpLCAwIDNweCA2cHggcmdiYSgwLDAsMCwwLjIzKTtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbn1cclxuLmZyb250OmhvdmVyIHtcclxuICAgIGJveC1zaGFkb3c6IDAgMTlweCAzOHB4IHJnYmEoMCwwLDAsMC4zMCksIDAgMTVweCA1MDBweCByZ2JhKDAsMCwwLDAuMjIpO1xyXG4gICAgei1pbmRleCA6MTA7XHJcbn1cclxuLmZyb250OmhvdmVyIC5iYWNrIHtcclxuICAgIHotaW5kZXg6IDU7XHJcbiAgICBib3gtc2hhZG93Om5vbmU7XHJcbn1cclxuLnVzZXIge1xyXG4gICAgbWFyZ2luOjEwMHB4IDA7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBib3R0b206MDtcclxuICAgIGxlZnQ6MDtcclxuICAgIHdpZHRoOjEwMCU7XHJcbiAgICBoZWlnaHQ6NzAwcHg7XHJcbn1cclxuLnVzZXItaW1hZ2Uge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn1cclxuLmZhcyB7XHJcbiAgICBtYXJnaW4tcmlnaHQ6MjBweDtcclxufVxyXG4uaW5mby10aXRsZSB7XHJcbiAgICBjb2xvcjpsaWdodGJsdWU7XHJcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".front, .back {\r\n    width: 600px;\r\n    border-radius: 20px;\r\n    background-color: white;\r\n    position: absolute;\r\n    height:550px;\r\n    transition: all 1s;\r\n}\r\n.back {\r\n    top: 20px;\r\n    right:0px;\r\n    border: 2px solid lightblue;\r\n    z-index: 1;\r\n}\r\n.back:hover {\r\n    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 500px rgba(0,0,0,0.22);\r\n    z-index :10;\r\n}\r\n.back:hover .front {\r\n    z-index: 5;\r\n    box-shadow:none;\r\n}\r\n.front {\r\n    left:0;\r\n    border: 2px solid khaki;\r\n    z-index:2;\r\n    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);\r\n    padding: 20px;\r\n}\r\n.front:hover {\r\n    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 500px rgba(0,0,0,0.22);\r\n    z-index :10;\r\n}\r\n.front:hover .back {\r\n    z-index: 5;\r\n    box-shadow:none;\r\n}\r\n.user {\r\n    margin:100px 0;\r\n    position: relative;\r\n    bottom:0;\r\n    left:0;\r\n    width:100%;\r\n    height:700px;\r\n}\r\n.user-image {\r\n    width: 100%;\r\n}\r\n.fas {\r\n    margin-right:20px;\r\n}\r\n.info-title {\r\n    color:lightblue;\r\n}\r\n.input-group-text {\r\n    background-color: lightblue;\r\n    color:white;\r\n    font-weight: 400;\r\n    \r\n}\r\n.fa-times {\r\n    color:lightcoral;\r\n}\r\n.fa-check {\r\n    color: greenyellow;\r\n}\r\n.input-group-text, .fa-check, .fa-times {\r\n    cursor: pointer;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC91c2VyL3VzZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFlBQVk7SUFDWixtQkFBbUI7SUFDbkIsdUJBQXVCO0lBQ3ZCLGtCQUFrQjtJQUNsQixZQUFZO0lBQ1osa0JBQWtCO0FBQ3RCO0FBQ0E7SUFDSSxTQUFTO0lBQ1QsU0FBUztJQUNULDJCQUEyQjtJQUMzQixVQUFVO0FBQ2Q7QUFDQTtJQUNJLHVFQUF1RTtJQUN2RSxXQUFXO0FBQ2Y7QUFDQTtJQUNJLFVBQVU7SUFDVixlQUFlO0FBQ25CO0FBQ0E7SUFDSSxNQUFNO0lBQ04sdUJBQXVCO0lBQ3ZCLFNBQVM7SUFDVCxrRUFBa0U7SUFDbEUsYUFBYTtBQUNqQjtBQUNBO0lBQ0ksdUVBQXVFO0lBQ3ZFLFdBQVc7QUFDZjtBQUNBO0lBQ0ksVUFBVTtJQUNWLGVBQWU7QUFDbkI7QUFDQTtJQUNJLGNBQWM7SUFDZCxrQkFBa0I7SUFDbEIsUUFBUTtJQUNSLE1BQU07SUFDTixVQUFVO0lBQ1YsWUFBWTtBQUNoQjtBQUNBO0lBQ0ksV0FBVztBQUNmO0FBQ0E7SUFDSSxpQkFBaUI7QUFDckI7QUFDQTtJQUNJLGVBQWU7QUFDbkI7QUFDQTtJQUNJLDJCQUEyQjtJQUMzQixXQUFXO0lBQ1gsZ0JBQWdCOztBQUVwQjtBQUNBO0lBQ0ksZ0JBQWdCO0FBQ3BCO0FBQ0E7SUFDSSxrQkFBa0I7QUFDdEI7QUFDQTtJQUNJLGVBQWU7QUFDbkIiLCJmaWxlIjoiYXBwL3VzZXIvdXNlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZyb250LCAuYmFjayB7XHJcbiAgICB3aWR0aDogNjAwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBoZWlnaHQ6NTUwcHg7XHJcbiAgICB0cmFuc2l0aW9uOiBhbGwgMXM7XHJcbn1cclxuLmJhY2sge1xyXG4gICAgdG9wOiAyMHB4O1xyXG4gICAgcmlnaHQ6MHB4O1xyXG4gICAgYm9yZGVyOiAycHggc29saWQgbGlnaHRibHVlO1xyXG4gICAgei1pbmRleDogMTtcclxufVxyXG4uYmFjazpob3ZlciB7XHJcbiAgICBib3gtc2hhZG93OiAwIDE5cHggMzhweCByZ2JhKDAsMCwwLDAuMzApLCAwIDE1cHggNTAwcHggcmdiYSgwLDAsMCwwLjIyKTtcclxuICAgIHotaW5kZXggOjEwO1xyXG59XHJcbi5iYWNrOmhvdmVyIC5mcm9udCB7XHJcbiAgICB6LWluZGV4OiA1O1xyXG4gICAgYm94LXNoYWRvdzpub25lO1xyXG59XHJcbi5mcm9udCB7XHJcbiAgICBsZWZ0OjA7XHJcbiAgICBib3JkZXI6IDJweCBzb2xpZCBraGFraTtcclxuICAgIHotaW5kZXg6MjtcclxuICAgIGJveC1zaGFkb3c6IDAgM3B4IDZweCByZ2JhKDAsMCwwLDAuMTYpLCAwIDNweCA2cHggcmdiYSgwLDAsMCwwLjIzKTtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbn1cclxuLmZyb250OmhvdmVyIHtcclxuICAgIGJveC1zaGFkb3c6IDAgMTlweCAzOHB4IHJnYmEoMCwwLDAsMC4zMCksIDAgMTVweCA1MDBweCByZ2JhKDAsMCwwLDAuMjIpO1xyXG4gICAgei1pbmRleCA6MTA7XHJcbn1cclxuLmZyb250OmhvdmVyIC5iYWNrIHtcclxuICAgIHotaW5kZXg6IDU7XHJcbiAgICBib3gtc2hhZG93Om5vbmU7XHJcbn1cclxuLnVzZXIge1xyXG4gICAgbWFyZ2luOjEwMHB4IDA7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBib3R0b206MDtcclxuICAgIGxlZnQ6MDtcclxuICAgIHdpZHRoOjEwMCU7XHJcbiAgICBoZWlnaHQ6NzAwcHg7XHJcbn1cclxuLnVzZXItaW1hZ2Uge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbn1cclxuLmZhcyB7XHJcbiAgICBtYXJnaW4tcmlnaHQ6MjBweDtcclxufVxyXG4uaW5mby10aXRsZSB7XHJcbiAgICBjb2xvcjpsaWdodGJsdWU7XHJcbn1cclxuLmlucHV0LWdyb3VwLXRleHQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogbGlnaHRibHVlO1xyXG4gICAgY29sb3I6d2hpdGU7XHJcbiAgICBmb250LXdlaWdodDogNDAwO1xyXG4gICAgXHJcbn1cclxuLmZhLXRpbWVzIHtcclxuICAgIGNvbG9yOmxpZ2h0Y29yYWw7XHJcbn1cclxuLmZhLWNoZWNrIHtcclxuICAgIGNvbG9yOiBncmVlbnllbGxvdztcclxufVxyXG4uaW5wdXQtZ3JvdXAtdGV4dCwgLmZhLWNoZWNrLCAuZmEtdGltZXMge1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59Il19 */");
 
 /***/ }),
 
@@ -14198,13 +14314,41 @@ let UserComponent = class UserComponent {
         this.mainSer = mainSer;
     }
     ngOnInit() {
-        this.listUser = this.mainSer.listUser;
+        this.listUser = JSON.parse(localStorage.getItem('listUser'));
         this.userId = sessionStorage.getItem('userId');
         this.listUser.forEach(user => {
             if (this.userId == user.id) {
                 this.curUser = user;
                 return;
             }
+        });
+        sessionStorage.setItem('curUser', JSON.stringify(this.curUser));
+        this.userField = document.querySelectorAll('.user-info-field');
+        this.editBut = document.querySelectorAll('.edit-but');
+        this.userField.forEach(user => {
+            user.setAttribute('disabled', 'disabled');
+        });
+        this.editBut.forEach(but => {
+            but.nextElementSibling.style.display = 'none';
+            but.addEventListener('click', function () {
+                var field = but.parentElement.previousElementSibling;
+                field.removeAttribute('disabled');
+                field.focus();
+                but.style.display = 'none';
+                but.nextElementSibling.style.display = 'block';
+            });
+        });
+        this.saveBut = document.querySelectorAll('.save-but');
+        this.saveBut.forEach(but => {
+            var user = this.curUser;
+            but.addEventListener('click', function () {
+                but.style.display = 'none';
+                but.previousElementSibling.style.display = 'block';
+                but.parentElement.previousElementSibling.setAttribute('disabled', 'disabled');
+                var x = JSON.parse(localStorage.getItem('listUser'));
+                x.splice(user.id - 1, 1, user);
+                localStorage.setItem('listUser', JSON.stringify(x));
+            });
         });
     }
 };

@@ -4,19 +4,19 @@
     <div class="col-md-7 left-sup">
       <div class="signup text-center">
         <p class="bg-light signup-title">Sign up to our world</p>
-        <form action="" method="POST" class="form-signup">
+        <form  method="POST" class="form-signup">
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="">Tên đăng nhập</label> <br>
-                  <input type="text" />
+                  <input class='signup-field' type="text" [(ngModel)]="signupInfo.user" [ngModelOptions]="{standalone: true}"/>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="">Mật khẩu</label> <br>
-                  <input type="text" />
+                  <input class='signup-field' type="password" [(ngModel)]="signupInfo.password" [ngModelOptions]="{standalone: true}"/>
                 </div>
               </div>
             </div>
@@ -24,13 +24,17 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="">Email</label> <br>
-                  <input type="text" />
+                  <input class='signup-field' type="email" [(ngModel)]="signupInfo.email" [ngModelOptions]="{standalone: true}"/>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="">Xác nhận mật khẩu</label> <br>
-                  <input type="text" />
+                  <input class='signup-field' type="password" (blur) = 'checkConfirmPass()' [(ngModel)]="confirmPass" [ngModelOptions]="{standalone: true}"/>
+                  <!-- <div class="message-confirm">
+                    <p>Khong dung</p>
+                    <p>Đung</p>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -38,25 +42,25 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="">Địa chỉ</label> <br>
-                  <input type="text" />
+                  <input class='signup-field' type="text" [(ngModel)]="signupInfo.address" [ngModelOptions]="{standalone: true}"/>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="">Số điện thoại</label> <br>
-                  <input type="text" />
+                  <input class='signup-field' type="text" [(ngModel)]="signupInfo.phone" [ngModelOptions]="{standalone: true}"/>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12 text-left">
-                <input type="checkbox" />đồng ý với điều khoản sử dụng
+                <input type="checkbox" [(ngModel)]="checkAgree" [ngModelOptions]="{standalone: true}"/> đồng ý với điều khoản sử dụng
               </div>
             </div>
             <br>
             <div class="row">
               <div class="col-md-6">
-                <button type="submit" class="btn btn-success sup-but">Đăng ký</button>
+                <button type="click" class="btn btn-success sup-but" (click) = 'checkSignup()'>Đăng ký</button>
               </div>
               <div class="col-md-6">
                 <button type="reset" class="btn btn-info can-but">Hủy bỏ</button>

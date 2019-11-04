@@ -10,13 +10,37 @@
             </div>
             <div class="col-md-8">
               <p class="info-title"><i class="fas fa-user"></i> Name</p>
-              <p>{{curUser.user}}</p>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control user-info-field" [(ngModel)]="curUser.name" name='user'>
+                <div class="input-group-append">
+                  <span class="input-group-text edit-but">Sửa</span>
+                  <span class="input-group-text save-but">Xong</span>
+                </div>
+              </div>
               <p class="info-title"><i class="fas fa-dumbbell"></i> Phone</p>
-              <p>{{curUser.phone}}</p>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control user-info-field" [(ngModel)]="curUser.phone" name='phone'>
+                <div class="input-group-append">
+                  <span class="input-group-text edit-but" >Sửa</span>
+                  <span class="input-group-text save-but">Xong</span>
+                </div>
+              </div>
               <p class="info-title"><i class="fas fa-venus-mars"></i> Address  </p>
-              <p>{{curUser.address}}</p>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control user-info-field" [(ngModel)]="curUser.address" name='address'>
+                <div class="input-group-append">
+                  <span class="input-group-text edit-but">Sửa</span>
+                  <span class="input-group-text save-but">Xong</span>
+                </div>
+              </div>
               <p class="info-title"><i class="fas fa-at"></i> Email</p>
-              <p>{{curUser.email}}</p>
+              <div class="input-group mb-3">
+                <input type="email" class="form-control user-info-field" [(ngModel)]="curUser.email" name='email'>
+                <div class="input-group-append">
+                  <span class="input-group-text edit-but">Sửa</span>
+                  <span class="input-group-text save-but">Xong</span>
+                </div>
+              </div>
             </div>
           </div>
 

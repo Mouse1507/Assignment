@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   }
   constructor(private route: RouterModule, private mainSer :MainServiceService) { }
   
-  listUser = this.mainSer.listUser;
+  listUser = JSON.parse(localStorage.getItem('listUser'));
   userName :any;
   password :any;
   ngOnInit() {

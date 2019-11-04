@@ -52,3 +52,18 @@
 .info-title {
     color:lightblue;
 }
+.input-group-text {
+    background-color: lightblue;
+    color:white;
+    font-weight: 400;
+    
+}
+.fa-times {
+    color:lightcoral;
+}
+.fa-check {
+    color: greenyellow;
+}
+.input-group-text, .fa-check, .fa-times {
+    cursor: pointer;
+}

@@ -15,8 +15,30 @@ export class MenuComponent implements OnInit {
   listUser:any;
   checkLogin = this.mainSer.checkLogin;
   switchModalBox = this.mainSer.switchModalBox;
+  defauUser = [{
+    id: 1,
+    user: 'luong',
+    password: '123456',
+    name: 'luong',
+    phone: '123456234',
+    address : '123 NVT, Q12',
+    email: 'vluong514@gmail.com'
+  },
+  {
+    id: 2,
+    user: 'nam',
+    password: '123456',
+    name: 'nam',
+    phone: '123456234',
+    address : '456 SJW, Q23, HCM',
+    email: 'vluong514@gmail.com'
+  }
+]
   ngOnInit() {
-    this.listUser = this.mainSer.listUser;
+    if(localStorage.length == 0) {
+      localStorage.setItem('listUser',JSON.stringify(this.defauUser));
+    }
+    this.listUser = JSON.parse(localStorage.getItem('listUser'));
     this.listMon = this.mainSer.listMon;
     this.userId = sessionStorage.getItem('userId');
     this.loginTus = JSON.parse(sessionStorage.getItem('loginTus'));
@@ -26,6 +48,9 @@ export class MenuComponent implements OnInit {
         return;
       }
     });
+    if(JSON.parse(sessionStorage.getItem('loginTus')) && this.curUser.name == '') {
+      this.curUser.name = this.curUser.user;
+    }
   }
   
   logOut() {
