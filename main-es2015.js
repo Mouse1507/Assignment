@@ -13860,7 +13860,6 @@ let MainServiceService = class MainServiceService {
         }
         else {
             this.router.navigate(['/test', Idmon]);
-            window.location.replace('/test/' + Idmon);
         }
     }
 };
