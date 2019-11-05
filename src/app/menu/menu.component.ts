@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MainServiceService } from '../main-service.service';
+import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -7,7 +9,7 @@ import { MainServiceService } from '../main-service.service';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private mainSer : MainServiceService) { }
+  constructor(private mainSer : MainServiceService, private router:Router) { }
   listMon : any;
   userId : any;
   loginTus :boolean;
@@ -50,7 +52,8 @@ export class MenuComponent implements OnInit {
     });
     if(JSON.parse(sessionStorage.getItem('loginTus')) && this.curUser.name == '') {
       this.curUser.name = this.curUser.user;
-    }
+    };
+    
   }
   
   logOut() {

@@ -1,12 +1,13 @@
 import {
   Injectable
 } from '@angular/core';
-
+import {Router} from '@angular/router';
+import { Navigation } from 'selenium-webdriver';
 @Injectable({
   providedIn: 'root'
 })
 export class MainServiceService {
-  constructor() {
+  constructor(private router:Router) {
 
   }
   userLogin: any;

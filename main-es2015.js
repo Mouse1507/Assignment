@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-12\">\n      <div id=\"demo\" class=\"carousel slide\" data-ride=\"carousel\">\n\n        <!-- Indicators -->\n        <ul class=\"carousel-indicators\">\n          <li data-target=\"#demo\" data-slide-to=\"0\" class=\"active\"></li>\n          <li data-target=\"#demo\" data-slide-to=\"1\"></li>\n          <li data-target=\"#demo\" data-slide-to=\"2\"></li>\n        </ul>\n\n        <!-- The slideshow -->\n        <div class=\"carousel-inner\">\n          <div class=\"carousel-item active\">\n            <img src=\"assets/images/banner-1.jpg\" alt=\"Los Angeles\" width=\"100%\" height=\"400\">\n          </div>\n          <div class=\"carousel-item\">\n            <img src=\"assets/images/banner-2.jpg\" alt=\"Chicago\" width=\"100%\" height=\"400\">\n          </div>\n          <div class=\"carousel-item\">\n            <img src=\"assets/images/banner-3.png\" alt=\"New York\" width=\"100%\" height=\"400\">\n          </div>\n        </div>\n\n        <!-- Left and right controls -->\n        <a class=\"carousel-control-prev\" href=\"#demo\" data-slide=\"prev\">\n          <span class=\"carousel-control-prev-icon\"></span>\n        </a>\n        <a class=\"carousel-control-next\" href=\"#demo\" data-slide=\"next\">\n          <span class=\"carousel-control-next-icon\"></span>\n        </a>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-md-12 text-center\">\n      <p class=\"title-gt\">Danh mục môn học</p>\n      <hr>\n    </div>\n  </div>\n  <div class=\"row flex-row\">\n    <div class=\"col-md-8 flex-box no-pad-right\">\n      <div class=\"gt-left\">\n        <div class=\"container-fluid\">\n          <div class=\"row flex-row\">\n            <div class=\"col-md-6 flex-layout\"\n              *ngFor=\"let mon of listMon | paginate : {itemsPerPage : 2, currentPage : curPage}\">\n              <div class=\"card\">\n                <img class=\"card-img-top\" src=\"assets/logo-mon/{{mon.Logo}}\" alt=\"Card image\">\n                <div class=\"card-body\">\n                  <h4 class=\"card-title\">{{mon.Name}}</h4>\n                  <p class=\"card-text\">Some example text.</p>\n                  <a href=\"/test/{{mon.Id}}\" (click)='checkLogin($event,\"block\")' class=\"btn btn-default test-button link-to-test\">Bắt đầu</a>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"row \">\n            <pagination-controls (pageChange)=\"curPage = $event\" class=\"text-center\"></pagination-controls>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-4 flex-box no-pad-left\">\n      <div class=\"gt-right text-center\">\n        <ul class=\"list-group\">\n          <li class=\"list-group-item\" *ngFor=\"let mon of listMon\"><a href=\"/test/{{mon.Id}}\" (click)='checkLogin($event,\"block\")'\n              class=\"item-link link-to-test\">{{mon.Name}}</a></li>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <!-- alert modal  -->\n  <div id=\"overlay\" (click)=\"switchModalBox('none')\">\n\n  </div>\n  <div id=\"box-message\">\n    <p>Bạn phải đăng nhập để vào kiểm tra</p>\n    <span class=\"close-box\" (click)=\"switchModalBox('none')\">&times;</span>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-12\">\n      <div id=\"demo\" class=\"carousel slide\" data-ride=\"carousel\">\n\n        <!-- Indicators -->\n        <ul class=\"carousel-indicators\">\n          <li data-target=\"#demo\" data-slide-to=\"0\" class=\"active\"></li>\n          <li data-target=\"#demo\" data-slide-to=\"1\"></li>\n          <li data-target=\"#demo\" data-slide-to=\"2\"></li>\n        </ul>\n\n        <!-- The slideshow -->\n        <div class=\"carousel-inner\">\n          <div class=\"carousel-item active\">\n            <img src=\"assets/images/banner-1.jpg\" alt=\"Los Angeles\" width=\"100%\" height=\"400\">\n          </div>\n          <div class=\"carousel-item\">\n            <img src=\"assets/images/banner-2.jpg\" alt=\"Chicago\" width=\"100%\" height=\"400\">\n          </div>\n          <div class=\"carousel-item\">\n            <img src=\"assets/images/banner-3.png\" alt=\"New York\" width=\"100%\" height=\"400\">\n          </div>\n        </div>\n\n        <!-- Left and right controls -->\n        <a class=\"carousel-control-prev\" href=\"#demo\" data-slide=\"prev\">\n          <span class=\"carousel-control-prev-icon\"></span>\n        </a>\n        <a class=\"carousel-control-next\" href=\"#demo\" data-slide=\"next\">\n          <span class=\"carousel-control-next-icon\"></span>\n        </a>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-md-12 text-center\">\n      <p class=\"title-gt\">Danh mục môn học</p>\n      <hr>\n    </div>\n  </div>\n  <div class=\"row flex-row\">\n    <div class=\"col-md-8 flex-box no-pad-right\">\n      <div class=\"gt-left\">\n        <div class=\"container-fluid\">\n          <div class=\"row flex-row\">\n            <div class=\"col-md-6 flex-layout\"\n              *ngFor=\"let mon of listMon | paginate : {itemsPerPage : 2, currentPage : curPage}\">\n              <div class=\"card\">\n                <img class=\"card-img-top\" src=\"assets/logo-mon/{{mon.Logo}}\" alt=\"Card image\">\n                <div class=\"card-body\">\n                  <h4 class=\"card-title\">{{mon.Name}}</h4>\n                  <p class=\"card-text\">Some example text.</p>\n                  <a [routerLink]='[\"/test\",mon.Id]' (click)='checkLogin($event,\"block\")' class=\"btn btn-default test-button link-to-test\">Bắt đầu</a>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"row \">\n            <pagination-controls (pageChange)=\"curPage = $event\" class=\"text-center\"></pagination-controls>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-4 flex-box no-pad-left\">\n      <div class=\"gt-right text-center\">\n        <ul class=\"list-group\">\n          <li class=\"list-group-item\" *ngFor=\"let mon of listMon\"><a [routerLink]='[\"/test\",mon.Id]' (click)='checkLogin($event,\"block\")'\n              class=\"item-link link-to-test\">{{mon.Name}}</a></li>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <!-- alert modal  -->\n  <div id=\"overlay\" (click)=\"switchModalBox('none')\">\n\n  </div>\n  <div id=\"box-message\">\n    <p>Bạn phải đăng nhập để vào kiểm tra</p>\n    <span class=\"close-box\" (click)=\"switchModalBox('none')\">&times;</span>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<header>\n  <nav class=\"navbar navbar-expand-md fixed-top\">\n    <div class=\"container\">\n      <!-- Brand -->\n      <a class=\"navbar-brand\" href=\"#\"><img src=\"assets/images/logo.png\" alt=\"\" class=\"menu-logo\"></a>\n\n      <!-- Toggler/collapsibe Button -->\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsibleNavbar\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n\n      <!-- Navbar links -->\n      <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">\n        <ul class=\"navbar-nav\" style=\"margin-right:auto!important\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/home\">Trang chủ</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/introduce\">Giới thiệu</a>\n          </li>\n          <li class=\"nav-item dropdown\">\n            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">\n              Môn học\n            </a>\n            <div class=\"dropdown-menu\">\n              <a class=\"dropdown-item menu-mon\" (click)='checkLogin($event,\"block\")' href=\"/test/{{mon.Id}}\" *ngFor=\"let mon of listMon\"> {{mon.Name}}</a>\n            </div>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/contact\">Liên hệ</a>\n          </li>\n        </ul>\n        <ul class=\"navbar-nav\">\n          <li class=\"nav-log\" *ngIf=\"!loginTus\">\n            <a routerLink=\"/login\" class=\"log-link\">Đăng nhập</a>\n          </li>\n          <li class=\"nav-user dropdown\" *ngIf=\"loginTus\">\n            <a class=\"nav-link dropdown-toggle\" id=\"navbardrop\" data-toggle=\"dropdown\">\n              <img src=\"assets/images/user.png\" alt=\"\" class=\"rounded-circle img-thumbnail\" style=\"width:50px;\" />\n              <span class=\"user-name\">{{curUser.name}}</span>\n            </a>\n            <div class=\"dropdown-menu\">\n              <a class=\"dropdown-item\" href='/user'> User Info</a>\n              <a class=\"dropdown-item\" href='/home' (click)='logOut()'> Đăng xuất</a>\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n</header>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<header>\n  <nav class=\"navbar navbar-expand-md fixed-top\">\n    <div class=\"container\">\n      <!-- Brand -->\n      <a class=\"navbar-brand\" href=\"#\"><img src=\"assets/images/logo.png\" alt=\"\" class=\"menu-logo\"></a>\n\n      <!-- Toggler/collapsibe Button -->\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsibleNavbar\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n\n      <!-- Navbar links -->\n      <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">\n        <ul class=\"navbar-nav\" style=\"margin-right:auto!important\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" [routerLink] ='[\"/home\"]'>Trang chủ</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" [routerLink] ='[\"/introduce\"]'>Giới thiệu</a>\n          </li>\n          <li class=\"nav-item dropdown\">\n            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">\n              Môn học\n            </a>\n            <div class=\"dropdown-menu\">\n              <a class=\"dropdown-item menu-mon\" (click)='checkLogin($event,\"block\")' href = './test/mon.Id' *ngFor=\"let mon of listMon\"> {{mon.Name}}</a>\n            </div>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" [routerLink]='[\"/contact\"]'>Liên hệ</a>\n          </li>\n        </ul>\n        <ul class=\"navbar-nav\">\n          <li class=\"nav-log\" *ngIf=\"!loginTus\">\n            <a routerLink=\"/login\" class=\"log-link\">Đăng nhập</a>\n          </li>\n          <li class=\"nav-user dropdown\" *ngIf=\"loginTus\">\n            <a class=\"nav-link dropdown-toggle\" id=\"navbardrop\" data-toggle=\"dropdown\">\n              <img src=\"assets/images/user.png\" alt=\"\" class=\"rounded-circle img-thumbnail\" style=\"width:50px;\" />\n              <span class=\"user-name\">{{curUser.name}}</span>\n            </a>\n            <div class=\"dropdown-menu\">\n              <a class=\"dropdown-item\" [routerLink] =\"['/user']\"> User Info</a>\n              <a class=\"dropdown-item\" [routerLink] =\"['/home']\" (click)='logOut()'> Đăng xuất</a>\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n</header>\n");
 
 /***/ }),
 
@@ -902,10 +902,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainServiceService", function() { return MainServiceService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 let MainServiceService = class MainServiceService {
-    constructor() {
+    constructor(router) {
+        this.router = router;
         this.listAns = [];
         this.listMon = [{
                 "Id": "ADAV",
@@ -13853,6 +13856,9 @@ let MainServiceService = class MainServiceService {
         }
     }
 };
+MainServiceService.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
 MainServiceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
@@ -13889,12 +13895,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _main_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../main-service.service */ "./src/app/main-service.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 
 let MenuComponent = class MenuComponent {
-    constructor(mainSer) {
+    constructor(mainSer, router) {
         this.mainSer = mainSer;
+        this.router = router;
         this.checkLogin = this.mainSer.checkLogin;
         this.switchModalBox = this.mainSer.switchModalBox;
         this.defauUser = [{
@@ -13934,6 +13943,7 @@ let MenuComponent = class MenuComponent {
         if (JSON.parse(sessionStorage.getItem('loginTus')) && this.curUser.name == '') {
             this.curUser.name = this.curUser.user;
         }
+        ;
     }
     logOut() {
         sessionStorage.setItem('loginTus', 'false');
@@ -13942,7 +13952,8 @@ let MenuComponent = class MenuComponent {
     }
 };
 MenuComponent.ctorParameters = () => [
-    { type: _main_service_service__WEBPACK_IMPORTED_MODULE_2__["MainServiceService"] }
+    { type: _main_service_service__WEBPACK_IMPORTED_MODULE_2__["MainServiceService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
 ];
 MenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -14097,14 +14108,16 @@ let TestComponent = class TestComponent {
     activeAnsNum() {
         var listUserAns = JSON.parse(sessionStorage.getItem('listUserAns'));
         var questNum = document.querySelectorAll('.quest-num');
-        listUserAns.forEach(user => {
-            questNum.forEach(quest => {
-                var questId = quest.getAttribute('id');
-                if (questId == user.Id) {
-                    quest.classList.add('answer');
-                }
+        if (listUserAns == null) {
+            listUserAns.forEach(user => {
+                questNum.forEach(quest => {
+                    var questId = quest.getAttribute('id');
+                    if (questId == user.Id) {
+                        quest.classList.add('answer');
+                    }
+                });
             });
-        });
+        }
     }
     ngOnInit() {
         this.listMon = this.mainSer.listMon;
@@ -14177,16 +14190,18 @@ let TestComponent = class TestComponent {
     showUserAns() {
         var userAns = JSON.parse(sessionStorage.getItem('listUserAns'));
         var questList = document.querySelectorAll('.quest-choose');
-        questList.forEach(quest => {
-            var questId = quest.getAttribute('name');
-            var ansId = quest.getAttribute('value');
-            userAns.forEach(user => {
-                if (user.Id == questId && user.ansId == ansId) {
-                    quest.nextElementSibling.classList.add('active');
-                    quest.setAttribute('checked', 'true');
-                }
+        if (userAns == null) {
+            questList.forEach(quest => {
+                var questId = quest.getAttribute('name');
+                var ansId = quest.getAttribute('value');
+                userAns.forEach(user => {
+                    if (user.Id == questId && user.ansId == ansId) {
+                        quest.nextElementSibling.classList.add('active');
+                        quest.setAttribute('checked', 'true');
+                    }
+                });
             });
-        });
+        }
     }
 };
 TestComponent.ctorParameters = () => [

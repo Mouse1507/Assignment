@@ -51,7 +51,7 @@
                 <div class="card-body">
                   <h4 class="card-title">{{mon.Name}}</h4>
                   <p class="card-text">Some example text.</p>
-                  <a href="/test/{{mon.Id}}" (click)='checkLogin($event,"block")' class="btn btn-default test-button link-to-test">Bắt đầu</a>
+                  <a [routerLink]='["/test",mon.Id]' (click)='checkLogin($event,"block")' class="btn btn-default test-button link-to-test">Bắt đầu</a>
                 </div>
               </div>
             </div>
@@ -65,7 +65,7 @@
     <div class="col-md-4 flex-box no-pad-left">
       <div class="gt-right text-center">
         <ul class="list-group">
-          <li class="list-group-item" *ngFor="let mon of listMon"><a href="/test/{{mon.Id}}" (click)='checkLogin($event,"block")'
+          <li class="list-group-item" *ngFor="let mon of listMon"><a [routerLink]='["/test",mon.Id]' (click)='checkLogin($event,"block")'
               class="item-link link-to-test">{{mon.Name}}</a></li>
         </ul>
       </div>

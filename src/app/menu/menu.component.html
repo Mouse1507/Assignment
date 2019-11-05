@@ -13,21 +13,21 @@
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav" style="margin-right:auto!important">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/home">Trang chủ</a>
+            <a class="nav-link" [routerLink] ='["/home"]'>Trang chủ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/introduce">Giới thiệu</a>
+            <a class="nav-link" [routerLink] ='["/introduce"]'>Giới thiệu</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
               Môn học
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item menu-mon" (click)='checkLogin($event,"block")' href="/test/{{mon.Id}}" *ngFor="let mon of listMon"> {{mon.Name}}</a>
+              <a class="dropdown-item menu-mon" (click)='checkLogin($event,"block")' href = './test/mon.Id' *ngFor="let mon of listMon"> {{mon.Name}}</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/contact">Liên hệ</a>
+            <a class="nav-link" [routerLink]='["/contact"]'>Liên hệ</a>
           </li>
         </ul>
         <ul class="navbar-nav">
@@ -40,8 +40,8 @@
               <span class="user-name">{{curUser.name}}</span>
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href='/user'> User Info</a>
-              <a class="dropdown-item" href='/home' (click)='logOut()'> Đăng xuất</a>
+              <a class="dropdown-item" [routerLink] ="['/user']"> User Info</a>
+              <a class="dropdown-item" [routerLink] ="['/home']" (click)='logOut()'> Đăng xuất</a>
             </div>
           </li>
         </ul>

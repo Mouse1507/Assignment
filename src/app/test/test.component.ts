@@ -40,20 +40,21 @@ export class TestComponent implements OnInit {
         return;
       }
     });
-    
+
   }
-  activeAnsNum(){
+  activeAnsNum() {
     var listUserAns = JSON.parse(sessionStorage.getItem('listUserAns'));
     var questNum = document.querySelectorAll('.quest-num');
-    listUserAns.forEach(user => {
-      questNum.forEach(quest => {
-        var questId = quest.getAttribute('id');
-        if(questId == user.Id){
-          quest.classList.add('answer');
-        }
+    if (listUserAns == null) {
+      listUserAns.forEach(user => {
+        questNum.forEach(quest => {
+          var questId = quest.getAttribute('id');
+          if (questId == user.Id) {
+            quest.classList.add('answer');
+          }
+        })
       })
-    })
-    
+    }
   }
 
   lessonId: any;
@@ -68,8 +69,8 @@ export class TestComponent implements OnInit {
     this.quizMon = this.listQuiz.find(q => q.Id === this.lessonId);
     sessionStorage.setItem('listWebAns', JSON.stringify(this.quizMon.quiz));
     this.toQuiz(this.curPage);
-    setInterval(this.showUserAns,100);
-    setInterval(this.activeAnsNum,100);
+    setInterval(this.showUserAns, 100);
+    setInterval(this.activeAnsNum, 100);
   }
   activeRadio(quizsId, ansId, event) {
     let checkHave = false;
@@ -105,9 +106,9 @@ export class TestComponent implements OnInit {
   // check question
   checkEndTest() {
     this.isEndTest = true;
-    if(this.isEndTest)
+    if (this.isEndTest)
       setInterval(this.showWebAns, 100);
-    
+
   }
   showWebAns() {
     var questList = document.querySelectorAll('.quest-choose');
@@ -127,15 +128,17 @@ export class TestComponent implements OnInit {
   showUserAns() {
     var userAns = JSON.parse(sessionStorage.getItem('listUserAns'));
     var questList = document.querySelectorAll('.quest-choose');
-    questList.forEach(quest => {
-      var questId = quest.getAttribute('name');
-      var ansId = quest.getAttribute('value');
-      userAns.forEach(user => {
-        if(user.Id == questId && user.ansId == ansId){
-          quest.nextElementSibling.classList.add('active');
-          quest.setAttribute('checked', 'true');
-        }
+    if (userAns == null) {
+      questList.forEach(quest => {
+        var questId = quest.getAttribute('name');
+        var ansId = quest.getAttribute('value');
+        userAns.forEach(user => {
+          if (user.Id == questId && user.ansId == ansId) {
+            quest.nextElementSibling.classList.add('active');
+            quest.setAttribute('checked', 'true');
+          }
+        })
       })
-    })
+    }
   }
 }
