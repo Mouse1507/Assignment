@@ -40,8 +40,8 @@
               <span class="user-name">{{curUser.name}}</span>
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href ="/Assignment/user"> User Info</a>
-              <a class="dropdown-item" href ="/Assignment/home" (click)='logOut()'> Đăng xuất</a>
+              <a class="dropdown-item" [routerLink] ='["/user"]'> User Info</a>
+              <a class="dropdown-item" [routerLink] ='["/home"]' (click)='logOut()'> Đăng xuất</a>
             </div>
           </li>
         </ul>
