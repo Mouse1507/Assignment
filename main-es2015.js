@@ -13859,7 +13859,11 @@ let MainServiceService = class MainServiceService {
             this.switchModalBox(x);
         }
         else {
-            this.router.navigate(['/test', Idmon]);
+            var confirm = window.confirm('Ban co muon chuyen den mon nay ?');
+            if (confirm) {
+                this.router.navigate(['/test', Idmon]);
+                window.location.href = window.location.origin + '/test/' + Idmon;
+            }
         }
     }
 };

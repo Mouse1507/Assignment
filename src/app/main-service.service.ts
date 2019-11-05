@@ -1,13 +1,17 @@
 import {
   Injectable
 } from '@angular/core';
-import {Router} from '@angular/router';
-import { Navigation } from 'selenium-webdriver';
+import {
+  Router
+} from '@angular/router';
+import {
+  Navigation
+} from 'selenium-webdriver';
 @Injectable({
   providedIn: 'root'
 })
 export class MainServiceService {
-  constructor(private router:Router) {
+  constructor(private router: Router) {
 
   }
   userLogin: any;
@@ -12955,10 +12959,14 @@ export class MainServiceService {
     if (loginTus != true) {
       event.preventDefault();
       this.switchModalBox(x);
-    } 
-    else {
-      this.router.navigate(['/test',Idmon]);
-    } 
+    } else {
+      var confirm = window.confirm('Ban co muon chuyen den mon nay ?');
+      if (confirm) {
+        this.router.navigate(['/test', Idmon]);
+        window.location.href = window.location.origin + '/test/' + Idmon;
+      }
+
+    }
   }
 
 }
