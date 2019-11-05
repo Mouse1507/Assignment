@@ -51,7 +51,7 @@
                 <div class="card-body">
                   <h4 class="card-title">{{mon.Name}}</h4>
                   <p class="card-text">Some example text.</p>
-                  <a [routerLink]='["Assignment/test",mon.Id]' (click)='checkLogin($event,"block")' class="btn btn-default test-button link-to-test">Bắt đầu</a>
+                  <a (click)='checkLogin($event,"block", mon.Id)' class="btn btn-default test-button link-to-test">Bắt đầu</a>
                 </div>
               </div>
             </div>
@@ -65,18 +65,11 @@
     <div class="col-md-4 flex-box no-pad-left">
       <div class="gt-right text-center">
         <ul class="list-group">
-          <li class="list-group-item" *ngFor="let mon of listMon"><a [routerLink]='["Assignment/test",mon.Id]' (click)='checkLogin($event,"block")'
+          <li class="list-group-item" *ngFor="let mon of listMon"><a (click)='checkLogin($event,"block", mon.Id)'
               class="item-link link-to-test">{{mon.Name}}</a></li>
         </ul>
       </div>
     </div>
   </div>
-  <!-- alert modal  -->
-  <div id="overlay" (click)="switchModalBox('none')">
-
-  </div>
-  <div id="box-message">
-    <p>Bạn phải đăng nhập để vào kiểm tra</p>
-    <span class="close-box" (click)="switchModalBox('none')">&times;</span>
-  </div>
+  
 </div>

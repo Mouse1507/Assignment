@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MainServiceService } from '../main-service.service';
 import {Router} from '@angular/router';
+import { Capabilities } from 'protractor';
 
 @Component({
   selector: 'app-menu',
@@ -37,6 +38,7 @@ export class MenuComponent implements OnInit {
   }
 ]
   ngOnInit() {
+    
     if(localStorage.length == 0) {
       localStorage.setItem('listUser',JSON.stringify(this.defauUser));
     }
@@ -45,7 +47,7 @@ export class MenuComponent implements OnInit {
     this.userId = sessionStorage.getItem('userId');
     this.loginTus = JSON.parse(sessionStorage.getItem('loginTus'));
     this.listUser.forEach(user => {
-      if(this.userId == user.id) {
+      if(this.userId == user.id) { 
         this.curUser = user;
         return;
       }

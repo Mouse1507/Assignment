@@ -12950,12 +12950,16 @@ export class MainServiceService {
     document.getElementById('overlay').style.display = x;
     document.getElementById('box-message').style.display = x;
   }
-  checkLogin(event, x: string) {
+  checkLogin(event, x: string, Idmon) {
     var loginTus = JSON.parse(sessionStorage.getItem('loginTus'));
     if (loginTus != true) {
       event.preventDefault();
       this.switchModalBox(x);
-    }
+    } 
+    else {
+      this.router.navigate(['/test',Idmon]);
+      window.location.replace('/test/' + Idmon);
+    } 
   }
 
 }

@@ -5,13 +5,15 @@ import {
 import {
   MainServiceService
 } from '../main-service.service';
+
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  constructor(private mainSer: MainServiceService) {}
+  constructor(private mainSer: MainServiceService, private router: Router) {}
   carousel = [{
       name: "",
       image: "banner-1.jpg",
@@ -27,7 +29,7 @@ export class ContentComponent implements OnInit {
   ]
   listMon : any;
   curPage: number = 1;
-  checkLogin = this.mainSer.checkLogin;
+  checkLogin = this.mainSer.checkLogin; 
   ngOnInit() {
     this.listMon = this.mainSer.listMon;
   }
@@ -35,5 +37,5 @@ export class ContentComponent implements OnInit {
     document.getElementById('overlay').style.display = x;
     document.getElementById('box-message').style.display = x;
   }
-
 }
+

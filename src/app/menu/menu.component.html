@@ -23,9 +23,9 @@
               Môn học
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item menu-mon" (click)='checkLogin($event,"block")' href = '/test/{{mon.Id}}' *ngFor="let mon of listMon"> {{mon.Name}}</a>
+              <a class="dropdown-item menu-mon" (click)='checkLogin($event,"block",mon.Id)'  *ngFor="let mon of listMon"> {{mon.Name}}</a>
             </div>
-          </li>
+          </li> 
           <li class="nav-item">
             <a class="nav-link" [routerLink]='["/contact"]'>Liên hệ</a>
           </li>
@@ -48,4 +48,12 @@
       </div>
     </div>
   </nav>
+  <!-- alert modal  -->
+  <div id="overlay" (click)="switchModalBox('none')">
+
+  </div>
+  <div id="box-message">
+    <p>Bạn phải đăng nhập để vào kiểm tra</p>
+    <span class="close-box" (click)="switchModalBox('none')">&times;</span>
+  </div>
 </header>

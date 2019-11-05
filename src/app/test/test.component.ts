@@ -3,7 +3,7 @@ import {
   OnInit
 } from '@angular/core';
 import {
-  ActivatedRoute
+  Router,ActivatedRoute
 } from '@angular/router';
 import {
   MainServiceService
@@ -16,7 +16,7 @@ import {
 })
 export class TestComponent implements OnInit {
 
-  constructor(private mainSer: MainServiceService, private route: ActivatedRoute) {}
+  constructor(private mainSer: MainServiceService, private route: ActivatedRoute, private router:Router) {}
   curPage: number = 1;
   countDown: number = 30;
   listMon: any = [];
@@ -45,7 +45,7 @@ export class TestComponent implements OnInit {
   activeAnsNum() {
     var listUserAns = JSON.parse(sessionStorage.getItem('listUserAns'));
     var questNum = document.querySelectorAll('.quest-num');
-    if (listUserAns == null) {
+    if (listUserAns != null) {
       listUserAns.forEach(user => {
         questNum.forEach(quest => {
           var questId = quest.getAttribute('id');
@@ -128,7 +128,7 @@ export class TestComponent implements OnInit {
   showUserAns() {
     var userAns = JSON.parse(sessionStorage.getItem('listUserAns'));
     var questList = document.querySelectorAll('.quest-choose');
-    if (userAns == null) {
+    if (userAns != null) {
       questList.forEach(quest => {
         var questId = quest.getAttribute('name');
         var ansId = quest.getAttribute('value');
