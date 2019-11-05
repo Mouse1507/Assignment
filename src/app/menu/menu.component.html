@@ -23,7 +23,7 @@
               Môn học
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item menu-mon" (click)='checkLogin($event,"block")' href = 'Assignment/test/mon.Id' *ngFor="let mon of listMon"> {{mon.Name}}</a>
+              <a class="dropdown-item menu-mon" (click)='checkLogin($event,"block")' href = '/test/mon.Id' *ngFor="let mon of listMon"> {{mon.Name}}</a>
             </div>
           </li>
           <li class="nav-item">
@@ -40,8 +40,8 @@
               <span class="user-name">{{curUser.name}}</span>
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" [routerLink] ="['Assignment/user']"> User Info</a>
-              <a class="dropdown-item" [routerLink] ="['Assignment/home']" (click)='logOut()'> Đăng xuất</a>
+              <a class="dropdown-item" [routerLink] ="['/user']"> User Info</a>
+              <a class="dropdown-item" [routerLink] ="['/home']" (click)='logOut()'> Đăng xuất</a>
             </div>
           </li>
         </ul>
