@@ -13863,7 +13863,7 @@ let MainServiceService = class MainServiceService {
             if (confirm) {
                 this.router.navigate(['/test']);
                 sessionStorage.setItem('lessionId', Idmon);
-                window.location.href = window.location.origin + '/test/';
+                window.location.href = window.location.origin + 'Assignment/test/';
             }
         }
     }
