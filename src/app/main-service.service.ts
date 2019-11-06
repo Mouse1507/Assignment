@@ -12964,7 +12964,6 @@ export class MainServiceService {
       if (confirm) {
         this.router.navigate(['/test']);
         sessionStorage.setItem('lessionId', Idmon);
-        window.location.href = window.location.origin + '/Assignment/test';
       }
 
     }
