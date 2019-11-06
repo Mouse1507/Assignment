@@ -1,0 +1,48 @@
+<app-menu></app-menu>
+<div class="container mar-t-b-20">
+  <div class="row">
+    <div class="col-md-5 text-left">
+      <h2 class="map-title">Chi nhánh</h2>
+      <p class="cn-text" (click)='showMap(true)'><i class="fas fa-search-location"></i> Chi nhánh 1 : 123 Lê đại hành, TP.HCM </p>
+      <p class="cn-text" (click)='showMap(false)'><i class="fas fa-search-location"></i> Chi nhánh 2 : 30 Cao Thắng, Q3, TP.HCM</p>
+    </div>
+    <div class="col-md-7 text-right">
+      <iframe *ngIf='showMap1' id='map1'
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.650655176696!2d106.65525331440884!3d10.76138399233174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752eedcb763559%3A0xf92e387d65fb8295!2zMTIzIEzDqiDEkOG6oWkgSMOgbmgsIFBoxrDhu51uZyA2LCBRdeG6rW4gMTEsIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1569737489575!5m2!1svi!2s"
+        width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      <iframe *ngIf='showMap2' id='map2'
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.547439284105!2d106.68104241440886!3d10.769319392326315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f22114ccbc5%3A0xf61e0ac7497a621a!2zMzAgQ2FvIFRo4bqvbmcsIFBoxrDhu51uZyA1LCBRdeG6rW4gMywgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1569737687250!5m2!1svi!2s"
+        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <p class="contact-title text-center"><span>Contact Us</span></p>
+  <div class="row">
+    <div class="col-md-6 flex-layout">
+      <img src="assets/images/contact-bg.png" alt="" class="contact-bg">
+    </div>
+    <div class="col-md-6 flex-layout">
+      <form action="" method="POST" class="contact-form">
+        <div class="form-group">
+          <label for="">Họ và tên</label><br>
+          <input type="text" class="field-contact" />
+        </div>
+        <div class="form-group">
+          <label for="">Số điện thoại</label><br>
+          <input type="text" class="field-contact" />
+        </div>
+        <div class="form-group">
+          <label for="">Email</label><br>
+          <input type="text" class="field-contact" />
+        </div>
+        <div class="form-group">
+          <label for="message">Lời nhắn</label><br>
+          <textarea name="message" id="message" cols="30" rows="10" class="field-contact message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

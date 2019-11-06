@@ -1,0 +1,59 @@
+<header>
+  <nav class="navbar navbar-expand-md fixed-top">
+    <div class="container">
+      <!-- Brand -->
+      <a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt="" class="menu-logo"></a>
+
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav" style="margin-right:auto!important">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink] ='["/home"]'>Trang chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink] ='["/introduce"]'>Giới thiệu</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              Môn học
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item menu-mon" (click)='checkLogin($event,"block",mon.Id)'  *ngFor="let mon of listMon"> {{mon.Name}}</a>
+            </div>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]='["/contact"]'>Liên hệ</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-log" *ngIf="!loginTus">
+            <a routerLink="/login" class="log-link">Đăng nhập</a>
+          </li>
+          <li class="nav-user dropdown" *ngIf="loginTus">
+            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+              <img src="assets/images/user.png" alt="" class="rounded-circle img-thumbnail" style="width:50px;" />
+              <span class="user-name">{{curUser.name}}</span>
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" [routerLink] ='["/user"]'> User Info</a>
+              <a class="dropdown-item" [routerLink] ='["/home"]' (click)='logOut()'> Đăng xuất</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- alert modal  -->
+  <div id="overlay" (click)="switchModalBox('none')">
+
+  </div>
+  <div id="box-message">
+    <p>Bạn phải đăng nhập để vào kiểm tra</p>
+    <span class="close-box" (click)="switchModalBox('none')">&times;</span>
+  </div>
+</header>

@@ -1,0 +1,96 @@
+.quest {
+    width:100%;
+    position: relative;
+}
+.quest-choose {
+    margin-right : 15px;
+    vertical-align: middle;
+}
+.quest-ans {
+    vertical-align: top;
+    color: rgba(0,0,0,0.5);
+}
+.answer-box {
+    padding-left: 30px;
+}
+.quest-title {
+    margin-bottom:0;
+}
+.user-info {
+    width:100%;
+    margin: 10px auto;
+}
+.user-img-test {
+    width:100px;
+    height:100px;
+    
+}
+.pad-t-b-20 {
+    margin: 20px auto;
+}
+.quest-num-box {
+    align-content: center;
+}
+.quest-num {
+    border-radius : 10px;
+    background-color:lightblue;
+    font-size:14px;
+    font-weight: 400;
+    padding: 5px;
+    margin: 5px;
+    width: 30px;
+    height:30px;
+    float:left;
+    cursor: pointer;
+}
+.card-bg {
+    background-color: lightgoldenrodyellow;
+}
+.count-down-box {
+    position: absolute;
+    top :10px;
+    right :20px;
+    padding:5px;
+    border-radius: 20px;
+    background-color: lightblue;
+    color :white;
+    width:auto;
+    height:30px;
+    line-height: 15px;
+}
+.test-title {
+    text-transform: uppercase;
+    font-size:20px;
+
+}
+.control-quest {
+    width:100%;
+    text-align: right;
+}
+.instruct-box {
+    width: 100%;
+    background-color: indianred;
+    color:white;
+    border-radius: 10px;
+    box-shadow: 0 7px 4px #777;
+    padding: 10px;   
+    margin : 20px 0;
+    height: 100px;
+    overflow: hidden;
+}
+.quest-num.active {
+    background-color: lightcoral!important;
+    color:white!important;
+}
+.quest-ans.active {
+    color: lightcoral;
+    font-weight: bold;
+}
+.quest-ans.answer {
+    color: lightgreen;
+    font-weight: bold;
+}
+.quest-num.answer {
+    background-color:lightgreen;
+    color:black;
+}
