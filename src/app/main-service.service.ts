@@ -12963,10 +12963,8 @@ export class MainServiceService {
       var confirm = window.confirm('Ban co muon chuyen den mon nay ?');
       if (confirm) {
         sessionStorage.setItem('lessionId', Idmon);
-        sessionStorage.setItem('isEndTest',JSON.stringify(false));
-        setTimeout(() => {
-          this.router.navigate(['/test']);
-        }, 100);
+        sessionStorage.setItem('isEndTest', JSON.stringify(false));
+        this.router.navigate(['/test']);
       }
 
     }
