@@ -45,7 +45,7 @@ import {FormsModule} from '@angular/forms';
       {path : 'signup', component:SignupComponent},
       {path : 'introduce', component : IntroduceComponent},
       {path : 'contact', component: ContactComponent},
-      {path : 'test/:monId', component: TestComponent},
+      {path : 'test', component: TestComponent},
       {path : 'user', component: UserComponent},
     ])
   ],

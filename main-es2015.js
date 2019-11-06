@@ -549,7 +549,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 { path: 'signup', component: _signup_signup_component__WEBPACK_IMPORTED_MODULE_11__["SignupComponent"] },
                 { path: 'introduce', component: _introduce_introduce_component__WEBPACK_IMPORTED_MODULE_12__["IntroduceComponent"] },
                 { path: 'contact', component: _contact_contact_component__WEBPACK_IMPORTED_MODULE_13__["ContactComponent"] },
-                { path: 'test/:monId', component: _test_test_component__WEBPACK_IMPORTED_MODULE_15__["TestComponent"] },
+                { path: 'test', component: _test_test_component__WEBPACK_IMPORTED_MODULE_15__["TestComponent"] },
                 { path: 'user', component: _user_user_component__WEBPACK_IMPORTED_MODULE_16__["UserComponent"] },
             ])
         ],
@@ -13861,8 +13861,9 @@ let MainServiceService = class MainServiceService {
         else {
             var confirm = window.confirm('Ban co muon chuyen den mon nay ?');
             if (confirm) {
-                this.router.navigate(['/test', Idmon]);
-                window.location.href = window.location.origin + '/test/' + Idmon;
+                this.router.navigate(['/test']);
+                sessionStorage.setItem('lessionId', Idmon);
+                window.location.href = window.location.origin + '/test/';
             }
         }
     }
@@ -14135,9 +14136,7 @@ let TestComponent = class TestComponent {
         this.listMon = this.mainSer.listMon;
         this.listQuiz = this.mainSer.listQuiz;
         ;
-        this.route.paramMap.subscribe(param => {
-            this.lessonId = param.get("monId");
-        });
+        this.lessonId = sessionStorage.getItem('lessionId');
         this.mon = this.listMon.find(m => m.Id === this.lessonId);
         this.quizMon = this.listQuiz.find(q => q.Id === this.lessonId);
         sessionStorage.setItem('listWebAns', JSON.stringify(this.quizMon.quiz));

@@ -12962,8 +12962,9 @@ export class MainServiceService {
     } else {
       var confirm = window.confirm('Ban co muon chuyen den mon nay ?');
       if (confirm) {
-        this.router.navigate(['/test', Idmon]);
-        window.location.href = window.location.origin + '/test/' + Idmon;
+        this.router.navigate(['/test']);
+        sessionStorage.setItem('lessionId', Idmon);
+        window.location.href = window.location.origin + '/test/'
       }
 
     }
