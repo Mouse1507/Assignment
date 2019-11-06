@@ -13863,6 +13863,7 @@ let MainServiceService = class MainServiceService {
             if (confirm) {
                 this.router.navigate(['/test']);
                 sessionStorage.setItem('lessionId', Idmon);
+                window.location.href = window.location.origin + '/Assignment/test';
             }
         }
     }
@@ -14097,7 +14098,6 @@ let TestComponent = class TestComponent {
         this.countDown = 30;
         this.listMon = [];
         this.listQuiz = [];
-        this.isEndTest = false;
         this.trung = false;
     }
     toQuiz(index) {
@@ -14142,6 +14142,7 @@ let TestComponent = class TestComponent {
         this.toQuiz(this.curPage);
         setInterval(this.showUserAns, 100);
         setInterval(this.activeAnsNum, 100);
+        this.isEndTest = false;
     }
     activeRadio(quizsId, ansId, event) {
         let checkHave = false;

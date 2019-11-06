@@ -23,7 +23,7 @@ export class TestComponent implements OnInit {
   listQuiz: any = []
   mon: any;
   quizMon: any;
-  isEndTest = false;
+  isEndTest:boolean;
   toQuiz(index: number) {
     this.curPage = index;
     this.activeQuestNum('.quest-num');
@@ -69,6 +69,7 @@ export class TestComponent implements OnInit {
     this.toQuiz(this.curPage);
     setInterval(this.showUserAns, 100);
     setInterval(this.activeAnsNum, 100);
+    this.isEndTest = false;
   }
   activeRadio(quizsId, ansId, event) {
     let checkHave = false;
