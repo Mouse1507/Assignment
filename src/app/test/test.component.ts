@@ -3,7 +3,8 @@ import {
   OnInit
 } from '@angular/core';
 import {
-  Router,ActivatedRoute
+  Router,
+  ActivatedRoute
 } from '@angular/router';
 import {
   MainServiceService
@@ -16,14 +17,14 @@ import {
 })
 export class TestComponent implements OnInit {
 
-  constructor(private mainSer: MainServiceService, private route: ActivatedRoute, private router:Router) {}
+  constructor(private mainSer: MainServiceService, private route: ActivatedRoute, private router: Router) {}
   curPage: number = 1;
   countDown: number = 30;
   listMon: any = [];
   listQuiz: any = []
   mon: any;
   quizMon: any;
-  isEndTest:boolean;
+  isEndTest: boolean;
   toQuiz(index: number) {
     this.curPage = index;
     this.activeQuestNum('.quest-num');
@@ -63,12 +64,9 @@ export class TestComponent implements OnInit {
     this.listMon = this.mainSer.listMon;
     this.listQuiz = this.mainSer.listQuiz;;
     this.lessonId = sessionStorage.getItem('lessionId');
-    setTimeout(function() {
-      this.mon = this.listMon.find(m => m.Id === this.lessonId);
-      this.quizMon = this.listQuiz.find(q => q.Id === this.lessonId);
-      sessionStorage.setItem('listWebAns', JSON.stringify(this.quizMon.quiz));
-    },1000);
-    
+    this.mon = this.listMon.find(m => m.Id === this.lessonId);
+    this.quizMon = this.listQuiz.find(q => q.Id === this.lessonId);
+    sessionStorage.setItem('listWebAns', JSON.stringify(this.quizMon.quiz));
     this.toQuiz(this.curPage);
     setInterval(this.showUserAns, 100);
     setInterval(this.activeAnsNum, 100);
