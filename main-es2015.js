@@ -13861,11 +13861,10 @@ let MainServiceService = class MainServiceService {
         else {
             var confirm = window.confirm('Ban co muon chuyen den mon nay ?');
             if (confirm) {
-                this.router.navigate(['/test']);
                 sessionStorage.setItem('lessionId', Idmon);
                 sessionStorage.setItem('isEndTest', JSON.stringify(false));
                 setTimeout(() => {
-                    location.reload(true);
+                    this.router.navigate(['/test']);
                 }, 100);
             }
         }
