@@ -13863,6 +13863,9 @@ let MainServiceService = class MainServiceService {
             if (confirm) {
                 this.router.navigate(['/test']);
                 sessionStorage.setItem('lessionId', Idmon);
+                setTimeout(() => {
+                    location.reload(true);
+                }, 100);
             }
         }
     }
