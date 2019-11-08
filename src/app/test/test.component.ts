@@ -60,7 +60,12 @@ export class TestComponent implements OnInit {
 
   lessonId: any;
   trung = false;
+  idmon: any;
+  loginTus: boolean;
+  curUser: any;
   ngOnInit() {
+    this.loginTus = JSON.parse(sessionStorage.getItem('loginTus'));
+    this.curUser = JSON.parse(sessionStorage.getItem('curUser'));
     this.listMon = this.mainSer.listMon;
     this.listQuiz = this.mainSer.listQuiz;;
     this.lessonId = sessionStorage.getItem('lessionId');
@@ -105,25 +110,41 @@ export class TestComponent implements OnInit {
   }
   // check question
   checkEndTest() {
-    sessionStorage.setItem('isEndTest',JSON.stringify(true));
-    if (JSON.parse(sessionStorage.getItem('isEndTest')))
-      setInterval(this.showWebAns, 100);
+    sessionStorage.setItem('isEndTest', JSON.stringify(true));
+
+    setInterval(() => {
+      this.showWebAns(true);
+    }, 100);
 
   }
-  showWebAns() {
+  showWebAns(option: boolean) {
     var questList = document.querySelectorAll('.quest-choose');
     let webAns = JSON.parse(sessionStorage.getItem('listWebAns'));
-    questList.forEach(quest => {
-      quest.setAttribute('disabled', 'true');
-      var questId = quest.getAttribute('name');
-      var ansId = quest.getAttribute('value');
-      webAns.forEach(ans => {
-        if (questId == ans.Id && ansId == ans.AnswerId) {
-          quest.nextElementSibling.classList.add('answer');
-          quest.setAttribute('checked', 'true');
-        }
-      })
-    });
+    if (option) {
+      questList.forEach(quest => {
+        quest.setAttribute('disabled', 'true');
+        var questId = quest.getAttribute('name');
+        var ansId = quest.getAttribute('value');
+        webAns.forEach(ans => {
+          if (questId == ans.Id && ansId == ans.AnswerId) {
+            quest.nextElementSibling.classList.add('answer');
+            quest.setAttribute('checked', 'true');
+          }
+        })
+      });
+    } else {
+      questList.forEach(quest => {
+        quest.setAttribute('disabled', 'false');
+        var questId = quest.getAttribute('name');
+        var ansId = quest.getAttribute('value');
+        webAns.forEach(ans => {
+          if (questId == ans.Id && ansId == ans.AnswerId) {
+            quest.nextElementSibling.classList.remove('answer');
+            quest.setAttribute('checked', 'false');
+          }
+        })
+      });
+    }
   }
   showUserAns() {
     var userAns = JSON.parse(sessionStorage.getItem('listUserAns'));
@@ -140,5 +161,29 @@ export class TestComponent implements OnInit {
         })
       })
     }
+  }
+  checkLogin(event, block, Id) {
+    this.mainSer.checkLogin(event, block, Id);
+  }
+  changeLesson(id) {
+    this.lessonId = id;
+    this.mon = this.listMon.find(m => m.Id === this.lessonId);
+    this.quizMon = this.listQuiz.find(q => q.Id === this.lessonId);
+    sessionStorage.setItem('listWebAns', JSON.stringify(this.quizMon.quiz));
+    this.toQuiz(this.curPage);
+    sessionStorage.setItem('isEndTest', JSON.stringify(false));
+    this.isEndTest = JSON.parse(sessionStorage.getItem('isEndTest'));
+    var questList = document.querySelectorAll('.quest-choose');
+    var webAns = JSON.parse(sessionStorage.getItem('listWebAns'));
+    questList.forEach(quest => {
+      quest.removeAttribute('disabled');
+    })
+  }
+  logOut() {
+    sessionStorage.setItem('loginTus', 'false');
+    sessionStorage.removeItem('listUserAns');
+    sessionStorage.removeItem('userId');
+    sessionStorage.removeItem('curUser');
+
   }
 }

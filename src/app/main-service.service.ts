@@ -7,6 +7,8 @@ import {
 import {
   Navigation
 } from 'selenium-webdriver';
+import { ResourceLoader } from '@angular/compiler';
+import { listenerCount } from 'cluster';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +19,9 @@ export class MainServiceService {
   userLogin: any;
   userPass: any;
   listAns = [];
-  listMon = [{
+  mon:any;
+  listMon = [
+    {
       "Id": "ADAV",
       "Name": "Lập trình Android nâng cao",
       "Logo": "ADAV.jpg"
@@ -12947,7 +12951,8 @@ export class MainServiceService {
           "Id": 105938,
           "Text": "JavaScript"
         }]
-      }]
+      }
+    ]
     }
   ];
   switchModalBox(x: string) {
@@ -12964,7 +12969,10 @@ export class MainServiceService {
       if (confirm) {
         sessionStorage.setItem('lessionId', Idmon);
         sessionStorage.setItem('isEndTest', JSON.stringify(false));
-        this.router.navigate(['/test']);
+        setTimeout(() => { 
+          this.router.navigate(['/test']);
+        }, 100);
+        
       }
 
     }

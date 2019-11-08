@@ -16,6 +16,7 @@ export class MenuComponent implements OnInit {
   loginTus :boolean;
   curUser:any;
   listUser:any;
+  listQuiz:any;
   checkLogin = this.mainSer.checkLogin;
   switchModalBox = this.mainSer.switchModalBox;
   defauUser = [{
@@ -44,6 +45,7 @@ export class MenuComponent implements OnInit {
     }
     this.listUser = JSON.parse(localStorage.getItem('listUser'));
     this.listMon = this.mainSer.listMon;
+    this.listQuiz = this.mainSer.listQuiz;
     this.userId = sessionStorage.getItem('userId');
     this.loginTus = JSON.parse(sessionStorage.getItem('loginTus'));
     this.listUser.forEach(user => {
@@ -55,12 +57,13 @@ export class MenuComponent implements OnInit {
     if(JSON.parse(sessionStorage.getItem('loginTus')) && this.curUser.name == '') {
       this.curUser.name = this.curUser.user;
     };
-    
   }
   
   logOut() {
     sessionStorage.setItem('loginTus','false');
     sessionStorage.removeItem('listUserAns');
     sessionStorage.removeItem('userId');
+    sessionStorage.removeItem('curUser');
+
   }
 }
