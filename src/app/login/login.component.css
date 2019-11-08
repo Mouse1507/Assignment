@@ -1,44 +1,107 @@
-.login{
-    margin:20px auto;
-    width:500px;
-    border: 2px dotted lightpink;
-    text-align: center;
+.login {
+  margin: 20px auto;
+  width: 500px;
+  border: 2px dotted lightpink;
+  text-align: center;
 }
+
 .login-title {
-    padding:15px;
-    text-transform: uppercase;
-    font-size:20px;
-    font-weight: 400;
-    letter-spacing: 4px;
+  padding: 15px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 4px;
 }
+
 .pad-10 {
-    padding:10px;
+  padding: 10px;
 }
+
 .login-logo {
-    width:50%;
-    height:200px;
-    border-radius: 50%;
+  width: 50%;
+  height: 200px;
+  border-radius: 50%;
 }
+
 .login-form {
-    width:60%;
-    margin:0 auto;
-    text-align: left;
-    padding:10px 0;
+  width: 60%;
+  margin: 0 auto;
+  text-align: left;
+  padding: 10px 0;
 }
-.login-form  input {
-    width:100%;
-    padding:5px;
-    border-radius: 5px;
-    border:0.5px solid lightgray;
-    color: black;
+
+.login-form input {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 0.5px solid lightgray;
+  color: black;
 }
+
 .login-form label {
-    color: lightslategrey;
-}  
+  color: lightslategrey;
+}
 
 .no-acc-text {
-    font-size: 10px;
+  font-size: 10px;
 }
+
 .login-but {
-    width:100%;
+  width: 100%;
+}
+
+#error-login {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: lightcoral;
+  padding: 10px 20px;
+  line-height: 25px;
+  height: 50px;
+  color: white;
+  border-radius: 30px;
+  width: 40%;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.error-user {
+  font-size: 20px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible
+  }
+}
+
+#forgot-pass {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px;
+  width: 30%;
+  color: white;
+  border-radius: 20px;
+  border: 2px solid lightgreen;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display:none;
+  z-index: 100;
+}
+
+.forgot-title {
+    color: lightsalmon;
+}
+.lost-info {
+  width: 100%;
 }
