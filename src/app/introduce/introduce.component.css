@@ -45,9 +45,15 @@
   width: 300px;
   height: 300px;
   border-radius:50%;
+  padding:20px;
+  color:white;
+  text-align: left;
 }
 .team-bg {
     background-image: url("../../assets/images/team-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+}
+h5 {
+  color: lightcoral;
 }

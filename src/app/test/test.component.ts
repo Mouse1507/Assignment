@@ -111,40 +111,28 @@ export class TestComponent implements OnInit {
   // check question
   checkEndTest() {
     sessionStorage.setItem('isEndTest', JSON.stringify(true));
-
-    setInterval(() => {
-      this.showWebAns(true);
-    }, 100);
-
   }
-  showWebAns(option: boolean) {
+  showAnsPerPage() {
+    if (JSON.parse(sessionStorage.getItem('isEndTest'))) {
+      setTimeout(() => {
+        this.showWebAns();
+      }, 100);
+    }
+  }
+  showWebAns() {
     var questList = document.querySelectorAll('.quest-choose');
     let webAns = JSON.parse(sessionStorage.getItem('listWebAns'));
-    if (option) {
-      questList.forEach(quest => {
-        quest.setAttribute('disabled', 'true');
-        var questId = quest.getAttribute('name');
-        var ansId = quest.getAttribute('value');
-        webAns.forEach(ans => {
-          if (questId == ans.Id && ansId == ans.AnswerId) {
-            quest.nextElementSibling.classList.add('answer');
-            quest.setAttribute('checked', 'true');
-          }
-        })
-      });
-    } else {
-      questList.forEach(quest => {
-        quest.setAttribute('disabled', 'false');
-        var questId = quest.getAttribute('name');
-        var ansId = quest.getAttribute('value');
-        webAns.forEach(ans => {
-          if (questId == ans.Id && ansId == ans.AnswerId) {
-            quest.nextElementSibling.classList.remove('answer');
-            quest.setAttribute('checked', 'false');
-          }
-        })
-      });
-    }
+    questList.forEach(quest => {
+      quest.setAttribute('disabled', 'true');
+      var questId = quest.getAttribute('name');
+      var ansId = quest.getAttribute('value');
+      webAns.forEach(ans => {
+        if (questId == ans.Id && ansId == ans.AnswerId) {
+          quest.nextElementSibling.classList.add('answer');
+          quest.setAttribute('checked', 'true');
+        }
+      })
+    });
   }
   showUserAns() {
     var userAns = JSON.parse(sessionStorage.getItem('listUserAns'));
@@ -166,18 +154,23 @@ export class TestComponent implements OnInit {
     this.mainSer.checkLogin(event, block, Id);
   }
   changeLesson(id) {
-    this.lessonId = id;
-    this.mon = this.listMon.find(m => m.Id === this.lessonId);
-    this.quizMon = this.listQuiz.find(q => q.Id === this.lessonId);
-    sessionStorage.setItem('listWebAns', JSON.stringify(this.quizMon.quiz));
-    this.toQuiz(this.curPage);
-    sessionStorage.setItem('isEndTest', JSON.stringify(false));
-    this.isEndTest = JSON.parse(sessionStorage.getItem('isEndTest'));
-    var questList = document.querySelectorAll('.quest-choose');
-    var webAns = JSON.parse(sessionStorage.getItem('listWebAns'));
-    questList.forEach(quest => {
-      quest.removeAttribute('disabled');
-    })
+    if (sessionStorage.getItem('lessonId') != id) {
+      this.lessonId = id;
+      this.mon = this.listMon.find(m => m.Id === this.lessonId);
+      this.quizMon = this.listQuiz.find(q => q.Id === this.lessonId);
+      sessionStorage.setItem('listWebAns', JSON.stringify(this.quizMon.quiz));
+      this.toQuiz(this.curPage);
+      sessionStorage.setItem('isEndTest', JSON.stringify(false));
+      this.isEndTest = JSON.parse(sessionStorage.getItem('isEndTest'));
+      setTimeout(() => {
+        var questList = document.querySelectorAll('.quest-choose');
+        var webAns = JSON.parse(sessionStorage.getItem('listWebAns'));
+        questList.forEach(quest => {
+          quest.removeAttribute('disabled');
+        })
+      }, 1000);
+      sessionStorage.removeItem('listUserAns');
+    }
   }
   logOut() {
     sessionStorage.setItem('loginTus', 'false');
