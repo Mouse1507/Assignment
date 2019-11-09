@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MainServiceService } from '../main-service.service';
 import {Router} from '@angular/router';
-import { Capabilities } from 'protractor';
 
 @Component({
   selector: 'app-menu',
@@ -39,7 +38,7 @@ export class MenuComponent implements OnInit {
   }
 ]
   ngOnInit() {
-    sessionStorage.setItem('isEndTest',JSON.stringify(false ));
+    // sessionStorage.setItem('isEndTest',JSON.stringify(false ));
     if(localStorage.length == 0) {
       localStorage.setItem('listUser',JSON.stringify(this.defauUser));
     }

@@ -185,4 +185,35 @@
     top: -10px;
     font-size: 30px;
   }
-  
+  #mark-alert {
+    position: fixed;
+    top:25%;
+    left:-50%;
+    width:40%;
+    height:400px;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 20px;
+    border: 2px solid lightblue;
+    transition: all 1s;
+    color:white;
+    padding:20px;
+  }
+  #closebox {
+    position: absolute;
+    right:0px;
+    top:-20px;
+    font-size: 40px;
+    color:white;
+    font-weight: bold;
+  }
+  .result-lesson {
+    text-transform: uppercase;
+  }
+  .result-part {
+    font-size:20px;
+    text-transform: capitalize;
+  }
+  .result-part span {
+    font-weight: bold;
+    color:lightblue;
+  }

@@ -149,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- <app-menu></app-menu>   -->\n\n<nav class=\"navbar navbar-expand-md fixed-top\">\n  <div class=\"container\">\n    <!-- Brand -->\n    <a class=\"navbar-brand\" href=\"#\"><img src=\"assets/images/logo.png\" alt=\"\" class=\"menu-logo\"></a>\n\n    <!-- Toggler/collapsibe Button -->\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsibleNavbar\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n\n    <!-- Navbar links -->\n    <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">\n      <ul class=\"navbar-nav\" style=\"margin-right:auto!important\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" [routerLink] ='[\"/home\"]'>Trang chủ</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" [routerLink] ='[\"/introduce\"]'>Giới thiệu</a>\n        </li>\n        <li class=\"nav-item dropdown\">\n          <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">\n            Môn học\n          </a>\n          <div class=\"dropdown-menu\">\n            <a class=\"dropdown-item menu-mon\" (click)='checkLogin($event,\"block\",mon.Id);changeLesson(mon.Id)'  *ngFor=\"let mon of listMon\"> {{mon.Name}}</a>\n          </div>\n        </li> \n        <li class=\"nav-item\">\n          <a class=\"nav-link\" [routerLink]='[\"/contact\"]'>Liên hệ</a>\n        </li>\n      </ul>\n      <ul class=\"navbar-nav\">\n        <li class=\"nav-log\" *ngIf=\"!loginTus\">\n          <a routerLink=\"/login\" class=\"log-link\">Đăng nhập</a>\n        </li>\n        <li class=\"nav-user dropdown\" *ngIf=\"loginTus\">\n          <a class=\"nav-link dropdown-toggle\" id=\"navbardrop\" data-toggle=\"dropdown\">\n            <img src=\"assets/images/user.png\" alt=\"\" class=\"rounded-circle img-thumbnail\" style=\"width:50px;\" />\n            <span class=\"user-name\">{{curUser.name}}</span>\n          </a>\n          <div class=\"dropdown-menu\">\n            <a class=\"dropdown-item\" [routerLink] ='[\"/user\"]'> User Info</a>\n            <a class=\"dropdown-item\" [routerLink] ='[\"/home\"]' (click)='logOut()'> Đăng xuất</a>\n          </div>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n\n<div class=\"container\">\n  <div class=\"row pad-t-b-20\">\n    <div class=\"col-md-8 text-right\">\n      <div class=\"card text-left\">\n        <div class=\"card-header card-bg\"><i class=\"fas fa-file-code\"></i> {{mon.Name}}</div>\n        <div class=\"card-body\">\n          <div class=\"quest\" *ngFor='let quizs of quizMon.quiz | paginate : {itemsPerPage : 1, currentPage: curPage}'>\n            <p class=\"quest-title\">{{curPage}} . {{quizs.Text}}</p>\n            <div class=\"answer-box\" *ngFor=\"let ans of quizs.Answers\">\n              <input type=\"radio\" name=\"{{quizs.Id}}\" class=\"quest-choose\" value=\"{{ans.Id}}\" (change)='activeRadio(quizs.Id, ans.Id,$event);'> <span class=\"quest-ans\">{{ans.Text}}</span><br>\n            </div>\n          </div>\n          <div class=\"count-down-box\">\n              <countdown #testTime [config]=\"{leftTime: countDown}\"></countdown>\n          </div> \n        </div>\n        <div class=\"card-footer card-bg\">Số câu : {{curPage}} / {{quizMon.quiz.length}}</div>\n      </div>\n      <hr>\n      <div class=\"control-quest\">\n        <div class=\"row\">\n          <div class=\"col-md-3\">\n            <div class=\"icon-paginate\"></div>\n          </div>\n          <div class=\"col-md-9\">\n            <pagination-controls (pageChange)=\"curPage = $event; testTime.restart(); activeQuestNum('.quest-num'); showAnsPerPage()\"></pagination-controls>\n          </div>\n        </div>\n      </div>\n      <div class=\"instruction container-fluid text-left\">\n        <div class=\"row\">\n          <div class=\"col-md-6 instruct-bg\">\n            <div class=\"instruct-box\">\n              <p>Trả lời câu hỏi bằng việc tích vào các radio button</p>\n            </div>\n          </div>\n          <div class=\"col-md-6 instruct-bg\">\n            <div class=\"instruct-box\">\n              <p>Chỉ chọn được một đáp án cho mỗi câu</p>\n            </div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6 instruct-bg\">\n            <div class=\"instruct-box\">\n              <p>Thời gian để trả lời mỗi câu hỏi là {{countDown}} giây</p>\n            </div>\n          </div>\n          <div class=\"col-md-6 instruct-bg\">\n            <div class=\"instruct-box\">\n              <p>Lựa chọn câu hỏi cần làm ở thanh điều hướng hoặc click vào các ô câu hỏi ở cột bên phải</p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-4\" style=\"background-color:lightgoldenrodyellow; border-radius: 10px;\">\n      <div class=\"user-info\">\n        <div class=\"row\">\n          <div class=\"col-md-4\">\n            <img src=\"assets/images/user.png\" alt=\"user-info\" class=\"user-img-test rounded-circle img-thumbnail\">\n          </div>\n          <div class=\"col-md-8\">\n            <p>Name : {{curUser.name}}</p>\n            <p>Id : {{curUser.id}}</p>\n          </div>\n        </div>\n        <hr>\n        <div class=\"row\">\n          <div class=\"col-md-12 text-center\">\n            <p class=\"test-title\">Các câu hỏi</p>\n            <div class=\"quest-num-box\">\n              <div  class=\"quest-num text-center\" *ngFor=\"let quiz of quizMon.quiz; let i = index\"\n                (click)=\"toQuiz(i+1,$event)\" id='{{quiz.Id}}'> {{i+1}} </div>\n            </div>\n            <div class=\"clear\"></div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <br>\n            <button type=\"submit\" class=\"btn btn-danger\" (click)='checkEndTest()'>Kết thúc</button>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n<app-footer></app-footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- <app-menu></app-menu>   -->\n\n<nav class=\"navbar navbar-expand-md fixed-top\">\n  <div class=\"container\">\n    <!-- Brand -->\n    <a class=\"navbar-brand\" href=\"#\"><img src=\"assets/images/logo.png\" alt=\"\" class=\"menu-logo\"></a>\n\n    <!-- Toggler/collapsibe Button -->\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsibleNavbar\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n\n    <!-- Navbar links -->\n    <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">\n      <ul class=\"navbar-nav\" style=\"margin-right:auto!important\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" [routerLink] ='[\"/home\"]'>Trang chủ</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" [routerLink] ='[\"/introduce\"]'>Giới thiệu</a>\n        </li>\n        <li class=\"nav-item dropdown\">\n          <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">\n            Môn học\n          </a>\n          <div class=\"dropdown-menu\">\n            <a class=\"dropdown-item menu-mon\" name='mon.Id' (click)='checkLogin($event,\"block\",mon.Id);changeLesson(mon.Id)'  *ngFor=\"let mon of listMon\"> {{mon.Name}}</a>\n          </div>\n        </li> \n        <li class=\"nav-item\">\n          <a class=\"nav-link\" [routerLink]='[\"/contact\"]'>Liên hệ</a>\n        </li>\n      </ul>\n      <ul class=\"navbar-nav\">\n        <li class=\"nav-log\" *ngIf=\"!loginTus\">\n          <a routerLink=\"/login\" class=\"log-link\">Đăng nhập</a>\n        </li>\n        <li class=\"nav-user dropdown\" *ngIf=\"loginTus\">\n          <a class=\"nav-link dropdown-toggle\" id=\"navbardrop\" data-toggle=\"dropdown\">\n            <img src=\"assets/images/user.png\" alt=\"\" class=\"rounded-circle img-thumbnail\" style=\"width:50px;\" />\n            <span class=\"user-name\">{{curUser.name}}</span>\n          </a>\n          <div class=\"dropdown-menu\">\n            <a class=\"dropdown-item\" [routerLink] ='[\"/user\"]'> User Info</a>\n            <a class=\"dropdown-item\" [routerLink] ='[\"/home\"]' (click)='logOut()'> Đăng xuất</a>\n          </div>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n\n<div class=\"container\">\n  <div class=\"row pad-t-b-20\">\n    <div class=\"col-md-8 text-right\">\n      <div class=\"card text-left\">\n        <div class=\"card-header card-bg\"><i class=\"fas fa-file-code\"></i> {{mon.Name}}</div>\n        <div class=\"card-body\">\n          <div class=\"quest\" *ngFor='let quizs of quizMon.quiz | paginate : {itemsPerPage : 1, currentPage: curPage}'>\n            <p class=\"quest-title\">{{curPage}} . {{quizs.Text}}</p>\n            <div class=\"answer-box\" *ngFor=\"let ans of quizs.Answers\">\n              <input type=\"radio\" name=\"{{quizs.Id}}\" class=\"quest-choose\" value=\"{{ans.Id}}\" (change)='activeRadio(quizs.Id, ans.Id,$event);disabledRadio()'> <span class=\"quest-ans\">{{ans.Text}}</span><br>\n            </div>\n          </div>\n          <div class=\"count-down-box\">\n              <span id='countDown'></span>\n          </div> \n        </div>\n        <div class=\"card-footer card-bg\">Số câu : {{curPage}} / {{quizMon.quiz.length}}</div>\n      </div>\n      <hr>\n      <div class=\"control-quest\">\n        <div class=\"row\">\n          <div class=\"col-md-3\">\n            <div class=\"icon-paginate\"></div>\n          </div>\n          <div class=\"col-md-9\">\n            <pagination-controls (pageChange)=\"curPage = $event; activeQuestNum('.quest-num'); showAnsPerPage();disabledRadio()\"></pagination-controls>\n          </div>\n        </div>\n      </div>\n      <div class=\"instruction container-fluid text-left\">\n        <div class=\"row\">\n          <div class=\"col-md-6 instruct-bg\">\n            <div class=\"instruct-box\">\n              <p>Trả lời câu hỏi bằng việc tích vào các radio button</p>\n            </div>\n          </div>\n          <div class=\"col-md-6 instruct-bg\">\n            <div class=\"instruct-box\">\n              <p>Chỉ chọn được một đáp án cho mỗi câu</p>\n            </div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6 instruct-bg\">\n            <div class=\"instruct-box\">\n              <p>Thời gian để trả lời bài kiểm tra là 1 tiếng 30 phút</p>\n            </div>\n          </div>\n          <div class=\"col-md-6 instruct-bg\">\n            <div class=\"instruct-box\">\n              <p>Lựa chọn câu hỏi cần làm ở thanh điều hướng hoặc click vào các ô câu hỏi ở cột bên phải</p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-4\" style=\"background-color:lightgoldenrodyellow; border-radius: 10px;\">\n      <div class=\"user-info\">\n        <div class=\"row\">\n          <div class=\"col-md-4\">\n            <img src=\"assets/images/user.png\" alt=\"user-info\" class=\"user-img-test rounded-circle img-thumbnail\">\n          </div>\n          <div class=\"col-md-8\">\n            <p>Tên : {{curUser.name}}</p>\n            <p>Id : {{curUser.id}}</p>\n          </div>\n        </div>\n        <hr>\n        <div class=\"row\">\n          <div class=\"col-md-12 text-center\">\n            <p class=\"test-title\">Các câu hỏi</p>\n            <div class=\"quest-num-box\">\n              <div  class=\"quest-num text-center\" *ngFor=\"let quiz of quizMon.quiz; let i = index\"\n                (click)=\"toQuiz(i+1,$event);showAnsPerPage()\" id='{{quiz.Id}}'> {{i+1}} </div>\n            </div>\n            <div class=\"clear\"></div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <br>\n            <button type=\"submit\" class=\"btn btn-danger\" (click)='checkEndTest()'>Kết thúc</button>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div id='mark-alert'>\n    <div id='closebox' (click)='closeBox()'>&times;</div>\n    <div class='text-center'>\n        <h2 class='result-lesson'>{{this.mon.Name}}</h2>\n    </div>\n    <hr />\n    <p class='result-part'><span>Tài Khoản</span> : {{curUser.name}}</p>\n    <p class='result-part'><span>Điểm số</span> : {{testMark()}} </p>\n    <p class='result-part'><span>Số câu đã làm</span> : {{countIsAnswer}}</p>\n    <p class='result-part'><span>Số câu làm sai</span> : {{quizMon.quiz.length - testMark()}}</p>\n\n    \n  </div>\n</div>\n<app-footer></app-footer>\n");
 
 /***/ }),
 
@@ -861,12 +861,13 @@ let LoginComponent = class LoginComponent {
         this.route = route;
         this.router = router;
         this.mainSer = mainSer;
-        this.listUser = JSON.parse(localStorage.getItem('listUser'));
+        this.listUser = [];
     }
     ngOnInit() {
         this.isCorrectUser = false;
     }
     login() {
+        this.listUser = JSON.parse(localStorage.getItem('listUser'));
         this.listUser.forEach(user => {
             if (this.userName == user.user && this.password == user.password) {
                 this.isCorrectUser = true;
@@ -891,6 +892,10 @@ let LoginComponent = class LoginComponent {
                     user.password = pass;
                     this.closeForgot();
                     alert('Thay đổi thành công');
+                    this.router.navigate(['/login']);
+                }
+                else {
+                    alert('Xác nhận mật khẩu không trùng');
                 }
                 hasUser = true;
             }
@@ -13891,9 +13896,9 @@ let MainServiceService = class MainServiceService {
             this.switchModalBox(x);
         }
         else {
-            var confirm = window.confirm('Ban co muon chuyen den mon nay ?');
+            var confirm = window.confirm('Bạn có muốn chuyển đến môn này ?');
             if (confirm) {
-                sessionStorage.setItem('lessionId', Idmon);
+                sessionStorage.setItem('lessonId', Idmon);
                 sessionStorage.setItem('isEndTest', JSON.stringify(false));
                 setTimeout(() => {
                     this.router.navigate(['/test']);
@@ -13973,7 +13978,7 @@ let MenuComponent = class MenuComponent {
         ];
     }
     ngOnInit() {
-        sessionStorage.setItem('isEndTest', JSON.stringify(false));
+        // sessionStorage.setItem('isEndTest',JSON.stringify(false ));
         if (localStorage.length == 0) {
             localStorage.setItem('listUser', JSON.stringify(this.defauUser));
         }
@@ -14109,7 +14114,7 @@ SignupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".quest {\r\n    width:100%;\r\n    position: relative;\r\n}\r\n.quest-choose {\r\n    margin-right : 15px;\r\n    vertical-align: middle;\r\n}\r\n.quest-ans {\r\n    vertical-align: top;\r\n    color: rgba(0,0,0,0.5);\r\n}\r\n.answer-box {\r\n    padding-left: 30px;\r\n}\r\n.quest-title {\r\n    margin-bottom:0;\r\n}\r\n.user-info {\r\n    width:100%;\r\n    margin: 10px auto;\r\n}\r\n.user-img-test {\r\n    width:100px;\r\n    height:100px;\r\n    \r\n}\r\n.pad-t-b-20 {\r\n    margin: 20px auto;\r\n}\r\n.quest-num-box {\r\n    align-content: center;\r\n}\r\n.quest-num {\r\n    border-radius : 10px;\r\n    background-color:lightblue;\r\n    font-size:14px;\r\n    font-weight: 400;\r\n    padding: 5px;\r\n    margin: 5px;\r\n    width: 30px;\r\n    height:30px;\r\n    float:left;\r\n    cursor: pointer;\r\n}\r\n.card-bg {\r\n    background-color: lightgoldenrodyellow;\r\n}\r\n.count-down-box {\r\n    position: absolute;\r\n    top :10px;\r\n    right :20px;\r\n    padding:5px;\r\n    border-radius: 20px;\r\n    background-color: lightblue;\r\n    color :white;\r\n    width:auto;\r\n    height:30px;\r\n    line-height: 15px;\r\n}\r\n.test-title {\r\n    text-transform: uppercase;\r\n    font-size:20px;\r\n\r\n}\r\n.control-quest {\r\n    width:100%;\r\n    text-align: right;\r\n}\r\n.instruct-box {\r\n    width: 100%;\r\n    background-color: indianred;\r\n    color:white;\r\n    border-radius: 10px;\r\n    box-shadow: 0 7px 4px #777;\r\n    padding: 10px;   \r\n    margin : 20px 0;\r\n    height: 100px;\r\n    overflow: hidden;\r\n}\r\n.quest-num.active {\r\n    background-color: lightcoral!important;\r\n    color:white!important;\r\n}\r\n.quest-ans.active {\r\n    color: lightcoral;\r\n    font-weight: bold;\r\n}\r\n.quest-ans.answer {\r\n    color: lightgreen;\r\n    font-weight: bold;\r\n}\r\n.quest-num.answer {\r\n    background-color:lightgreen;\r\n    color:black;\r\n}\r\n/***************************************/\r\n.menu-logo {\r\n    width: 200px;\r\n    height: 50px;\r\n  }\r\nnav {\r\n    background-color: rgba(0, 0, 0, 0.8);\r\n  }\r\n.nav-item {\r\n    width: 150px;\r\n  }\r\n.nav-link {\r\n    text-align: center;\r\n    color: white;\r\n    border-radius: 20px;\r\n  }\r\n.nav-link:hover {\r\n    background-color: white;\r\n    color: rgba(0, 0, 0, 0.8);\r\n  }\r\n.nav-log {\r\n    background-color: white;\r\n    color: rgba(0, 0, 0, 0.8);\r\n    padding: 5px 15px;\r\n    border-radius: 20px;\r\n  }\r\n.log-link {\r\n    color: tomato;\r\n  }\r\n.user-name {\r\n    color: white;\r\n    text-transform: capitalize;\r\n    margin-left: 10px;\r\n  }\r\n.nav-link:hover .user-name {\r\n    color: black;\r\n  }\r\n.alert-login-box {\r\n    width: 200px;\r\n    height: 200px\r\n  }\r\n.menu-mon {\r\n    cursor: pointer;\r\n  }\r\n#overlay {\r\n    width: 100%;\r\n    height: 100vh;\r\n    background-color: rgba(0, 0, 0, 0.4);\r\n    left: 0;\r\n    right: 0;\r\n    top: 0;\r\n    bottom: 0;\r\n    position: fixed;\r\n    display: none;\r\n    z-index:10;\r\n  }\r\n#box-message {\r\n    width: 30%;\r\n    height: 70px;\r\n    background-color: lightskyblue;\r\n    position: fixed;\r\n    top: 80px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    z-index: 10000;\r\n    padding: 15px;\r\n    color: white;\r\n    font-size: 20px;\r\n    border-radius: 15px;\r\n    display: none;\r\n  }\r\n.close-box {\r\n    position: absolute;\r\n    right: 10px;\r\n    top: -10px;\r\n    font-size: 30px;\r\n  }\r\n  \r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC90ZXN0L3Rlc3QuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFVBQVU7SUFDVixrQkFBa0I7QUFDdEI7QUFDQTtJQUNJLG1CQUFtQjtJQUNuQixzQkFBc0I7QUFDMUI7QUFDQTtJQUNJLG1CQUFtQjtJQUNuQixzQkFBc0I7QUFDMUI7QUFDQTtJQUNJLGtCQUFrQjtBQUN0QjtBQUNBO0lBQ0ksZUFBZTtBQUNuQjtBQUNBO0lBQ0ksVUFBVTtJQUNWLGlCQUFpQjtBQUNyQjtBQUNBO0lBQ0ksV0FBVztJQUNYLFlBQVk7O0FBRWhCO0FBQ0E7SUFDSSxpQkFBaUI7QUFDckI7QUFDQTtJQUNJLHFCQUFxQjtBQUN6QjtBQUNBO0lBQ0ksb0JBQW9CO0lBQ3BCLDBCQUEwQjtJQUMxQixjQUFjO0lBQ2QsZ0JBQWdCO0lBQ2hCLFlBQVk7SUFDWixXQUFXO0lBQ1gsV0FBVztJQUNYLFdBQVc7SUFDWCxVQUFVO0lBQ1YsZUFBZTtBQUNuQjtBQUNBO0lBQ0ksc0NBQXNDO0FBQzFDO0FBQ0E7SUFDSSxrQkFBa0I7SUFDbEIsU0FBUztJQUNULFdBQVc7SUFDWCxXQUFXO0lBQ1gsbUJBQW1CO0lBQ25CLDJCQUEyQjtJQUMzQixZQUFZO0lBQ1osVUFBVTtJQUNWLFdBQVc7SUFDWCxpQkFBaUI7QUFDckI7QUFDQTtJQUNJLHlCQUF5QjtJQUN6QixjQUFjOztBQUVsQjtBQUNBO0lBQ0ksVUFBVTtJQUNWLGlCQUFpQjtBQUNyQjtBQUNBO0lBQ0ksV0FBVztJQUNYLDJCQUEyQjtJQUMzQixXQUFXO0lBQ1gsbUJBQW1CO0lBQ25CLDBCQUEwQjtJQUMxQixhQUFhO0lBQ2IsZUFBZTtJQUNmLGFBQWE7SUFDYixnQkFBZ0I7QUFDcEI7QUFDQTtJQUNJLHNDQUFzQztJQUN0QyxxQkFBcUI7QUFDekI7QUFDQTtJQUNJLGlCQUFpQjtJQUNqQixpQkFBaUI7QUFDckI7QUFDQTtJQUNJLGlCQUFpQjtJQUNqQixpQkFBaUI7QUFDckI7QUFDQTtJQUNJLDJCQUEyQjtJQUMzQixXQUFXO0FBQ2Y7QUFFQSx3Q0FBd0M7QUFDeEM7SUFDSSxZQUFZO0lBQ1osWUFBWTtFQUNkO0FBRUE7SUFDRSxvQ0FBb0M7RUFDdEM7QUFFQTtJQUNFLFlBQVk7RUFDZDtBQUVBO0lBQ0Usa0JBQWtCO0lBQ2xCLFlBQVk7SUFDWixtQkFBbUI7RUFDckI7QUFFQTtJQUNFLHVCQUF1QjtJQUN2Qix5QkFBeUI7RUFDM0I7QUFFQTtJQUNFLHVCQUF1QjtJQUN2Qix5QkFBeUI7SUFDekIsaUJBQWlCO0lBQ2pCLG1CQUFtQjtFQUNyQjtBQUVBO0lBQ0UsYUFBYTtFQUNmO0FBRUE7SUFDRSxZQUFZO0lBQ1osMEJBQTBCO0lBQzFCLGlCQUFpQjtFQUNuQjtBQUVBO0lBQ0UsWUFBWTtFQUNkO0FBRUE7SUFDRSxZQUFZO0lBQ1o7RUFDRjtBQUVBO0lBQ0UsZUFBZTtFQUNqQjtBQUVBO0lBQ0UsV0FBVztJQUNYLGFBQWE7SUFDYixvQ0FBb0M7SUFDcEMsT0FBTztJQUNQLFFBQVE7SUFDUixNQUFNO0lBQ04sU0FBUztJQUNULGVBQWU7SUFDZixhQUFhO0lBQ2IsVUFBVTtFQUNaO0FBRUE7SUFDRSxVQUFVO0lBQ1YsWUFBWTtJQUNaLDhCQUE4QjtJQUM5QixlQUFlO0lBQ2YsU0FBUztJQUNULFNBQVM7SUFDVCwyQkFBMkI7SUFDM0IsY0FBYztJQUNkLGFBQWE7SUFDYixZQUFZO0lBQ1osZUFBZTtJQUNmLG1CQUFtQjtJQUNuQixhQUFhO0VBQ2Y7QUFFQTtJQUNFLGtCQUFrQjtJQUNsQixXQUFXO0lBQ1gsVUFBVTtJQUNWLGVBQWU7RUFDakIiLCJmaWxlIjoiYXBwL3Rlc3QvdGVzdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnF1ZXN0IHtcclxuICAgIHdpZHRoOjEwMCU7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbn1cclxuLnF1ZXN0LWNob29zZSB7XHJcbiAgICBtYXJnaW4tcmlnaHQgOiAxNXB4O1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxufVxyXG4ucXVlc3QtYW5zIHtcclxuICAgIHZlcnRpY2FsLWFsaWduOiB0b3A7XHJcbiAgICBjb2xvcjogcmdiYSgwLDAsMCwwLjUpO1xyXG59XHJcbi5hbnN3ZXItYm94IHtcclxuICAgIHBhZGRpbmctbGVmdDogMzBweDtcclxufVxyXG4ucXVlc3QtdGl0bGUge1xyXG4gICAgbWFyZ2luLWJvdHRvbTowO1xyXG59XHJcbi51c2VyLWluZm8ge1xyXG4gICAgd2lkdGg6MTAwJTtcclxuICAgIG1hcmdpbjogMTBweCBhdXRvO1xyXG59XHJcbi51c2VyLWltZy10ZXN0IHtcclxuICAgIHdpZHRoOjEwMHB4O1xyXG4gICAgaGVpZ2h0OjEwMHB4O1xyXG4gICAgXHJcbn1cclxuLnBhZC10LWItMjAge1xyXG4gICAgbWFyZ2luOiAyMHB4IGF1dG87XHJcbn1cclxuLnF1ZXN0LW51bS1ib3gge1xyXG4gICAgYWxpZ24tY29udGVudDogY2VudGVyO1xyXG59XHJcbi5xdWVzdC1udW0ge1xyXG4gICAgYm9yZGVyLXJhZGl1cyA6IDEwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOmxpZ2h0Ymx1ZTtcclxuICAgIGZvbnQtc2l6ZToxNHB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcclxuICAgIHBhZGRpbmc6IDVweDtcclxuICAgIG1hcmdpbjogNXB4O1xyXG4gICAgd2lkdGg6IDMwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIGZsb2F0OmxlZnQ7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLmNhcmQtYmcge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogbGlnaHRnb2xkZW5yb2R5ZWxsb3c7XHJcbn1cclxuLmNvdW50LWRvd24tYm94IHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcCA6MTBweDtcclxuICAgIHJpZ2h0IDoyMHB4O1xyXG4gICAgcGFkZGluZzo1cHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogbGlnaHRibHVlO1xyXG4gICAgY29sb3IgOndoaXRlO1xyXG4gICAgd2lkdGg6YXV0bztcclxuICAgIGhlaWdodDozMHB4O1xyXG4gICAgbGluZS1oZWlnaHQ6IDE1cHg7XHJcbn1cclxuLnRlc3QtdGl0bGUge1xyXG4gICAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcclxuICAgIGZvbnQtc2l6ZToyMHB4O1xyXG5cclxufVxyXG4uY29udHJvbC1xdWVzdCB7XHJcbiAgICB3aWR0aDoxMDAlO1xyXG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbn1cclxuLmluc3RydWN0LWJveCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGluZGlhbnJlZDtcclxuICAgIGNvbG9yOndoaXRlO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICAgIGJveC1zaGFkb3c6IDAgN3B4IDRweCAjNzc3O1xyXG4gICAgcGFkZGluZzogMTBweDsgICBcclxuICAgIG1hcmdpbiA6IDIwcHggMDtcclxuICAgIGhlaWdodDogMTAwcHg7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG59XHJcbi5xdWVzdC1udW0uYWN0aXZlIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGxpZ2h0Y29yYWwhaW1wb3J0YW50O1xyXG4gICAgY29sb3I6d2hpdGUhaW1wb3J0YW50O1xyXG59XHJcbi5xdWVzdC1hbnMuYWN0aXZlIHtcclxuICAgIGNvbG9yOiBsaWdodGNvcmFsO1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuLnF1ZXN0LWFucy5hbnN3ZXIge1xyXG4gICAgY29sb3I6IGxpZ2h0Z3JlZW47XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG4ucXVlc3QtbnVtLmFuc3dlciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOmxpZ2h0Z3JlZW47XHJcbiAgICBjb2xvcjpibGFjaztcclxufVxyXG5cclxuLyoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKi9cclxuLm1lbnUtbG9nbyB7XHJcbiAgICB3aWR0aDogMjAwcHg7XHJcbiAgICBoZWlnaHQ6IDUwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIG5hdiB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuOCk7XHJcbiAgfVxyXG4gIFxyXG4gIC5uYXYtaXRlbSB7XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC5uYXYtbGluayB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gIH1cclxuICBcclxuICAubmF2LWxpbms6aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICBjb2xvcjogcmdiYSgwLCAwLCAwLCAwLjgpO1xyXG4gIH1cclxuICBcclxuICAubmF2LWxvZyB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuOCk7XHJcbiAgICBwYWRkaW5nOiA1cHggMTVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC5sb2ctbGluayB7XHJcbiAgICBjb2xvcjogdG9tYXRvO1xyXG4gIH1cclxuICBcclxuICAudXNlci1uYW1lIHtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC5uYXYtbGluazpob3ZlciAudXNlci1uYW1lIHtcclxuICAgIGNvbG9yOiBibGFjaztcclxuICB9XHJcbiAgXHJcbiAgLmFsZXJ0LWxvZ2luLWJveCB7XHJcbiAgICB3aWR0aDogMjAwcHg7XHJcbiAgICBoZWlnaHQ6IDIwMHB4XHJcbiAgfVxyXG4gIFxyXG4gIC5tZW51LW1vbiB7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgfVxyXG4gIFxyXG4gICNvdmVybGF5IHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiAxMDB2aDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgMC40KTtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICByaWdodDogMDtcclxuICAgIHRvcDogMDtcclxuICAgIGJvdHRvbTogMDtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbiAgICB6LWluZGV4OjEwO1xyXG4gIH1cclxuICBcclxuICAjYm94LW1lc3NhZ2Uge1xyXG4gICAgd2lkdGg6IDMwJTtcclxuICAgIGhlaWdodDogNzBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGxpZ2h0c2t5Ymx1ZTtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHRvcDogODBweDtcclxuICAgIGxlZnQ6IDUwJTtcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgtNTAlKTtcclxuICAgIHotaW5kZXg6IDEwMDAwO1xyXG4gICAgcGFkZGluZzogMTVweDtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDE1cHg7XHJcbiAgICBkaXNwbGF5OiBub25lO1xyXG4gIH1cclxuICBcclxuICAuY2xvc2UtYm94IHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHJpZ2h0OiAxMHB4O1xyXG4gICAgdG9wOiAtMTBweDtcclxuICAgIGZvbnQtc2l6ZTogMzBweDtcclxuICB9XHJcbiAgIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".quest {\r\n    width:100%;\r\n    position: relative;\r\n}\r\n.quest-choose {\r\n    margin-right : 15px;\r\n    vertical-align: middle;\r\n}\r\n.quest-ans {\r\n    vertical-align: top;\r\n    color: rgba(0,0,0,0.5);\r\n}\r\n.answer-box {\r\n    padding-left: 30px;\r\n}\r\n.quest-title {\r\n    margin-bottom:0;\r\n}\r\n.user-info {\r\n    width:100%;\r\n    margin: 10px auto;\r\n}\r\n.user-img-test {\r\n    width:100px;\r\n    height:100px;\r\n    \r\n}\r\n.pad-t-b-20 {\r\n    margin: 20px auto;\r\n}\r\n.quest-num-box {\r\n    align-content: center;\r\n}\r\n.quest-num {\r\n    border-radius : 10px;\r\n    background-color:lightblue;\r\n    font-size:14px;\r\n    font-weight: 400;\r\n    padding: 5px;\r\n    margin: 5px;\r\n    width: 30px;\r\n    height:30px;\r\n    float:left;\r\n    cursor: pointer;\r\n}\r\n.card-bg {\r\n    background-color: lightgoldenrodyellow;\r\n}\r\n.count-down-box {\r\n    position: absolute;\r\n    top :10px;\r\n    right :20px;\r\n    padding:5px;\r\n    border-radius: 20px;\r\n    background-color: lightblue;\r\n    color :white;\r\n    width:auto;\r\n    height:30px;\r\n    line-height: 15px;\r\n}\r\n.test-title {\r\n    text-transform: uppercase;\r\n    font-size:20px;\r\n\r\n}\r\n.control-quest {\r\n    width:100%;\r\n    text-align: right;\r\n}\r\n.instruct-box {\r\n    width: 100%;\r\n    background-color: indianred;\r\n    color:white;\r\n    border-radius: 10px;\r\n    box-shadow: 0 7px 4px #777;\r\n    padding: 10px;   \r\n    margin : 20px 0;\r\n    height: 100px;\r\n    overflow: hidden;\r\n}\r\n.quest-num.active {\r\n    background-color: lightcoral!important;\r\n    color:white!important;\r\n}\r\n.quest-ans.active {\r\n    color: lightcoral;\r\n    font-weight: bold;\r\n}\r\n.quest-ans.answer {\r\n    color: lightgreen;\r\n    font-weight: bold;\r\n}\r\n.quest-num.answer {\r\n    background-color:lightgreen;\r\n    color:black;\r\n}\r\n/***************************************/\r\n.menu-logo {\r\n    width: 200px;\r\n    height: 50px;\r\n  }\r\nnav {\r\n    background-color: rgba(0, 0, 0, 0.8);\r\n  }\r\n.nav-item {\r\n    width: 150px;\r\n  }\r\n.nav-link {\r\n    text-align: center;\r\n    color: white;\r\n    border-radius: 20px;\r\n  }\r\n.nav-link:hover {\r\n    background-color: white;\r\n    color: rgba(0, 0, 0, 0.8);\r\n  }\r\n.nav-log {\r\n    background-color: white;\r\n    color: rgba(0, 0, 0, 0.8);\r\n    padding: 5px 15px;\r\n    border-radius: 20px;\r\n  }\r\n.log-link {\r\n    color: tomato;\r\n  }\r\n.user-name {\r\n    color: white;\r\n    text-transform: capitalize;\r\n    margin-left: 10px;\r\n  }\r\n.nav-link:hover .user-name {\r\n    color: black;\r\n  }\r\n.alert-login-box {\r\n    width: 200px;\r\n    height: 200px\r\n  }\r\n.menu-mon {\r\n    cursor: pointer;\r\n  }\r\n#overlay {\r\n    width: 100%;\r\n    height: 100vh;\r\n    background-color: rgba(0, 0, 0, 0.4);\r\n    left: 0;\r\n    right: 0;\r\n    top: 0;\r\n    bottom: 0;\r\n    position: fixed;\r\n    display: none;\r\n    z-index:10;\r\n  }\r\n#box-message {\r\n    width: 30%;\r\n    height: 70px;\r\n    background-color: lightskyblue;\r\n    position: fixed;\r\n    top: 80px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    z-index: 10000;\r\n    padding: 15px;\r\n    color: white;\r\n    font-size: 20px;\r\n    border-radius: 15px;\r\n    display: none;\r\n  }\r\n.close-box {\r\n    position: absolute;\r\n    right: 10px;\r\n    top: -10px;\r\n    font-size: 30px;\r\n  }\r\n#mark-alert {\r\n    position: fixed;\r\n    top:25%;\r\n    left:-50%;\r\n    width:40%;\r\n    height:400px;\r\n    background-color: rgba(0,0,0,0.8);\r\n    border-radius: 20px;\r\n    border: 2px solid lightblue;\r\n    transition: all 1s;\r\n    color:white;\r\n    padding:20px;\r\n  }\r\n#closebox {\r\n    position: absolute;\r\n    right:0px;\r\n    top:-20px;\r\n    font-size: 40px;\r\n    color:white;\r\n    font-weight: bold;\r\n  }\r\n.result-lesson {\r\n    text-transform: uppercase;\r\n  }\r\n.result-part {\r\n    font-size:20px;\r\n    text-transform: capitalize;\r\n  }\r\n.result-part span {\r\n    font-weight: bold;\r\n    color:lightblue;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC90ZXN0L3Rlc3QuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFVBQVU7SUFDVixrQkFBa0I7QUFDdEI7QUFDQTtJQUNJLG1CQUFtQjtJQUNuQixzQkFBc0I7QUFDMUI7QUFDQTtJQUNJLG1CQUFtQjtJQUNuQixzQkFBc0I7QUFDMUI7QUFDQTtJQUNJLGtCQUFrQjtBQUN0QjtBQUNBO0lBQ0ksZUFBZTtBQUNuQjtBQUNBO0lBQ0ksVUFBVTtJQUNWLGlCQUFpQjtBQUNyQjtBQUNBO0lBQ0ksV0FBVztJQUNYLFlBQVk7O0FBRWhCO0FBQ0E7SUFDSSxpQkFBaUI7QUFDckI7QUFDQTtJQUNJLHFCQUFxQjtBQUN6QjtBQUNBO0lBQ0ksb0JBQW9CO0lBQ3BCLDBCQUEwQjtJQUMxQixjQUFjO0lBQ2QsZ0JBQWdCO0lBQ2hCLFlBQVk7SUFDWixXQUFXO0lBQ1gsV0FBVztJQUNYLFdBQVc7SUFDWCxVQUFVO0lBQ1YsZUFBZTtBQUNuQjtBQUNBO0lBQ0ksc0NBQXNDO0FBQzFDO0FBQ0E7SUFDSSxrQkFBa0I7SUFDbEIsU0FBUztJQUNULFdBQVc7SUFDWCxXQUFXO0lBQ1gsbUJBQW1CO0lBQ25CLDJCQUEyQjtJQUMzQixZQUFZO0lBQ1osVUFBVTtJQUNWLFdBQVc7SUFDWCxpQkFBaUI7QUFDckI7QUFDQTtJQUNJLHlCQUF5QjtJQUN6QixjQUFjOztBQUVsQjtBQUNBO0lBQ0ksVUFBVTtJQUNWLGlCQUFpQjtBQUNyQjtBQUNBO0lBQ0ksV0FBVztJQUNYLDJCQUEyQjtJQUMzQixXQUFXO0lBQ1gsbUJBQW1CO0lBQ25CLDBCQUEwQjtJQUMxQixhQUFhO0lBQ2IsZUFBZTtJQUNmLGFBQWE7SUFDYixnQkFBZ0I7QUFDcEI7QUFDQTtJQUNJLHNDQUFzQztJQUN0QyxxQkFBcUI7QUFDekI7QUFDQTtJQUNJLGlCQUFpQjtJQUNqQixpQkFBaUI7QUFDckI7QUFDQTtJQUNJLGlCQUFpQjtJQUNqQixpQkFBaUI7QUFDckI7QUFDQTtJQUNJLDJCQUEyQjtJQUMzQixXQUFXO0FBQ2Y7QUFFQSx3Q0FBd0M7QUFDeEM7SUFDSSxZQUFZO0lBQ1osWUFBWTtFQUNkO0FBRUE7SUFDRSxvQ0FBb0M7RUFDdEM7QUFFQTtJQUNFLFlBQVk7RUFDZDtBQUVBO0lBQ0Usa0JBQWtCO0lBQ2xCLFlBQVk7SUFDWixtQkFBbUI7RUFDckI7QUFFQTtJQUNFLHVCQUF1QjtJQUN2Qix5QkFBeUI7RUFDM0I7QUFFQTtJQUNFLHVCQUF1QjtJQUN2Qix5QkFBeUI7SUFDekIsaUJBQWlCO0lBQ2pCLG1CQUFtQjtFQUNyQjtBQUVBO0lBQ0UsYUFBYTtFQUNmO0FBRUE7SUFDRSxZQUFZO0lBQ1osMEJBQTBCO0lBQzFCLGlCQUFpQjtFQUNuQjtBQUVBO0lBQ0UsWUFBWTtFQUNkO0FBRUE7SUFDRSxZQUFZO0lBQ1o7RUFDRjtBQUVBO0lBQ0UsZUFBZTtFQUNqQjtBQUVBO0lBQ0UsV0FBVztJQUNYLGFBQWE7SUFDYixvQ0FBb0M7SUFDcEMsT0FBTztJQUNQLFFBQVE7SUFDUixNQUFNO0lBQ04sU0FBUztJQUNULGVBQWU7SUFDZixhQUFhO0lBQ2IsVUFBVTtFQUNaO0FBRUE7SUFDRSxVQUFVO0lBQ1YsWUFBWTtJQUNaLDhCQUE4QjtJQUM5QixlQUFlO0lBQ2YsU0FBUztJQUNULFNBQVM7SUFDVCwyQkFBMkI7SUFDM0IsY0FBYztJQUNkLGFBQWE7SUFDYixZQUFZO0lBQ1osZUFBZTtJQUNmLG1CQUFtQjtJQUNuQixhQUFhO0VBQ2Y7QUFFQTtJQUNFLGtCQUFrQjtJQUNsQixXQUFXO0lBQ1gsVUFBVTtJQUNWLGVBQWU7RUFDakI7QUFDQTtJQUNFLGVBQWU7SUFDZixPQUFPO0lBQ1AsU0FBUztJQUNULFNBQVM7SUFDVCxZQUFZO0lBQ1osaUNBQWlDO0lBQ2pDLG1CQUFtQjtJQUNuQiwyQkFBMkI7SUFDM0Isa0JBQWtCO0lBQ2xCLFdBQVc7SUFDWCxZQUFZO0VBQ2Q7QUFDQTtJQUNFLGtCQUFrQjtJQUNsQixTQUFTO0lBQ1QsU0FBUztJQUNULGVBQWU7SUFDZixXQUFXO0lBQ1gsaUJBQWlCO0VBQ25CO0FBQ0E7SUFDRSx5QkFBeUI7RUFDM0I7QUFDQTtJQUNFLGNBQWM7SUFDZCwwQkFBMEI7RUFDNUI7QUFDQTtJQUNFLGlCQUFpQjtJQUNqQixlQUFlO0VBQ2pCIiwiZmlsZSI6ImFwcC90ZXN0L3Rlc3QuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5xdWVzdCB7XHJcbiAgICB3aWR0aDoxMDAlO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcbi5xdWVzdC1jaG9vc2Uge1xyXG4gICAgbWFyZ2luLXJpZ2h0IDogMTVweDtcclxuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbn1cclxuLnF1ZXN0LWFucyB7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG4gICAgY29sb3I6IHJnYmEoMCwwLDAsMC41KTtcclxufVxyXG4uYW5zd2VyLWJveCB7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDMwcHg7XHJcbn1cclxuLnF1ZXN0LXRpdGxlIHtcclxuICAgIG1hcmdpbi1ib3R0b206MDtcclxufVxyXG4udXNlci1pbmZvIHtcclxuICAgIHdpZHRoOjEwMCU7XHJcbiAgICBtYXJnaW46IDEwcHggYXV0bztcclxufVxyXG4udXNlci1pbWctdGVzdCB7XHJcbiAgICB3aWR0aDoxMDBweDtcclxuICAgIGhlaWdodDoxMDBweDtcclxuICAgIFxyXG59XHJcbi5wYWQtdC1iLTIwIHtcclxuICAgIG1hcmdpbjogMjBweCBhdXRvO1xyXG59XHJcbi5xdWVzdC1udW0tYm94IHtcclxuICAgIGFsaWduLWNvbnRlbnQ6IGNlbnRlcjtcclxufVxyXG4ucXVlc3QtbnVtIHtcclxuICAgIGJvcmRlci1yYWRpdXMgOiAxMHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpsaWdodGJsdWU7XHJcbiAgICBmb250LXNpemU6MTRweDtcclxuICAgIGZvbnQtd2VpZ2h0OiA0MDA7XHJcbiAgICBwYWRkaW5nOiA1cHg7XHJcbiAgICBtYXJnaW46IDVweDtcclxuICAgIHdpZHRoOiAzMHB4O1xyXG4gICAgaGVpZ2h0OjMwcHg7XHJcbiAgICBmbG9hdDpsZWZ0O1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5jYXJkLWJnIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGxpZ2h0Z29sZGVucm9keWVsbG93O1xyXG59XHJcbi5jb3VudC1kb3duLWJveCB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3AgOjEwcHg7XHJcbiAgICByaWdodCA6MjBweDtcclxuICAgIHBhZGRpbmc6NXB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGxpZ2h0Ymx1ZTtcclxuICAgIGNvbG9yIDp3aGl0ZTtcclxuICAgIHdpZHRoOmF1dG87XHJcbiAgICBoZWlnaHQ6MzBweDtcclxuICAgIGxpbmUtaGVpZ2h0OiAxNXB4O1xyXG59XHJcbi50ZXN0LXRpdGxlIHtcclxuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcbiAgICBmb250LXNpemU6MjBweDtcclxuXHJcbn1cclxuLmNvbnRyb2wtcXVlc3Qge1xyXG4gICAgd2lkdGg6MTAwJTtcclxuICAgIHRleHQtYWxpZ246IHJpZ2h0O1xyXG59XHJcbi5pbnN0cnVjdC1ib3gge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBpbmRpYW5yZWQ7XHJcbiAgICBjb2xvcjp3aGl0ZTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICBib3gtc2hhZG93OiAwIDdweCA0cHggIzc3NztcclxuICAgIHBhZGRpbmc6IDEwcHg7ICAgXHJcbiAgICBtYXJnaW4gOiAyMHB4IDA7XHJcbiAgICBoZWlnaHQ6IDEwMHB4O1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxufVxyXG4ucXVlc3QtbnVtLmFjdGl2ZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBsaWdodGNvcmFsIWltcG9ydGFudDtcclxuICAgIGNvbG9yOndoaXRlIWltcG9ydGFudDtcclxufVxyXG4ucXVlc3QtYW5zLmFjdGl2ZSB7XHJcbiAgICBjb2xvcjogbGlnaHRjb3JhbDtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcbi5xdWVzdC1hbnMuYW5zd2VyIHtcclxuICAgIGNvbG9yOiBsaWdodGdyZWVuO1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuLnF1ZXN0LW51bS5hbnN3ZXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjpsaWdodGdyZWVuO1xyXG4gICAgY29sb3I6YmxhY2s7XHJcbn1cclxuXHJcbi8qKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiovXHJcbi5tZW51LWxvZ28ge1xyXG4gICAgd2lkdGg6IDIwMHB4O1xyXG4gICAgaGVpZ2h0OiA1MHB4O1xyXG4gIH1cclxuICBcclxuICBuYXYge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgwLCAwLCAwLCAwLjgpO1xyXG4gIH1cclxuICBcclxuICAubmF2LWl0ZW0ge1xyXG4gICAgd2lkdGg6IDE1MHB4O1xyXG4gIH1cclxuICBcclxuICAubmF2LWxpbmsge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjBweDtcclxuICB9XHJcbiAgXHJcbiAgLm5hdi1saW5rOmhvdmVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC44KTtcclxuICB9XHJcbiAgXHJcbiAgLm5hdi1sb2cge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICBjb2xvcjogcmdiYSgwLCAwLCAwLCAwLjgpO1xyXG4gICAgcGFkZGluZzogNXB4IDE1cHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gIH1cclxuICBcclxuICAubG9nLWxpbmsge1xyXG4gICAgY29sb3I6IHRvbWF0bztcclxuICB9XHJcbiAgXHJcbiAgLnVzZXItbmFtZSB7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICB0ZXh0LXRyYW5zZm9ybTogY2FwaXRhbGl6ZTtcclxuICAgIG1hcmdpbi1sZWZ0OiAxMHB4O1xyXG4gIH1cclxuICBcclxuICAubmF2LWxpbms6aG92ZXIgLnVzZXItbmFtZSB7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbiAgfVxyXG4gIFxyXG4gIC5hbGVydC1sb2dpbi1ib3gge1xyXG4gICAgd2lkdGg6IDIwMHB4O1xyXG4gICAgaGVpZ2h0OiAyMDBweFxyXG4gIH1cclxuICBcclxuICAubWVudS1tb24ge1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIH1cclxuICBcclxuICAjb3ZlcmxheSB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMTAwdmg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuNCk7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgcmlnaHQ6IDA7XHJcbiAgICB0b3A6IDA7XHJcbiAgICBib3R0b206IDA7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICBkaXNwbGF5OiBub25lO1xyXG4gICAgei1pbmRleDoxMDtcclxuICB9XHJcbiAgXHJcbiAgI2JveC1tZXNzYWdlIHtcclxuICAgIHdpZHRoOiAzMCU7XHJcbiAgICBoZWlnaHQ6IDcwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBsaWdodHNreWJsdWU7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICB0b3A6IDgwcHg7XHJcbiAgICBsZWZ0OiA1MCU7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoLTUwJSk7XHJcbiAgICB6LWluZGV4OiAxMDAwMDtcclxuICAgIHBhZGRpbmc6IDE1cHg7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxNXB4O1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxuICB9XHJcbiAgXHJcbiAgLmNsb3NlLWJveCB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICByaWdodDogMTBweDtcclxuICAgIHRvcDogLTEwcHg7XHJcbiAgICBmb250LXNpemU6IDMwcHg7XHJcbiAgfVxyXG4gICNtYXJrLWFsZXJ0IHtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHRvcDoyNSU7XHJcbiAgICBsZWZ0Oi01MCU7XHJcbiAgICB3aWR0aDo0MCU7XHJcbiAgICBoZWlnaHQ6NDAwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsMCwwLDAuOCk7XHJcbiAgICBib3JkZXItcmFkaXVzOiAyMHB4O1xyXG4gICAgYm9yZGVyOiAycHggc29saWQgbGlnaHRibHVlO1xyXG4gICAgdHJhbnNpdGlvbjogYWxsIDFzO1xyXG4gICAgY29sb3I6d2hpdGU7XHJcbiAgICBwYWRkaW5nOjIwcHg7XHJcbiAgfVxyXG4gICNjbG9zZWJveCB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICByaWdodDowcHg7XHJcbiAgICB0b3A6LTIwcHg7XHJcbiAgICBmb250LXNpemU6IDQwcHg7XHJcbiAgICBjb2xvcjp3aGl0ZTtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIH1cclxuICAucmVzdWx0LWxlc3NvbiB7XHJcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG4gIH1cclxuICAucmVzdWx0LXBhcnQge1xyXG4gICAgZm9udC1zaXplOjIwcHg7XHJcbiAgICB0ZXh0LXRyYW5zZm9ybTogY2FwaXRhbGl6ZTtcclxuICB9XHJcbiAgLnJlc3VsdC1wYXJ0IHNwYW4ge1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICBjb2xvcjpsaWdodGJsdWU7XHJcbiAgfSJdfQ== */");
 
 /***/ }),
 
@@ -14137,10 +14142,31 @@ let TestComponent = class TestComponent {
         this.route = route;
         this.router = router;
         this.curPage = 1;
-        this.countDown = 30;
         this.listMon = [];
         this.listQuiz = [];
-        this.trung = false;
+        this.countIsAnswer = 0;
+    }
+    ngOnInit() {
+        this.loginTus = JSON.parse(sessionStorage.getItem('loginTus'));
+        this.curUser = JSON.parse(sessionStorage.getItem('curUser'));
+        this.listMon = this.mainSer.listMon;
+        this.listQuiz = this.mainSer.listQuiz;
+        ;
+        this.lessonId = sessionStorage.getItem('lessonId');
+        this.mon = this.listMon.find(m => m.Id === this.lessonId);
+        this.quizMon = this.listQuiz.find(q => q.Id === this.lessonId);
+        sessionStorage.setItem('listWebAns', JSON.stringify(this.quizMon.quiz));
+        sessionStorage.setItem('isEndTest', JSON.stringify(false));
+        sessionStorage.setItem('isTimeOut', JSON.stringify(false));
+        //countdown
+        clearInterval(this.x);
+        setTimeout(this.setCountDown, 200);
+        //end countdown
+        this.toQuiz(this.curPage);
+        setInterval(this.showUserAns, 100);
+        setInterval(this.activeAnsNum, 100);
+        this.isEndTest = JSON.parse(sessionStorage.getItem('isEndTest'));
+        sessionStorage.setItem('listUserAns', JSON.stringify(this.mainSer.listAns));
     }
     toQuiz(index) {
         this.curPage = index;
@@ -14173,27 +14199,15 @@ let TestComponent = class TestComponent {
             });
         }
     }
-    ngOnInit() {
-        this.loginTus = JSON.parse(sessionStorage.getItem('loginTus'));
-        this.curUser = JSON.parse(sessionStorage.getItem('curUser'));
-        this.listMon = this.mainSer.listMon;
-        this.listQuiz = this.mainSer.listQuiz;
-        ;
-        this.lessonId = sessionStorage.getItem('lessionId');
-        this.mon = this.listMon.find(m => m.Id === this.lessonId);
-        this.quizMon = this.listQuiz.find(q => q.Id === this.lessonId);
-        sessionStorage.setItem('listWebAns', JSON.stringify(this.quizMon.quiz));
-        this.toQuiz(this.curPage);
-        setInterval(this.showUserAns, 100);
-        setInterval(this.activeAnsNum, 100);
-        this.isEndTest = JSON.parse(sessionStorage.getItem('isEndTest'));
-    }
     activeRadio(quizsId, ansId, event) {
         let checkHave = false;
+        // active user answer color
         document.querySelectorAll('.quest-ans').forEach(ans => {
             ans.classList.remove('active');
         });
         event.target.nextSibling.classList.add('active');
+        //add user ans to list
+        this.mainSer.listAns = JSON.parse(sessionStorage.getItem('listUserAns'));
         if (this.mainSer.listAns.length == 0) {
             this.mainSer.listAns.push({
                 Id: quizsId,
@@ -14207,9 +14221,6 @@ let TestComponent = class TestComponent {
                     checkHave = true;
                     return;
                 }
-                else {
-                    checkHave = false;
-                }
             });
             if (checkHave == false) {
                 this.mainSer.listAns.push({
@@ -14220,10 +14231,18 @@ let TestComponent = class TestComponent {
         }
         // sessionStorage.removeItem('listAns');
         sessionStorage.setItem('listUserAns', JSON.stringify(this.mainSer.listAns));
+        this.countIsAnswer = this.mainSer.listAns.length;
     }
     // check question
     checkEndTest() {
         sessionStorage.setItem('isEndTest', JSON.stringify(true));
+        setTimeout(() => {
+            this.showWebAns();
+        }, 100);
+        document.getElementById('mark-alert').style.transform = 'translateX(200%)';
+    }
+    closeBox() {
+        document.getElementById('mark-alert').style.removeProperty('transform');
     }
     showAnsPerPage() {
         if (JSON.parse(sessionStorage.getItem('isEndTest'))) {
@@ -14232,9 +14251,10 @@ let TestComponent = class TestComponent {
             }, 100);
         }
     }
+    //show answer when end test
     showWebAns() {
         var questList = document.querySelectorAll('.quest-choose');
-        let webAns = JSON.parse(sessionStorage.getItem('listWebAns'));
+        var webAns = JSON.parse(sessionStorage.getItem('listWebAns'));
         questList.forEach(quest => {
             quest.setAttribute('disabled', 'true');
             var questId = quest.getAttribute('name');
@@ -14263,11 +14283,16 @@ let TestComponent = class TestComponent {
             });
         }
     }
+    //login test menu
     checkLogin(event, block, Id) {
         this.mainSer.checkLogin(event, block, Id);
     }
+    //test menu change lesson
     changeLesson(id) {
-        if (sessionStorage.getItem('lessonId') != id) {
+        if (this.lessonId != id) {
+            //countdown
+            clearInterval(this.x);
+            setTimeout(this.setCountDown, 200);
             this.lessonId = id;
             this.mon = this.listMon.find(m => m.Id === this.lessonId);
             this.quizMon = this.listQuiz.find(q => q.Id === this.lessonId);
@@ -14275,14 +14300,18 @@ let TestComponent = class TestComponent {
             this.toQuiz(this.curPage);
             sessionStorage.setItem('isEndTest', JSON.stringify(false));
             this.isEndTest = JSON.parse(sessionStorage.getItem('isEndTest'));
+            sessionStorage.setItem('listUserAns', '[]');
+            sessionStorage.setItem('isTimeOut', JSON.stringify(false));
+            //remove disabled choose
             setTimeout(() => {
                 var questList = document.querySelectorAll('.quest-choose');
-                var webAns = JSON.parse(sessionStorage.getItem('listWebAns'));
                 questList.forEach(quest => {
                     quest.removeAttribute('disabled');
                 });
-            }, 1000);
-            sessionStorage.removeItem('listUserAns');
+            }, 500);
+        }
+        else {
+            alert('Bạn đang ở môn ' + this.mon.Name + ' rồi');
         }
     }
     logOut() {
@@ -14290,6 +14319,54 @@ let TestComponent = class TestComponent {
         sessionStorage.removeItem('listUserAns');
         sessionStorage.removeItem('userId');
         sessionStorage.removeItem('curUser');
+    }
+    //calculate grade
+    testMark() {
+        var mark = 0;
+        var userAns = JSON.parse(sessionStorage.getItem('listUserAns'));
+        var webAns = JSON.parse(sessionStorage.getItem('listWebAns'));
+        if (userAns.length != 0 && userAns != undefined && userAns != null) {
+            userAns.forEach(uAns => {
+                webAns.forEach(wAns => {
+                    if (uAns.Id == wAns.Id && uAns.ansId == wAns.AnswerId) {
+                        mark += wAns.Marks;
+                    }
+                });
+            });
+        }
+        return mark;
+    }
+    setCountDown() {
+        var distance = 60;
+        this.x = setInterval(function () {
+            document.getElementById('countDown').innerHTML = '';
+            var hour = Math.floor(distance / 3600);
+            var minute = Math.floor((distance - hour * 3600) / 60);
+            var second = Math.floor(distance % 60);
+            document.getElementById('countDown').innerHTML += ((hour < 10) ? '0' + hour : hour) + ':';
+            document.getElementById('countDown').innerHTML += ((minute < 10) ? '0' + minute : minute) + ':';
+            document.getElementById('countDown').innerHTML += (second < 10) ? '0' + second : second;
+            distance = distance - 1;
+            if (distance < 0) {
+                clearInterval(this.x);
+                alert('Bấm nút kết thúc để xem đáp án');
+                sessionStorage.setItem('isTimeOut', JSON.stringify(true));
+                var questList = document.querySelectorAll('.quest-choose');
+                questList.forEach(quest => {
+                    quest.setAttribute('disabled', 'true');
+                });
+            }
+        }, 1000);
+    }
+    disabledRadio() {
+        setTimeout(() => {
+            if (JSON.parse(sessionStorage.getItem('isTimeOut'))) {
+                var questList = document.querySelectorAll('.quest-choose');
+                questList.forEach(quest => {
+                    quest.setAttribute('disabled', 'true');
+                });
+            }
+        }, 100);
     }
 };
 TestComponent.ctorParameters = () => [

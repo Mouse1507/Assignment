@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   
   constructor(private route: RouterModule, private router: Router, private mainSer: MainServiceService) {}
 
-  listUser = JSON.parse(localStorage.getItem('listUser'));
+  listUser =[];
   userName: string;
   password: string;
   isCorrectUser: boolean;
@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
     this.isCorrectUser = false;
   }
   login() {
+    this.listUser = JSON.parse(localStorage.getItem('listUser'));
     this.listUser.forEach(user => {
       if (this.userName == user.user && this.password == user.password) {
         this.isCorrectUser = true;
@@ -53,6 +54,9 @@ export class LoginComponent implements OnInit {
           user.password = pass;
           this.closeForgot();
           alert('Thay đổi thành công');
+          this.router.navigate(['/login']);
+        }else{
+          alert('Xác nhận mật khẩu không trùng');
         }
         hasUser = true;
       }

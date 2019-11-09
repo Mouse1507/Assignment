@@ -4,11 +4,7 @@ import {
 import {
   Router
 } from '@angular/router';
-import {
-  Navigation
-} from 'selenium-webdriver';
-import { ResourceLoader } from '@angular/compiler';
-import { listenerCount } from 'cluster';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12965,9 +12961,9 @@ export class MainServiceService {
       event.preventDefault();
       this.switchModalBox(x);
     } else {
-      var confirm = window.confirm('Ban co muon chuyen den mon nay ?');
+      var confirm = window.confirm('Bạn có muốn chuyển đến môn này ?');
       if (confirm) {
-        sessionStorage.setItem('lessionId', Idmon);
+        sessionStorage.setItem('lessonId', Idmon);
         sessionStorage.setItem('isEndTest', JSON.stringify(false));
         setTimeout(() => { 
           this.router.navigate(['/test']);
